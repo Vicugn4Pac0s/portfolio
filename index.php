@@ -113,24 +113,36 @@ $Page = 'top';
             <ul class="topSec_list l-grid">
               <li class="l-grid_item l-grid_item-6">
                 <a href="#">
-                  <div class="worksCont">
+                  <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
-                      <div class="worksCont_imt">
+                      <div class="worksCont_img">
                         <img src="./images/works.jpg" alt="">
                       </div>
+                      <div class="worksCont_body menuAnim_body">
+                        <h4 class="worksCont_ttl">制作実績タイトル</h4>
+                        <p class="worksCont_txt">
+                          テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </article>
                 </a>
               </li>
               <li class="l-grid_item l-grid_item-6">
                 <a href="#">
-                  <div class="worksCont">
+                  <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
-                      <div class="worksCont_imt">
+                      <div class="worksCont_img">
                         <img src="./images/works02.jpg" alt="">
                       </div>
+                      <div class="worksCont_body menuAnim_body">
+                        <h4 class="worksCont_ttl">制作実績タイトル</h4>
+                        <p class="worksCont_txt">
+                          テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </article>
                 </a>
               </li>
             </ul>
@@ -155,7 +167,8 @@ $Page = 'top';
                         <img src="./images/thumb-sample.jpg" alt="">
                       </div>
                       <div class="card_body">
-                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time datetime="2020-07-07">2020.07.07</time></p>
+                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time
+                            datetime="2020-07-07">2020.07.07</time></p>
                         <h4 class="card_ttl">タイトルが入ります。</h4>
                         <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
                       </div>
@@ -172,7 +185,8 @@ $Page = 'top';
                         <img src="./images/thumb-sample.jpg" alt="">
                       </div>
                       <div class="card_body">
-                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time datetime="2020-07-07">2020.07.07</time></p>
+                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time
+                            datetime="2020-07-07">2020.07.07</time></p>
                         <h4 class="card_ttl">タイトルが入ります。</h4>
                         <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
                       </div>
@@ -188,7 +202,8 @@ $Page = 'top';
                         <img src="./images/thumb-sample.jpg" alt="">
                       </div>
                       <div class="card_body">
-                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time datetime="2020-07-07">2020.07.07</time></p>
+                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time
+                            datetime="2020-07-07">2020.07.07</time></p>
                         <h4 class="card_ttl">タイトルが入ります。</h4>
                         <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
                       </div>
@@ -204,7 +219,8 @@ $Page = 'top';
                         <img src="./images/thumb-sample.jpg" alt="">
                       </div>
                       <div class="card_body">
-                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time datetime="2020-07-07">2020.07.07</time></p>
+                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time
+                            datetime="2020-07-07">2020.07.07</time></p>
                         <h4 class="card_ttl">タイトルが入ります。</h4>
                         <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
                       </div>

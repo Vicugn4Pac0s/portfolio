@@ -86,7 +86,7 @@
       position: absolute;
       top: 0;
       right: -80px;
-  
+
       border-style: solid;
       border-width: 288px 80px 0 0;
       border-color: #e6e6e6 transparent transparent transparent;
@@ -107,20 +107,20 @@
   padding: 60px 0 120px;
   position: relative;
   &:before {
-      content: "";
-      display: block;
-      position: absolute;
-      top: -120px;
-      left: 50%;
-      -webkit-transform: translate(-50%, 0);
-      -ms-transform: translate(-50%, 0);
-      transform: translate(-50%, 0);
-        
-      border-style: solid;
-      border-width: 0 0 120px 1920px;
-      border-color: transparent transparent #f9f9f9 transparent;
-      height: 0;
-      width: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    top: -120px;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+
+    border-style: solid;
+    border-width: 0 0 120px 1920px;
+    border-color: transparent transparent #f9f9f9 transparent;
+    height: 0;
+    width: 0;
   }
   .skills_inner {
     position: relative;
@@ -146,6 +146,31 @@
     text-align: center;
   }
 }
+
+.worksCont {
+  .worksCont_inner {
+  }
+  .worksCont_body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+    width: 80%;
+    z-index: 2;
+  }
+  .worksCont_ttl {
+    font-size: 21px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .worksCont_txt {
+    font-size: 14px;
+  }
+}
+
 
 .topSec {
   .topSec_inner {
@@ -182,7 +207,6 @@
       left: 0px;
       width: 100%;
     }
-
   }
   &.topSec-blog {
     background: rgba(255, 255, 255, 0.5);
@@ -203,19 +227,21 @@
         display: block;
         position: absolute;
         top: 0;
-    
+
         border-style: solid;
         height: 0;
         width: 0;
       }
       &:before {
         border-width: 50px 25px 0 0;
-        border-color: transparent rgba(255, 255, 255, 0.5) transparent transparent;
+        border-color: transparent rgba(255, 255, 255, 0.5) transparent
+          transparent;
         left: -25px;
       }
       &:after {
         border-width: 50px 0 0 25px;
-        border-color: transparent transparent transparent rgba(255, 255, 255, 0.5);
+        border-color: transparent transparent transparent
+          rgba(255, 255, 255, 0.5);
         right: -25px;
       }
     }
@@ -226,6 +252,5 @@
       left: 0px;
       width: 100%;
     }
-
   }
 }
