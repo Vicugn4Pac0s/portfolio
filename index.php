@@ -64,13 +64,45 @@ $Page = 'top';
     <!-- Main -->
     <section class="main main-<?php echo $Page; ?>">
 
-      <!-- Section01 -->
-      <section class="topSec topSec-topics">
+      <!-- SectionAbout -->
+      <section class="topSec topSec-about">
         <div class="topSec_inner l-inner">
-
+          <div class="aboutCont topSec_about">
+            <div class="aboutCont_inner">
+              <h3 class="aboutCont_ttl headingA">ABOUT</h3>
+              <p class="aboutCont_txt">
+                テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+              </p>
+            </div>
+          </div>
+          <div class="topSec_img">
+            <img src="./images/about_img.png" alt="">
+          </div>
         </div>
+        <section class="topSec_skills skills">
+          <div class="skills_inner l-inner">
+            <h4 class="skills_ttl">SKILLS</h4>
+            <ul class="skills_list l-grid">
+              <li class="l-grid_item l-grid_item-3">
+                <img src="./images/html.png" alt="">
+              </li>
+              <li class="l-grid_item l-grid_item-3">
+                <img src="./images/javascript.png" alt="">
+              </li>
+              <li class="l-grid_item l-grid_item-3">
+                <img src="./images/php.png" alt="">
+              </li>
+              <li class="l-grid_item l-grid_item-3">
+                <img src="./images/wordpress.png" alt="">
+              </li>
+            </ul>
+            <div class="skills_others">
+              <img src="./images/bg_skillIcons.png" alt="">
+            </div>
+          </div>
+        </section>
       </section>
-      <!-- Section01 END -->
+      <!-- SectionAbout END -->
 
     </section>
     <!-- Main End -->
