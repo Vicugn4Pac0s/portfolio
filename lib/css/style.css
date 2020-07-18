@@ -1791,7 +1791,7 @@ a {
 
 ----------------------------------------------------*/
 body {
-  background: #fff;
+  background: #88BBD6;
   color: #333;
   font-size: 16px;
   font-size: 1.6rem;
@@ -2174,11 +2174,11 @@ img {
   padding: 30px 0; }
 
 .mv {
-  background: #88bbd6;
   color: #fff;
   text-align: center;
   min-height: 650px;
-  position: relative; }
+  position: relative;
+  z-index: 1; }
 .mv .mv_inner {
   position: absolute;
   top: 0;
@@ -2271,6 +2271,14 @@ img {
 .main {
   position: relative;
   z-index: 101; }
+
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0; }
 
 .topicsCont {
   background: #fff;

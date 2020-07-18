@@ -20,6 +20,15 @@
   z-index: 101;
 }
 
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
 .topicsCont {
   background: #fff;
   color: #333;

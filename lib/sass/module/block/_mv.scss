@@ -2,11 +2,12 @@
 
 // mv
 .mv {
-	background: #88bbd6;
+	//background: #88bbd6;
 	color: #fff;
 	text-align: center;
 	min-height: 650px;
 	position: relative;
+	z-index: 1;
 	.mv_inner {
 		position: absolute;
 		top: 0;
