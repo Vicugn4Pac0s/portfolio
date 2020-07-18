@@ -82,8 +82,8 @@
     display: block;
     height: 100%;
     width: 100%;
-    transform: scale(2) translate(-100%, -100%) rotate(-45deg);
-    transition: all 0.7s;
+    transform: scale(2) translate(-60%, -60%) rotate(-45deg);
+    transition: all 0.5s;
     position: absolute;
     top: 0;
     left: 0;
@@ -91,7 +91,7 @@
   }
   .menuAnim_body {
     opacity: 0;
-    transition: all 0.4s;
+    transition: all .35s;
   }
   &:hover {
     &:before {
@@ -99,8 +99,7 @@
     }
     .menuAnim_body {
       opacity: 1;
-      transition: all 0.5s 0.2s;
-
+      transition: all 0.35s 0.15s;
     }
   }
 }
