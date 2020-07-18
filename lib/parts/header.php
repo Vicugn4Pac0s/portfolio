@@ -24,7 +24,7 @@
         <div class="gMenu_inner">
             <ul class="gMenu_list">
                 <li>
-                    <a href="#">TOP</a>
+                    <a href="#mv">TOP</a>
                 </li>
                 <li>
                     <a href="#about">ABOUT</a>

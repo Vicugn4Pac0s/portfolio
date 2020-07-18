@@ -41,7 +41,7 @@ $Page = 'top';
     <?php require_once($Root . "/lib/parts/header.php"); ?>
 
     <!-- MainVisual -->
-    <div class="mv js-mv">
+    <div id="mv" class="mv js-mv">
       <div class="mv_inner l-inner">
         <div class="mv_body">
           <h2 class="mv_ttl">
@@ -66,7 +66,7 @@ $Page = 'top';
     <section class="main main-<?php echo $Page; ?>">
 
       <!-- SectionAbout -->
-      <section class="topSec topSec-about">
+      <section id="about" class="topSec topSec-about">
         <div class="topSec_inner l-inner">
           <div class="aboutCont topSec_about">
             <div class="aboutCont_inner">
@@ -104,6 +104,119 @@ $Page = 'top';
         </section>
       </section>
       <!-- SectionAbout END -->
+
+      <!-- SectionWorks -->
+      <section id="works" class="topSec topSec-works">
+        <div class="topSec_inner l-inner">
+          <h3 class="topSec_ttl headingA">WORKS</h3>
+          <div class="topSec_body">
+            <ul class="topSec_list l-grid">
+              <li class="l-grid_item l-grid_item-6">
+                <a href="#">
+                  <div class="worksCont">
+                    <div class="worksCont_inner">
+                      <div class="worksCont_imt">
+                        <img src="./images/works.jpg" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+              <li class="l-grid_item l-grid_item-6">
+                <a href="#">
+                  <div class="worksCont">
+                    <div class="worksCont_inner">
+                      <div class="worksCont_imt">
+                        <img src="./images/works02.jpg" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- SectionWorks END -->
+
+      <!-- SectionBlog -->
+      <section id="blog" class="topSec topSec-blog">
+        <div class="topSec_inner l-inner">
+          <div class="topSec_header">
+            <h3 class="topSec_ttl headingA">BLOG</h3>
+          </div>
+          <div class="topSec_body">
+            <ul class="topSec_list l-grid l-gutter-m">
+              <li class="l-grid_item l-grid_item-3">
+                <a href="#">
+                  <article class="card">
+                    <div class="card_inner">
+                      <div class="card_img">
+                        <img src="./images/thumb-sample.jpg" alt="">
+                      </div>
+                      <div class="card_body">
+                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time datetime="2020-07-07">2020.07.07</time></p>
+                        <h4 class="card_ttl">タイトルが入ります。</h4>
+                        <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+
+              <li class="l-grid_item l-grid_item-3">
+                <a href="#">
+                  <article class="card">
+                    <div class="card_inner">
+                      <div class="card_img">
+                        <img src="./images/thumb-sample.jpg" alt="">
+                      </div>
+                      <div class="card_body">
+                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time datetime="2020-07-07">2020.07.07</time></p>
+                        <h4 class="card_ttl">タイトルが入ります。</h4>
+                        <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="l-grid_item l-grid_item-3">
+                <a href="#">
+                  <article class="card">
+                    <div class="card_inner">
+                      <div class="card_img">
+                        <img src="./images/thumb-sample.jpg" alt="">
+                      </div>
+                      <div class="card_body">
+                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time datetime="2020-07-07">2020.07.07</time></p>
+                        <h4 class="card_ttl">タイトルが入ります。</h4>
+                        <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="l-grid_item l-grid_item-3">
+                <a href="#">
+                  <article class="card">
+                    <div class="card_inner">
+                      <div class="card_img">
+                        <img src="./images/thumb-sample.jpg" alt="">
+                      </div>
+                      <div class="card_body">
+                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time datetime="2020-07-07">2020.07.07</time></p>
+                        <h4 class="card_ttl">タイトルが入ります。</h4>
+                        <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!-- SectionBlog END -->
 
     </section>
     <!-- Main End -->

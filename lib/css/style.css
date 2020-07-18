@@ -2225,7 +2225,7 @@ img {
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 101; }
+  z-index: 999; }
 .gMenu:after {
   content: "";
   display: block;
@@ -2252,6 +2252,34 @@ img {
   font-family: "Russo One";
   line-height: 31px;
   padding: 0 30px; }
+
+.card {
+  background: #fff; }
+.card .card_img img {
+  vertical-align: middle; }
+.card .card_body {
+  padding: 20px 10px;
+  position: relative; }
+.card .card_body:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: 0;
+  border-style: solid;
+  border-width: 0 0 20px 235px;
+  border-color: transparent transparent #ffffff transparent;
+  height: 0;
+  width: 0; }
+.card .card_date {
+  font-size: 12px;
+  position: absolute;
+  top: -6px;
+  right: 10px; }
+.card .card_ttl {
+  margin-bottom: 10px; }
+.card .card_txt {
+  font-size: 14px; }
 
 /* page */
 /*----------------------------------------------------
@@ -2340,8 +2368,8 @@ img {
 
 .skills {
   background: #f9f9f9;
-  margin-top: 240px;
-  padding: 60px 0;
+  margin-top: 320px;
+  padding: 60px 0 120px;
   position: relative; }
 .skills:before {
   content: "";
@@ -2381,12 +2409,53 @@ img {
 .topSec.topSec-about {
   background: #fff; }
 .topSec.topSec-about .topSec_inner {
-  padding-top: 60px;
+  padding-top: 120px;
   z-index: 1; }
 .topSec.topSec-about .topSec_img {
   position: absolute;
   bottom: -240px;
   right: -200px; }
+.topSec.topSec-works .topSec_inner {
+  padding: 100px 0 150px; }
+.topSec.topSec-works .topSec_ttl {
+  text-align: center;
+  position: absolute;
+  top: -18px;
+  left: 0px;
+  width: 100%; }
+.topSec.topSec-blog {
+  background: rgba(255, 255, 255, 0.5); }
+.topSec.topSec-blog .topSec_inner {
+  padding: 60px 0 80px; }
+.topSec.topSec-blog .topSec_header {
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: -50px;
+  left: 0;
+  height: 50px;
+  width: 100%; }
+.topSec.topSec-blog .topSec_header:before, .topSec.topSec-blog .topSec_header:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  border-style: solid;
+  height: 0;
+  width: 0; }
+.topSec.topSec-blog .topSec_header:before {
+  border-width: 50px 25px 0 0;
+  border-color: transparent rgba(255, 255, 255, 0.5) transparent transparent;
+  left: -25px; }
+.topSec.topSec-blog .topSec_header:after {
+  border-width: 50px 0 0 25px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.5);
+  right: -25px; }
+.topSec.topSec-blog .topSec_ttl {
+  text-align: center;
+  position: absolute;
+  top: -18px;
+  left: 0px;
+  width: 100%; }
 
 /*--------------------------
 	animation
