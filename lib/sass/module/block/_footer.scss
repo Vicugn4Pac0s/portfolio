@@ -2,14 +2,45 @@
 
 // footer
 .footer {
-	.footer_inner {
+  background: #fff;
+  position: relative;
+  z-index: 101;
+  .footer_inner {
+    background: #e0f2f5;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    &:before,
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+
+      border-style: solid;
+      height: 0;
+      width: 0;
+    }
+    &:before {
+      border-width: 58px 25px 0 0;
+      border-color: transparent #e0f2f5 transparent transparent;
+      left: -25px;
+    }
+    &:after {
+      border-width: 58px 0 0 25px;
+      border-color: transparent transparent transparent #e0f2f5;
+      right: -25px;
+    }
 	}
-	@include max-screen($bp-tab) {
-		.footer_inner {
-		}
+	.footer_copy {
+		font-size: 12px;
 	}
-	@include max-screen($bp-sp) {
-		.footer_inner {
-		}
-	}
+  @include max-screen($bp-tab) {
+    .footer_inner {
+    }
+  }
+  @include max-screen($bp-sp) {
+    .footer_inner {
+    }
+  }
 }

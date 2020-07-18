@@ -30,13 +30,13 @@
                     <a href="#about">ABOUT</a>
                 </li>
                 <li>
-                    <a href="#works">WORKS</a>
+                    <a href="#anchor-works">WORKS</a>
                 </li>
                 <li>
-                    <a href="#blog">BLOG</a>
+                    <a href="#anchor-blog">BLOG</a>
                 </li>
                 <li>
-                    <a href="#contact">CONTACT</a>
+                    <a href="#footer">CONTACT</a>
                 </li>
             </ul>
         </div>

@@ -40,30 +40,30 @@ $Page = 'top';
   <div class="wrap wrap-<?php echo $Page; ?>">
     <?php require_once($Root . "/lib/parts/header.php"); ?>
 
-    <!-- MainVisual -->
-    <div id="mv" class="mv js-mv">
-      <div class="mv_inner l-inner">
-        <div class="mv_body">
-          <h2 class="mv_ttl">
-            <img src="./images/mv_ttl.png" alt="">
-          </h2>
-          <p class="mv_txt">Good to see you!</p>
-        </div>
-        <section class="mv_topics topicsCont">
-          <div class="topicsCont_inner">
-            <h3 class="topicsCont_ttl headingA headingA-s">TOPICS</h3>
-            <div class="topicsCont_body">
-              <p class="topicsCont_topics">2020.07.11　Webサイトを公開しました。</p>
-            </div>
-          </div>
-        </section>
-      </div>
-      <div class="mv_bg"></div>
-    </div>
-    <!-- MainVisual END -->
-
     <!-- Main -->
     <section class="main main-<?php echo $Page; ?>">
+
+      <!-- MainVisual -->
+      <div id="mv" class="mv js-mv">
+        <div class="mv_inner l-inner">
+          <div class="mv_body">
+            <h2 class="mv_ttl">
+              <img src="./images/mv_ttl.png" alt="">
+            </h2>
+            <p class="mv_txt">Good to see you!</p>
+          </div>
+          <section class="mv_topics topicsCont">
+            <div class="topicsCont_inner">
+              <h3 class="topicsCont_ttl headingA headingA-s">TOPICS</h3>
+              <div class="topicsCont_body">
+                <p class="topicsCont_topics">2020.07.11　Webサイトを公開しました。</p>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="mv_bg"></div>
+      </div>
+      <!-- MainVisual END -->
 
       <!-- SectionAbout -->
       <section id="about" class="topSec topSec-about">
@@ -108,7 +108,7 @@ $Page = 'top';
       <!-- SectionWorks -->
       <section id="works" class="topSec topSec-works">
         <div class="topSec_inner l-inner">
-          <h3 class="topSec_ttl headingA">WORKS</h3>
+          <h3 id="anchor-works" class="topSec_ttl headingA">WORKS</h3>
           <div class="topSec_body">
             <ul class="topSec_list l-grid">
               <li class="l-grid_item l-grid_item-6">
@@ -155,7 +155,7 @@ $Page = 'top';
       <section id="blog" class="topSec topSec-blog">
         <div class="topSec_inner l-inner">
           <div class="topSec_header">
-            <h3 class="topSec_ttl headingA">BLOG</h3>
+            <h3 id="anchor-blog" class="topSec_ttl headingA">BLOG</h3>
           </div>
           <div class="topSec_body">
             <ul class="topSec_list l-grid l-gutter-m">
@@ -232,6 +232,66 @@ $Page = 'top';
           </div>
         </div>
       </section>
+      <!-- SectionBlog END -->
+
+      <!-- SectionFooter -->
+      <div id="footer" class="topSec topSec-footer">
+        <div class="topSec_inner l-inner">
+          <div class="l-grid l-gutter-s">
+            <div class="l-grid_item l-grid_item-6">
+              <section class="snsCont">
+                <div class="snsCont_inner">
+                  <h3 class="snsCont_ttl headingA">SNS</h3>
+                  <div class="snsCont_body">
+                    <div class="snsCont_note"></div>
+                    <ul class="snsCont_btns l-grid l-gutter-s">
+                      <li class="l-grid_item l-grid_item-6">
+                        <a href="#">
+                          <img src="/lib/images/btn-twitter.png" alt="">
+                        </a>
+                      </li>
+                      <li class="l-grid_item l-grid_item-6">
+                        <a href="#">
+                          <img src="/lib/images/btn-github.png" alt="">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            <div class="l-grid_item l-grid_item-6">
+              <section class="contactCont">
+                <div class="contactCont_inner">
+                  <h3 class="contactCont_ttl headingA">CONTACT</h3>
+                  <div class="snsCont_body">
+                    <form action="/">
+                      <ul class="formList">
+                        <li>
+                          <input type="text" name="name" class="InputA" placeholder="Name">
+                        </li>
+                        <li>
+                          <input type="text" name="email" class="InputA" placeholder="Email">
+                        </li>
+                        <li>
+                          <input type="text" name="title" class="InputA" placeholder="Title">
+                        </li>
+                        <li>
+                          <textarea name="message" class="InputA InputA-ta" placeholder="Message"></textarea>
+                        </li>
+                        <li>
+                          <button type="submit" class="submitBtn">Submit</button>
+                        </li>
+                      </ul>
+                    </form>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- SectionBlog END -->
 
     </section>
