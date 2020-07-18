@@ -25,6 +25,17 @@
     url('../fonts/noto_sans/NotoSansCJKjp-Bold.ttf')  format('truetype');
 }
 
+/*----------------------------------------------------
+  Russo One
+*/
+@font-face {
+  font-family: 'Russo One';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Russo_One/RussoOne-Regular.ttf')  format('truetype');
+}
+
+
 // ゴシック(ベーシック)
 $gothic-A: Arial, "Helvetica Neue",'Hiragino Kaku Gothic ProN',Osaka,メイリオ,Meiryo,"ＭＳ Ｐゴシック",sans-serif;
 

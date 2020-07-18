@@ -21,11 +21,13 @@ $Page = 'top';
   echo ogpSouceCode('');
   ?>
   <link rel="stylesheet" href="/lib/fonts/font_awesome/font-awesome.min.css">
-  <link rel="stylesheet" href="/lib/css/style.css?<?php echo $Timestamp; ?>">
+  <link rel="stylesheet"
+    href="/lib/css/style.css?<?php echo $Timestamp; ?>">
 
   <script src="/lib/js/jquery.min.js"></script><!-- 最新版があればダウンロード ※~IE8対応の場合は、jQuery1.xの最新版 -->
   <script src="/lib/js/smoothscroll.js"></script>
   <script src="/lib/js/common.js?<?php echo $Timestamp; ?>"></script>
+  <script src="/lib/js/top.js?<?php echo $Timestamp; ?>"></script>
 
   <!--[if lt IE 9]>
 	<script src="/lib/js/html5shiv.js"></script>
@@ -38,10 +40,24 @@ $Page = 'top';
     <?php require_once($Root . "/lib/parts/header.php"); ?>
 
     <!-- MainVisual -->
-    <div class="mv">
-      <div class="mv_inner">
-
+    <div class="mv js-mv">
+      <div class="mv_inner l-inner">
+        <div class="mv_body">
+          <h2 class="mv_ttl">
+            <img src="./images/mv_ttl.png" alt="">
+          </h2>
+          <p class="mv_txt">Good to see you!</p>
+        </div>
+        <section class="mv_topics topicsCont">
+          <div class="topicsCont_inner">
+            <h3 class="topicsCont_ttl headingA headingA-s">TOPICS</h3>
+            <div class="topicsCont_body">
+              <p class="topicsCont_topics">2020.07.11　Webサイトを公開しました。</p>
+            </div>
+          </div>
+        </section>
       </div>
+      <div class="mv_bg"></div>
     </div>
     <!-- MainVisual END -->
 
@@ -49,8 +65,8 @@ $Page = 'top';
     <section class="main main-<?php echo $Page; ?>">
 
       <!-- Section01 -->
-      <section class="topSec topSec-01">
-        <div class="topSec_inner">
+      <section class="topSec topSec-topics">
+        <div class="topSec_inner l-inner">
 
         </div>
       </section>

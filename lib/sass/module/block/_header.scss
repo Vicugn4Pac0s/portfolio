@@ -2,7 +2,13 @@
 
 // header
 .header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 101;
 	.header_inner {
+		padding: 30px 0;
 	}
 	@include max-screen($bp-tab) {
 		.header_inner {

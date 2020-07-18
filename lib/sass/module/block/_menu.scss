@@ -21,7 +21,50 @@
   }
   @include max-screen($bp-sp) {
     $top: 80px;
-    
+
     top: $top;
+  }
+}
+
+// gMenu
+.gMenu {
+  background: rgba(255, 255, 255, 0.5);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 101;
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -50px;
+
+    border-style: solid;
+    border-width: 0 50px 91px 0;
+    border-color: transparent rgba(255, 255, 255, 0.5) transparent transparent;
+    height: 0;
+    width: 0;
+  }
+  .gMenu_inner {
+    padding: 30px 60px;
+  }
+  .gMenu_list {
+    &::after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+    li {
+      float: left;
+      a {
+        color: #666;
+        display: block;
+        font-size: 18px;
+        font-family: "Russo One";
+        line-height: 31px;
+        padding: 0 30px;
+      }
+    }
   }
 }

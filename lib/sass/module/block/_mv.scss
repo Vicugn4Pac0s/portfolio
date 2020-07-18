@@ -2,7 +2,42 @@
 
 // mv
 .mv {
+	background: #88bbd6;
+	color: #fff;
+	text-align: center;
+	min-height: 650px;
 	.mv_inner {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		-webkit-transform: translate(-50%, 0);
+		-ms-transform: translate(-50%, 0);
+		transform: translate(-50%, 0);
+		height: 100%;
+		z-index: 100;
+	}
+	.mv_body {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+	.mv_ttl {
+		margin-bottom: 10px;
+	}
+	.mv_txt {
+		font-size: 24px;
+	}
+	.mv_topics {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+	.mv_bg {
+
 	}
 	@include max-screen($bp-tab) {
 		.mv_inner {
