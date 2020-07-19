@@ -70,6 +70,11 @@
     margin: 0 auto;
     width: 680px;
   }
+  @include max-screen($bp-tab) {
+    .topicsCont_topics {
+      width: 100%;
+    }
+  }
 }
 
 .aboutCont {
@@ -98,6 +103,22 @@
     position: absolute;
     top: -18px;
     left: -10px;
+  }
+  @include max-screen($bp-tab) {
+    .aboutCont_inner {
+      &:after {
+        border-width: 240px 80px 0 0;
+      }
+    }
+  }
+  @include max-screen($bp-sp) {
+    .aboutCont_inner {
+      padding: 40px 20px;
+      width: 100%;
+      &:after {
+        content: none;
+      }
+    }
   }
 }
 
@@ -141,9 +162,33 @@
   }
   .skills_list {
     margin-bottom: 60px;
+    li {
+      text-align: center;
+    }
   }
   .skills_others {
     text-align: center;
+  }
+  @include max-screen($bp-tab) {
+    padding: 30px 0 80px;
+    margin-top: 280px;
+    .skills_ttl {
+      font-size: 80px;
+      top: -135px;
+      left: -20px;
+      letter-spacing: 5px;
+    }
+  }
+  @include max-screen($bp-sp) {
+    padding: 0 0 60px;
+    .skills_ttl {
+      font-size: 60px;
+      top: -105px;
+      left: -5px;
+    }
+    .skills_list {
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -228,6 +273,29 @@
       bottom: -240px;
       right: -200px;
     }
+    @include max-screen($bp-tab) {
+      .topSec_img {
+        bottom: -200px;
+        right: -60px;
+        width: 450px;
+      }
+    }
+    @include max-screen($bp-sp) {
+      .topSec_inner {
+        padding-top: 40px;
+      }
+      .topSec_img {
+        bottom: auto;
+        top: 95%;
+        right: -5%;
+        width: 75%;
+      }
+    }
+    @include max-screen(480px) {
+      .topSec_img {
+        width: 90%;
+      }
+    }
   }
   &.topSec-works {
     .topSec_inner {
@@ -239,6 +307,14 @@
       top: -18px;
       left: 0px;
       width: 100%;
+    }
+    @include max-screen($bp-sp) {
+      .topSec_inner {
+        padding: 60px 0 110px;
+      }
+      .topSec_ttl {
+        top: -14px;
+      }
     }
   }
   &.topSec-blog {
@@ -285,11 +361,29 @@
       left: 0px;
       width: 100%;
     }
+    @include max-screen($bp-tab) {
+      .topSec_list {
+        li:nth-child(4) {
+          display: none;
+        }
+      }
+    }
+    @include max-screen($bp-sp) {
+      .topSec_inner {
+        padding: 20px 0 40px;
+      }
+      .topSec_ttl {
+        top: -14px;
+      }
+    }
   }
   &.topSec-footer {
     background: #fff;
     .topSec_inner {
       padding: 60px 0;
+    }
+    .topSec_inner {
+      padding: 40px 0 20px;
     }
   }
 }

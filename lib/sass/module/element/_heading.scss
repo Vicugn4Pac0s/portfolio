@@ -11,4 +11,10 @@
   &.headingA-s {
     font-size: 24px;
   }
+  @include max-screen($bp-sp) {
+    font-size: 28px;
+    &.headingA-s {
+      font-size: 21px;
+    }
+  }
 }

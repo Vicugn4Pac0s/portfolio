@@ -67,6 +67,9 @@
       }
     }
   }
+  @include max-screen($bp-tab) {
+    display: none;
+  }
 }
 
 // menuAnim
@@ -100,6 +103,11 @@
     .menuAnim_body {
       opacity: 1;
       transition: all 0.35s 0.15s;
+    }
+  }
+  @include max-screen($bp-tab) {
+    &:before, .menuAnim_body {
+      display: none;
     }
   }
 }

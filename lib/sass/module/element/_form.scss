@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 .InputA {
+  box-sizing: border-box;
   font-size: 18px;
   padding: 10px 20px;
   width: 100%;
@@ -23,6 +24,10 @@
   &.InputA-ta {
     height: 150px;
   }  
+  @include max-screen($bp-sp) {
+    font-size: 16px;
+    padding: 5px 10px;
+  }
 }
 
 .submitBtn {

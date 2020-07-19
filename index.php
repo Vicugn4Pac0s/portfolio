@@ -83,17 +83,17 @@ $Page = 'top';
         <section class="topSec_skills skills">
           <div class="skills_inner l-inner">
             <h4 class="skills_ttl">SKILLS</h4>
-            <ul class="skills_list l-grid">
-              <li class="l-grid_item l-grid_item-3">
+            <ul class="skills_list l-grid l-gutter-s-tab">
+              <li class="l-grid_item l-grid_item-3 l-grid_item-6-sp">
                 <img src="./images/html.png" alt="">
               </li>
-              <li class="l-grid_item l-grid_item-3">
+              <li class="l-grid_item l-grid_item-3 l-grid_item-6-sp">
                 <img src="./images/javascript.png" alt="">
               </li>
-              <li class="l-grid_item l-grid_item-3">
+              <li class="l-grid_item l-grid_item-3 l-grid_item-6-sp">
                 <img src="./images/php.png" alt="">
               </li>
-              <li class="l-grid_item l-grid_item-3">
+              <li class="l-grid_item l-grid_item-3 l-grid_item-6-sp">
                 <img src="./images/wordpress.png" alt="">
               </li>
             </ul>
@@ -111,7 +111,7 @@ $Page = 'top';
           <h3 id="anchor-works" class="topSec_ttl headingA">WORKS</h3>
           <div class="topSec_body">
             <ul class="topSec_list l-grid">
-              <li class="l-grid_item l-grid_item-6">
+              <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
                 <a href="#">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
@@ -128,7 +128,7 @@ $Page = 'top';
                   </article>
                 </a>
               </li>
-              <li class="l-grid_item l-grid_item-6">
+              <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
                 <a href="#">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
@@ -159,7 +159,7 @@ $Page = 'top';
           </div>
           <div class="topSec_body">
             <ul class="topSec_list l-grid l-gutter-m">
-              <li class="l-grid_item l-grid_item-3">
+              <li class="l-grid_item l-grid_item-3 l-grid_item-4-tab l-grid_item-12-sp">
                 <a href="#">
                   <article class="card">
                     <div class="card_inner">
@@ -177,7 +177,7 @@ $Page = 'top';
                 </a>
               </li>
 
-              <li class="l-grid_item l-grid_item-3">
+              <li class="l-grid_item l-grid_item-3 l-grid_item-4-tab l-grid_item-12-sp">
                 <a href="#">
                   <article class="card">
                     <div class="card_inner">
@@ -194,7 +194,7 @@ $Page = 'top';
                   </article>
                 </a>
               </li>
-              <li class="l-grid_item l-grid_item-3">
+              <li class="l-grid_item l-grid_item-3 l-grid_item-4-tab l-grid_item-12-sp">
                 <a href="#">
                   <article class="card">
                     <div class="card_inner">
@@ -211,7 +211,7 @@ $Page = 'top';
                   </article>
                 </a>
               </li>
-              <li class="l-grid_item l-grid_item-3">
+              <li class="l-grid_item l-grid_item-3 l-grid_item-4-tab l-grid_item-12-sp">
                 <a href="#">
                   <article class="card">
                     <div class="card_inner">
@@ -238,7 +238,7 @@ $Page = 'top';
       <div id="footer" class="topSec topSec-footer">
         <div class="topSec_inner l-inner">
           <div class="l-grid l-gutter-s">
-            <div class="l-grid_item l-grid_item-6">
+            <div class="l-grid_item l-grid_item-6 l-grid_item-12-sp u-mb40-sp">
               <section class="snsCont">
                 <div class="snsCont_inner">
                   <h3 class="snsCont_ttl headingA">SNS</h3>
@@ -261,7 +261,7 @@ $Page = 'top';
               </section>
             </div>
 
-            <div class="l-grid_item l-grid_item-6">
+            <div class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
               <section class="contactCont">
                 <div class="contactCont_inner">
                   <h3 class="contactCont_ttl headingA">CONTACT</h3>
