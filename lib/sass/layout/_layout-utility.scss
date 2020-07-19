@@ -19,6 +19,7 @@
   }
   @include max-screen($bp-sp) {
     max-width: 480px;
+    width: 90%;
   }
 }
 

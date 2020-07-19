@@ -2018,7 +2018,8 @@ img {
     width: 95%; } }
 @media screen and (max-width: 767px) {
   .l-inner {
-    max-width: 480px; } }
+    max-width: 480px;
+    width: 90%; } }
 
 .l-pos-relative {
   position: relative; }
