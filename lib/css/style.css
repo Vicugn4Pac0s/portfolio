@@ -2113,13 +2113,20 @@ img {
 .pagetop {
   cursor: pointer;
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 999;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
   transition: 0.45s; }
+.pagetop img {
+  vertical-align: middle; }
 .pagetop:hover {
   transition: 0.15s;
   opacity: 0.5; }
+@media screen and (max-width: 767px) {
+  .pagetop {
+    width: 80px; }
+  .pagetop:hover {
+    opacity: 1; } }
 
 .headingA {
   color: #99d3df;

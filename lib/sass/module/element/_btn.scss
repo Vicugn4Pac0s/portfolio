@@ -83,13 +83,22 @@
 .pagetop {
   cursor: pointer;
   position: fixed;
-  bottom: 30px;
-  right: 30px;
-  z-index: 999;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
 
   transition: 0.45s;
+  img {
+    vertical-align: middle;
+  }
   &:hover {
     transition: 0.15s;
     opacity: 0.5;
+  }
+  @include max-screen($bp-sp) {
+    width: 80px;
+    &:hover {
+      opacity: 1;
+    }
   }
 }
