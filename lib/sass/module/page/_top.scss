@@ -237,6 +237,13 @@
   .snsCont_btns {
     margin: 0 auto;
     width: 160px;
+    a {
+      transition: .35s;
+      &:hover {
+        opacity: .5;
+        transition: .15s;
+      }
+    }
   }
 }
 

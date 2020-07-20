@@ -2653,6 +2653,11 @@ img {
 .snsCont .snsCont_btns {
   margin: 0 auto;
   width: 160px; }
+.snsCont .snsCont_btns a {
+  transition: .35s; }
+.snsCont .snsCont_btns a:hover {
+  opacity: .5;
+  transition: .15s; }
 
 .contactCont .contactCont_inner {
   text-align: center;
