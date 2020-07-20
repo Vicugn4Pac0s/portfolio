@@ -2187,6 +2187,8 @@ img {
   border-radius: 0;
   color: inherit;
   font-family: inherit; }
+.InputA::placeholder {
+  color: #88BBD6; }
 .InputA:focus {
   border: 1px solid rgba(0, 0, 0, 0.32);
   box-shadow: none;
