@@ -2381,7 +2381,9 @@ img {
     display: none; } }
 
 .card {
-  background: #fff; }
+  background: #fff;
+  transform-origin: center bottom;
+  transition: .35s; }
 .card .card_img {
   box-sizing: border-box; }
 .card .card_img img {
@@ -2410,13 +2412,19 @@ img {
   margin-bottom: 10px; }
 .card .card_txt {
   font-size: 14px; }
+.card:hover {
+  transform: translate(0, -10px) scale(1.05);
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); }
 @media screen and (max-width: 1000px) {
   .card {
     max-width: 225px;
     margin: 0 auto; }
   .card .card_body:before {
     border-style: solid;
-    border-width: 0 0 20px 225px; } }
+    border-width: 0 0 20px 225px; }
+  .card:hover {
+    transform: none;
+    box-shadow: none; } }
 @media screen and (max-width: 767px) {
   .card {
     max-width: initial; }
