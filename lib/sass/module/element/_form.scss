@@ -48,11 +48,18 @@
   display: inline-block;
   margin: 0;
   text-decoration: none;
+
+  transition: .35s;
   &:hover, &:focus {
     outline: none;
   }
   &::-moz-foucus-inner {
     border: none;
     padding: 0;
+  }
+
+  &:hover {
+    background-color: $main-color;
+    transition: .15s;
   }
 }

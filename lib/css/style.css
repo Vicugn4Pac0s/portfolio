@@ -2219,12 +2219,16 @@ img {
   cursor: pointer;
   display: inline-block;
   margin: 0;
-  text-decoration: none; }
+  text-decoration: none;
+  transition: .35s; }
 .submitBtn:hover, .submitBtn:focus {
   outline: none; }
 .submitBtn::-moz-foucus-inner {
   border: none;
   padding: 0; }
+.submitBtn:hover {
+  background-color: #99d3df;
+  transition: .15s; }
 
 /* block */
 .header {
