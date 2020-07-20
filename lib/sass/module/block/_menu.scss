@@ -64,6 +64,12 @@
         font-family: "Russo One";
         line-height: 31px;
         padding: 0 30px;
+
+        transition: .35s;
+        &:hover {
+          color: $base-color;
+          transition: .15s;
+        }
       }
     }
   }

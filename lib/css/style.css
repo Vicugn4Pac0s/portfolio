@@ -2346,7 +2346,11 @@ img {
   font-size: 18px;
   font-family: "Russo One";
   line-height: 31px;
-  padding: 0 30px; }
+  padding: 0 30px;
+  transition: .35s; }
+.gMenu .gMenu_list li a:hover {
+  color: #88BBD6;
+  transition: .15s; }
 @media screen and (max-width: 1000px) {
   .gMenu {
     display: none; } }
