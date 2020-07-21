@@ -2482,6 +2482,19 @@ img {
 	※CSSに展開した場合
 
 ----------------------------------------------------*/
+.wrap {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#99d3df+0,88bbd6+100 */
+  background: #99d3df;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #99d3df 0%, #88bbd6 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #99d3df 0%, #88bbd6 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #99d3df 0%, #88bbd6 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99d3df', endColorstr='#88bbd6',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
+
 .main {
   position: relative;
   z-index: 101; }
@@ -2654,10 +2667,10 @@ img {
   margin: 0 auto;
   width: 160px; }
 .snsCont .snsCont_btns a {
-  transition: .35s; }
+  transition: 0.35s; }
 .snsCont .snsCont_btns a:hover {
-  opacity: .5;
-  transition: .15s; }
+  opacity: 0.5;
+  transition: 0.15s; }
 
 .contactCont .contactCont_inner {
   text-align: center;
