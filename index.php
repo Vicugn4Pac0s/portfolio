@@ -109,7 +109,7 @@ $Page = 'top';
         <div class="topSec_inner l-inner">
           <h3 id="anchor-works" class="topSec_ttl headingA">WORKS</h3>
           <div class="topSec_body">
-            <ul class="topSec_list l-grid">
+            <ul class="topSec_list worksList l-grid">
               <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
                 <a href="#">
                   <article class="worksCont menuAnim">
