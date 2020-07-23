@@ -2468,38 +2468,6 @@ img {
   .formList li {
     margin-bottom: 15px; } }
 
-/* page */
-/*----------------------------------------------------
-
-	各ページの独自モジュールスタイルのCSS。
-
-	【記述ルール】
-	{ ページ名(top, about等) }○○○○
-
-	階層はルートクラスより、三階層までが基本
-	【例】
-	.topSec .topSec_ttl span {		
-	}
-	※CSSに展開した場合
-
-----------------------------------------------------*/
-.wrap {
-  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#99d3df+0,88bbd6+100 */
-  background: #99d3df;
-  /* Old browsers */
-  background: -moz-linear-gradient(-45deg, #99d3df 0%, #88bbd6 100%);
-  /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg, #99d3df 0%, #88bbd6 100%);
-  /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg, #99d3df 0%, #88bbd6 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99d3df', endColorstr='#88bbd6',GradientType=1 );
-  /* IE6-9 fallback on horizontal gradient */ }
-
-.main {
-  position: relative;
-  z-index: 101; }
-
 .particles {
   position: fixed;
   top: 0;
@@ -2690,6 +2658,38 @@ img {
   margin: 0 auto; }
 .contactCont .contactCont_ttl {
   margin-bottom: 30px; }
+
+/* page */
+/*----------------------------------------------------
+
+	各ページの独自モジュールスタイルのCSS。
+
+	【記述ルール】
+	{ ページ名(top, about等) }○○○○
+
+	階層はルートクラスより、三階層までが基本
+	【例】
+	.topSec .topSec_ttl span {		
+	}
+	※CSSに展開した場合
+
+----------------------------------------------------*/
+.wrap {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#99d3df+0,88bbd6+100 */
+  background: #99d3df;
+  /* Old browsers */
+  background: -moz-linear-gradient(-45deg, #99d3df 0%, #88bbd6 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, #99d3df 0%, #88bbd6 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, #99d3df 0%, #88bbd6 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99d3df', endColorstr='#88bbd6',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */ }
+
+.main {
+  position: relative;
+  z-index: 101; }
 
 .topSec .topSec_inner {
   position: relative; }
