@@ -25,8 +25,9 @@ $Page = 'top';
     href="/lib/css/style.css?<?php echo $Timestamp; ?>">
 
   <script src="/lib/js/jquery.min.js"></script><!-- 最新版があればダウンロード ※~IE8対応の場合は、jQuery1.xの最新版 -->
-  <script src="/lib/js/particles.min.js"></script>
   <script src="/lib/js/common.js?<?php echo $Timestamp; ?>"></script>
+  <script src="/lib/js/particles.min.js"></script>
+  <script src="/lib/js/particles_init.js"></script>
   <script src="/lib/js/top.js?<?php echo $Timestamp; ?>"></script>
 
   <!--[if lt IE 9]>
