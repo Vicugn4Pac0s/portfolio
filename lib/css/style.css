@@ -2342,9 +2342,9 @@ img {
   content: "";
   clear: both;
   display: block; }
-.gMenu .gMenu_list li {
+.gMenu .gMenu_list .gMenu_li {
   float: left; }
-.gMenu .gMenu_list li a {
+.gMenu .gMenu_list .gMenu_li a {
   color: #666;
   display: block;
   font-size: 18px;
@@ -2352,7 +2352,10 @@ img {
   line-height: 31px;
   padding: 0 30px;
   transition: .35s; }
-.gMenu .gMenu_list li a:hover {
+.gMenu .gMenu_list .gMenu_li a:hover {
+  color: #88BBD6;
+  transition: .15s; }
+.gMenu .gMenu_list .gMenu_li.current a {
   color: #88BBD6;
   transition: .15s; }
 @media screen and (max-width: 1000px) {

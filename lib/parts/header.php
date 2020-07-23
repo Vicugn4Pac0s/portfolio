@@ -23,19 +23,19 @@
     <nav class="gMenu">
         <div class="gMenu_inner">
             <ul class="gMenu_list">
-                <li>
+                <li class="gMenu_li gMenu_li-mv">
                     <a href="#mv">TOP</a>
                 </li>
-                <li>
+                <li class="gMenu_li gMenu_li-about">
                     <a href="#about">ABOUT</a>
                 </li>
-                <li>
+                <li class="gMenu_li gMenu_li-works">
                     <a href="#anchor-works">WORKS</a>
                 </li>
-                <li>
+                <li class="gMenu_li gMenu_li-blog">
                     <a href="#anchor-blog">BLOG</a>
                 </li>
-                <li>
+                <li class="gMenu_li gMenu_li-footer">
                     <a href="#footer">CONTACT</a>
                 </li>
             </ul>

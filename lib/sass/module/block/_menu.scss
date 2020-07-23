@@ -55,7 +55,7 @@
       clear: both;
       display: block;
     }
-    li {
+    .gMenu_li {
       float: left;
       a {
         color: #666;
@@ -67,6 +67,12 @@
 
         transition: .35s;
         &:hover {
+          color: $base-color;
+          transition: .15s;
+        }
+      }
+      &.current {
+        a {
           color: $base-color;
           transition: .15s;
         }

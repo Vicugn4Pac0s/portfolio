@@ -67,20 +67,22 @@ $Page = 'top';
 
       <!-- SectionAbout -->
       <section id="about" class="topSec topSec-about">
-        <div class="topSec_inner l-inner">
-          <div class="aboutCont topSec_about">
-            <div class="aboutCont_inner">
-              <h3 class="aboutCont_ttl headingA">ABOUT</h3>
-              <p class="aboutCont_txt">
-                テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-              </p>
+        <div id="aboutAbout">
+          <div class="topSec_inner l-inner">
+            <div class="aboutCont topSec_about">
+              <div class="aboutCont_inner">
+                <h3 class="aboutCont_ttl headingA">ABOUT</h3>
+                <p class="aboutCont_txt">
+                  テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                </p>
+              </div>
+            </div>
+            <div class="topSec_img">
+              <img src="./images/about_img.png" alt="">
             </div>
           </div>
-          <div class="topSec_img">
-            <img src="./images/about_img.png" alt="">
-          </div>
         </div>
-        <section class="topSec_skills skills">
+        <section id="skills" class="topSec_skills skills">
           <div class="skills_inner l-inner">
             <h4 class="skills_ttl">SKILLS</h4>
             <ul class="skills_list l-grid l-gutter-s-tab">
