@@ -245,7 +245,11 @@ $Page = 'top';
                 <div class="snsCont_inner">
                   <h3 class="snsCont_ttl headingA">SNS</h3>
                   <div class="snsCont_body">
-                    <div class="snsCont_note"></div>
+                    <div class="snsCont_note">
+                      <iframe class="note-embed" src="https://note.com/embed/notes/nb92f110ed106"
+                        style="border: 0; display: block; max-width: 100%; height: 471px; width: 494px; padding: 0px; margin: 0 0px; position: static; visibility: visible;"></iframe>
+                      <script async src="https://note.com/scripts/embed.js" charset="utf-8"></script>
+                    </div>
                     <ul class="snsCont_btns l-grid l-gutter-s">
                       <li class="l-grid_item l-grid_item-6">
                         <a href="#">
