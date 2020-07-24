@@ -25,11 +25,14 @@
     outline: none;
   }
   &.InputA-ta {
-    height: 150px;
+    height: 235px;
   } 
   @include max-screen($bp-sp) {
     font-size: 16px;
     padding: 5px 10px;
+    &.InputA-ta {
+      height: 150px;
+    } 
   }
 }
 
