@@ -138,9 +138,9 @@ $Page = 'top';
                         <img src="./images/works02.jpg" alt="">
                       </div>
                       <div class="worksCont_body menuAnim_body">
-                        <h4 class="worksCont_ttl">制作実績タイトル</h4>
+                        <h4 class="worksCont_ttl">jQueryAnchorScroll</h4>
                         <p class="worksCont_txt">
-                          テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+                        「jQueryAnchorScroll」は、ページ内スムーススクロールのjQueryプラグインです。<br>カスタマイズ性があり、セクション・画面サイズによってスクロール位置を柔軟に変更することが可能です。 
                         </p>
                       </div>
                     </div>
