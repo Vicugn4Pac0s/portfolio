@@ -49,7 +49,7 @@ $Page = 'top';
         <div class="mv_inner l-inner">
           <div class="mv_body">
             <h2 class="mv_ttl">
-              <img src="./images/mv_ttl.png" alt="">
+              <img src="./images/mv_ttl.png" alt="Thanks for visiting!">
             </h2>
             <p class="mv_txt">Yoshiki's portfolio site</p>
           </div>
@@ -79,7 +79,7 @@ $Page = 'top';
               </div>
             </div>
             <div class="topSec_img">
-              <img src="./images/about_img.png" alt="">
+              <img src="./images/about_img.png" alt="ABOUTイメージ">
             </div>
           </div>
         </div>
@@ -88,20 +88,20 @@ $Page = 'top';
             <h4 class="skills_ttl">SKILLS</h4>
             <ul class="skills_list l-grid l-gutter-s-tab">
               <li class="l-grid_item l-grid_item-3 l-grid_item-6-sp">
-                <img src="./images/html.png" alt="">
+                <img src="./images/html.png" alt="HTML&CSS ★×5">
               </li>
               <li class="l-grid_item l-grid_item-3 l-grid_item-6-sp">
-                <img src="./images/javascript.png" alt="">
+                <img src="./images/javascript.png" alt="JavaScript ★×4">
               </li>
               <li class="l-grid_item l-grid_item-3 l-grid_item-6-sp">
-                <img src="./images/php.png" alt="">
+                <img src="./images/php.png" alt="PHP ★×3">
               </li>
               <li class="l-grid_item l-grid_item-3 l-grid_item-6-sp">
-                <img src="./images/wordpress.png" alt="">
+                <img src="./images/wordpress.png" alt="WORDPRESS ★×3">
               </li>
             </ul>
             <div class="skills_others">
-              <img src="./images/bg_skillIcons.png" alt="">
+              <img src="./images/bg_skillIcons.png" alt="jQuery Vue.js Laravel Git GitHub Photoshop Illustrator">
             </div>
           </div>
         </section>
@@ -136,7 +136,7 @@ $Page = 'top';
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
                       <div class="worksCont_img">
-                        <img src="./images/works02.jpg" alt="">
+                        <img src="./images/works02.jpg" alt="jQuery Anchor Scroll">
                       </div>
                       <div class="worksCont_body menuAnim_body">
                         <h4 class="worksCont_ttl">jQueryAnchorScroll</h4>

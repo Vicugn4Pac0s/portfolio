@@ -8,6 +8,6 @@
     </footer>
 
     <div class="pagetop">
-        <a href="#mv"><img src="/lib/images/pagetop.png" alt=""></a>
+        <a href="#mv"><img src="/lib/images/pagetop.png" alt="TOPへ"></a>
     </div>
     <!-- Footer END -->

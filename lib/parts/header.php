@@ -4,7 +4,7 @@
             <div class="header_inner l-inner">
 
                 <h1 class="header_logo">
-                    <img src="/lib/images/logo.png" alt="">
+                    <img src="/lib/images/logo.png" alt="YOSHIKI YAMADA">
                 </h1>
 
                 <!-- ハンバーガーボタン -->
