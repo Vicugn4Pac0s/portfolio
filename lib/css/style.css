@@ -2241,6 +2241,8 @@ img {
   z-index: 998; }
 .header .header_inner {
   padding: 30px 0; }
+.header .header_logo {
+  max-width: 55%; }
 
 .footer {
   background: #fff;

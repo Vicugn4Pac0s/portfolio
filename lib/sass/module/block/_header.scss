@@ -10,6 +10,9 @@
 	.header_inner {
 		padding: 30px 0;
 	}
+	.header_logo {
+		max-width: 55%;
+	}
 	@include max-screen($bp-tab) {
 		.header_inner {
 		}
