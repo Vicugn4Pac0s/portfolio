@@ -2298,7 +2298,9 @@ img {
 .mv .mv_ttl {
   margin-bottom: 10px; }
 .mv .mv_txt {
-  font-size: 24px; }
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 21px;
+  letter-spacing: 1px; }
 .mv .mv_topics {
   position: absolute;
   bottom: 0;
@@ -2307,6 +2309,9 @@ img {
 @media screen and (max-width: 1000px) {
   .mv .mv_inner {
     width: 90%; } }
+@media screen and (max-width: 767px) {
+  .mv .mv_txt {
+    font-size: 16px; } }
 
 .menuSp {
   display: none;

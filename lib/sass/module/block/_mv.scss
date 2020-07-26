@@ -32,7 +32,9 @@
 		margin-bottom: 10px;
 	}
 	.mv_txt {
-		font-size: 24px;
+		color: rgba(255,255,255,0.7);
+		font-size: 21px;
+		letter-spacing: 1px;
 	}
 	.mv_topics {
 		position: absolute;
@@ -50,6 +52,9 @@
 	}
 	@include max-screen($bp-sp) {
 		.mv_inner {
+		}
+		.mv_txt {
+			font-size: 16px;
 		}
 	}
 }

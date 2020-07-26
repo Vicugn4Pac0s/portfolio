@@ -50,7 +50,7 @@ $Page = 'top';
             <h2 class="mv_ttl">
               <img src="./images/mv_ttl.png" alt="">
             </h2>
-            <p class="mv_txt">Good to see you!</p>
+            <p class="mv_txt">Yoshiki's portfolio site</p>
           </div>
           <section class="mv_topics topicsCont">
             <div class="topicsCont_inner">
