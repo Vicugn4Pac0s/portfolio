@@ -1,3 +1,9 @@
+/*
+  Copyright (c) 2020 Yoshiki Yamada
+  Released under the MIT license
+  https://opensource.org/licenses/mit-license.php
+*/
+
 (function ($) {
   function isset(data) {
     if (data === "" || data === null || data === undefined) {
