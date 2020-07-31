@@ -17,29 +17,29 @@ $Page = 'top';
   <title></title>
 
   <?php
-  require_once($Root . "/lib/parts/ogp.php");
+  require_once($Root . "/assets/parts/ogp.php");
   echo ogpSouceCode('');
   ?>
-  <link rel="stylesheet" href="/lib/fonts/font_awesome/font-awesome.min.css">
+  <link rel="stylesheet" href="/assets/fonts/font_awesome/font-awesome.min.css">
   <link rel="stylesheet"
-    href="/lib/css/style.css?<?php echo $Timestamp; ?>">
+    href="/assets/css/style.css?<?php echo $Timestamp; ?>">
 
-  <script src="/lib/js/jquery.min.js"></script><!-- 最新版があればダウンロード ※~IE8対応の場合は、jQuery1.xの最新版 -->
-  <script src="/lib/js/jquery-anchorScroll.js"></script>
-  <script src="/lib/js/common.js?<?php echo $Timestamp; ?>"></script>
-  <script src="/lib/js/particles.min.js"></script>
-  <script src="/lib/js/particles_init.js"></script>
-  <script src="/lib/js/top.js?<?php echo $Timestamp; ?>"></script>
+  <script src="/assets/js/jquery.min.js"></script><!-- 最新版があればダウンロード ※~IE8対応の場合は、jQuery1.xの最新版 -->
+  <script src="/assets/js/jquery-anchorScroll.js"></script>
+  <script src="/assets/js/common.js?<?php echo $Timestamp; ?>"></script>
+  <script src="/assets/js/particles.min.js"></script>
+  <script src="/assets/js/particles_init.js"></script>
+  <script src="/assets/js/top.js?<?php echo $Timestamp; ?>"></script>
 
   <!--[if lt IE 9]>
-	<script src="/lib/js/html5shiv.js"></script>
+	<script src="/assets/js/html5shiv.js"></script>
   <![endif]-->
 
 </head>
 
 <body>
   <div class="wrap wrap-<?php echo $Page; ?>">
-    <?php require_once($Root . "/lib/parts/header.php"); ?>
+    <?php require_once($Root . "/assets/parts/header.php"); ?>
 
     <!-- Main -->
     <section class="main main-<?php echo $Page; ?>">
@@ -254,12 +254,12 @@ $Page = 'top';
                     <ul class="snsCont_btns l-grid l-gutter-s">
                       <li class="l-grid_item l-grid_item-6">
                         <a href="https://twitter.com/yamayoshi18" target="_blank">
-                          <img src="/lib/images/btn-twitter.png" alt="">
+                          <img src="/assets/images/btn-twitter.png" alt="">
                         </a>
                       </li>
                       <li class="l-grid_item l-grid_item-6">
                         <a href="https://github.com/Vicugn4Pac0s" target="_blank">
-                          <img src="/lib/images/btn-github.png" alt="">
+                          <img src="/assets/images/btn-github.png" alt="">
                         </a>
                       </li>
                     </ul>
@@ -304,7 +304,7 @@ $Page = 'top';
     </section>
     <!-- Main End -->
 
-    <?php require_once($Root . "/lib/parts/footer.php"); ?>
+    <?php require_once($Root . "/assets/parts/footer.php"); ?>
 
     <div id="js-particles" class="particles"></div>
 

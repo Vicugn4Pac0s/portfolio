@@ -3,6 +3,8 @@ Thumbs.db
 .Ds_Store
 *.log
 .gitignore
+package.json
+package-lock.json
 
 #directory ignore
 .history/

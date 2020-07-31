@@ -9,6 +9,7 @@
           (ver != "" ? " " + name + (ver * 1).toString().replace(".", "_") : "")
       );
     };
+    var get;
     var userAgent = window.navigator.userAgent.toLowerCase();
     var appVersion = window.navigator.appVersion.toLowerCase();
     if ((get = userAgent.match(/msie (\d+(\.\d+)?)/i))) {

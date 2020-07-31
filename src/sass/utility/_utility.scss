@@ -13,13 +13,35 @@
 ----------------------------------------------------*/
 
 .u-align-l {
-  text-align: left;
+  text-align: left !important;
 }
 .u-align-c {
-  text-align: center;
+  text-align: center !important;
 }
 .u-align-r {
-  text-align: right;
+  text-align: right !important;
+}
+@include max-screen($bp-tab) {
+  .u-align-l-tab {
+    text-align: left !important;
+  }
+  .u-align-c-tab {
+    text-align: center !important;
+  }
+  .u-align-r-tab {
+    text-align: right !important;
+  }
+}
+@include max-screen($bp-sp) {
+  .u-align-l-sp {
+    text-align: left !important;
+  }
+  .u-align-c-sp {
+    text-align: center !important;
+  }
+  .u-align-r-sp {
+    text-align: right !important;
+  }
 }
 
 /*--------------------------
