@@ -253,7 +253,7 @@ $Page = 'top';
                     </div>
                     <ul class="snsCont_btns l-grid l-gutter-s">
                       <li class="l-grid_item l-grid_item-6">
-                        <a href="https://twitter.com/yamayoshi18" target="_blank">
+                        <a href="https://twitter.com/___jihui" target="_blank">
                           <img src="/assets/images/btn-twitter.png" alt="">
                         </a>
                       </li>
