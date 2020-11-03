@@ -148,7 +148,7 @@ $Page = 'top';
                       <div class="worksCont_body menuAnim_body">
                         <h4 class="worksCont_ttl">CSS STYLE GUIDE</h4>
                         <p class="worksCont_txt">
-                          HTML TEMPLATEのCSSスタイルガイドです。
+                          HTML TEMPLATEのCSSスタイルガイドです。<br>スタイルガイドジェネレーター「Fractal」で作成しました。
                         </p>
                       </div>
                     </div>
