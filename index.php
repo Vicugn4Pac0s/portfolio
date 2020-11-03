@@ -15,12 +15,16 @@ $Page = 'top';
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Yoshiki's portfolio site</title>
-  <meta name="description" content="YOSHIKIのポートフォリオサイト。独学でWebサイト制作を学び、Web制作会社に入社、数々の大手企業のWebサイト制作に携わってきました。煩わしいこと・めんどくさいことが大嫌いすぎて、快適なPC環境を求めて日々模索中。">
+  <meta name="description"
+    content="YOSHIKIのポートフォリオサイト。独学でWebサイト制作を学び、Web制作会社に入社、数々の大手企業のWebサイト制作に携わってきました。煩わしいこと・めんどくさいことが大嫌いすぎて、快適なPC環境を求めて日々模索中。">
 
   <?php
   require_once($Root . "/assets/parts/ogp.php");
   echo ogpSouceCode("");
   ?>
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="/android-chrome-256x256.png">
   <link rel="stylesheet" href="/assets/fonts/font_awesome/font-awesome.min.css">
   <link rel="stylesheet"
     href="/assets/css/style.css?<?php echo $Timestamp; ?>">
@@ -74,7 +78,11 @@ $Page = 'top';
             <div class="aboutCont topSec_about">
               <div class="aboutCont_inner">
                 <h3 class="aboutCont_ttl headingA">ABOUT</h3>
-                <p class="aboutCont_txt">はじめまして。YOSHIKIと申します。<br>独学でWebサイト制作を学び、Web制作会社に入社、数々の大手企業のWebサイト制作に携わってきました。主にフロントエンド周りを得意としております。（CSS設計・インタラクティブサイトの制作・Wordpress・Webアプリケーション等）<br>煩わしいこと・めんどくさいことが大嫌いすぎて、快適なPC環境を求めて日々模索中。<br><br>【受賞歴】<br> <a href="https://ps.nikkei.co.jp/nbrand/awards/2017/yanmar.html" target="_blank">2017年　第８回日経電子版広告賞　コンテンツ部門　優秀賞</a></p>
+                <p class="aboutCont_txt">
+                  はじめまして。YOSHIKIと申します。<br>独学でWebサイト制作を学び、Web制作会社に入社、数々の大手企業のWebサイト制作に携わってきました。主にフロントエンド周りを得意としております。（CSS設計・インタラクティブサイトの制作・Wordpress・Webアプリケーション等）<br>煩わしいこと・めんどくさいことが大嫌いすぎて、快適なPC環境を求めて日々模索中。<br><br>【受賞歴】<br>
+                  <a href="https://ps.nikkei.co.jp/nbrand/awards/2017/yanmar.html"
+                    target="_blank">2017年　第８回日経電子版広告賞　コンテンツ部門　優秀賞</a>
+                </p>
               </div>
             </div>
             <div class="topSec_img">
@@ -140,7 +148,7 @@ $Page = 'top';
                       <div class="worksCont_body menuAnim_body">
                         <h4 class="worksCont_ttl">jQueryAnchorScroll</h4>
                         <p class="worksCont_txt">
-                        「jQueryAnchorScroll」は、ページ内スムーススクロールのjQueryプラグインです。<br>カスタマイズ性があり、セクション・画面サイズによってスクロール位置を柔軟に変更することが可能です。 
+                          「jQueryAnchorScroll」は、ページ内スムーススクロールのjQueryプラグインです。<br>カスタマイズ性があり、セクション・画面サイズによってスクロール位置を柔軟に変更することが可能です。
                         </p>
                       </div>
                     </div>
@@ -163,31 +171,37 @@ $Page = 'top';
             <ul class="topSec_list l-grid l-gutter-m">
               <?php
 
-                function convertDate($date, $delimiter = '.') {
-                  $result = explode(' ', $date);
-                  $result = explode('/', $result[0]);
-                  $result = $result[0] . $delimiter . $result[1] . $delimiter . $result[2];
-                  return $result;
+                function convertDate($date, $delimiter = '.')
+                {
+                    $result = explode(' ', $date);
+                    $result = explode('/', $result[0]);
+                    $result = $result[0] . $delimiter . $result[1] . $delimiter . $result[2];
+                    return $result;
                 }
 
                 $json = file_get_contents('https://note.com/api/v2/creators/vicugnapacos/contents?kind=note&page=1');
                 $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
-                $arr = json_decode($json,true);
+                $arr = json_decode($json, true);
                 $data = $arr['data']['contents'];
                 
                 foreach ($data as $key => $value) {
-              ?>
+                    ?>
               <li class="l-grid_item l-grid_item-3 l-grid_item-4-tab l-grid_item-12-sp">
-                <a href="https://note.com/vicugnapacos/n/<?php echo $value['key']; ?>" target="_blank">
+                <a href="https://note.com/vicugnapacos/n/<?php echo $value['key']; ?>"
+                  target="_blank">
                   <article class="card">
                     <div class="card_inner">
                       <div class="card_img">
-                        <img src="<?php echo $value['eyecatch']; ?>" alt="">
+                        <img
+                          src="<?php echo $value['eyecatch']; ?>"
+                          alt="">
                       </div>
                       <div class="card_body">
                         <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time
-                            datetime="<?php echo convertDate( $value['publishAt'], '-'); ?>"><?php echo convertDate( $value['publishAt'], '.'); ?></time></p>
-                        <h4 class="card_ttl"><?php echo $value['name']; ?></h4>
+                            datetime="<?php echo convertDate($value['publishAt'], '-'); ?>"><?php echo convertDate($value['publishAt'], '.'); ?></time>
+                        </p>
+                        <h4 class="card_ttl"><?php echo $value['name']; ?>
+                        </h4>
                         <!-- <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p> -->
                       </div>
                     </div>
