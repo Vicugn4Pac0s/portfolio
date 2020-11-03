@@ -254,7 +254,7 @@ $Page = 'top';
                 <div class="contactCont_inner">
                   <h3 class="contactCont_ttl headingA">CONTACT</h3>
                   <div class="snsCont_body">
-                    <form action="/">
+                    <form id="contact-form" action="/">
                       <ul class="formList">
                         <li>
                           <input type="text" name="name" class="InputA" placeholder="Name">
@@ -288,6 +288,16 @@ $Page = 'top';
     <?php require_once($Root . "/assets/parts/footer.php"); ?>
 
     <div id="js-particles" class="particles"></div>
+
+    <!-- フォーム準備中エラー 削除予定 -->
+    <script>
+      $(function() {
+        $('#contact-form').on('submit', function(e) {
+          e.preventDefault()
+          alert('ほんますみません! メールフォームはまだ準備中です...');
+        });
+      });
+    </script>
 
   </div>
 </body>
