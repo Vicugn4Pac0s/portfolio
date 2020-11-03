@@ -73,9 +73,7 @@ $Page = 'top';
             <div class="aboutCont topSec_about">
               <div class="aboutCont_inner">
                 <h3 class="aboutCont_ttl headingA">ABOUT</h3>
-                <p class="aboutCont_txt">
-                  テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
-                </p>
+                <p class="aboutCont_txt">はじめまして。YOSHIKIと申します。<br>独学でWebサイト制作を学び、Web制作会社に入社、数々の大手企業のWebサイト制作に携わってきました。主にフロントエンド周りを得意としております。（CSS設計・インタラクティブサイトの制作・Wordpress・Webアプリケーション等）<br>煩わしいこと・めんどくさいことが大嫌いすぎて、快適なPC環境を求めて日々模索中。<br><br>【受賞歴】<br> <a href="https://ps.nikkei.co.jp/nbrand/awards/2017/yanmar.html" target="_blank">2017年　第８回日経電子版広告賞　コンテンツ部門　優秀賞</a></p>
               </div>
             </div>
             <div class="topSec_img">
