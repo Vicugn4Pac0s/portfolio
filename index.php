@@ -158,79 +158,47 @@ $Page = 'top';
       <section id="blog" class="topSec topSec-blog">
         <div class="topSec_inner l-inner">
           <div class="topSec_header">
-            <h3 id="anchor-blog" class="topSec_ttl headingA">BLOG</h3>
+            <h3 id="anchor-blog" class="topSec_ttl headingA">NOTE</h3>
           </div>
           <div class="topSec_body">
             <ul class="topSec_list l-grid l-gutter-m">
+              <?php
+
+                function convertDate($date, $delimiter = '.') {
+                  $result = explode(' ', $date);
+                  $result = explode('/', $result[0]);
+                  $result = $result[0] . $delimiter . $result[1] . $delimiter . $result[2];
+                  return $result;
+                }
+
+                $json = file_get_contents('https://note.com/api/v2/creators/vicugnapacos/contents?kind=note&page=1');
+                $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
+                $arr = json_decode($json,true);
+                $data = $arr['data']['contents'];
+                
+                foreach ($data as $key => $value) {
+              ?>
               <li class="l-grid_item l-grid_item-3 l-grid_item-4-tab l-grid_item-12-sp">
-                <a href="#">
+                <a href="https://note.com/vicugnapacos/n/<?php echo $value['key']; ?>" target="_blank">
                   <article class="card">
                     <div class="card_inner">
                       <div class="card_img">
-                        <img src="./images/thumb-sample.jpg" alt="">
+                        <img src="<?php echo $value['eyecatch']; ?>" alt="">
                       </div>
                       <div class="card_body">
                         <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time
-                            datetime="2020-07-07">2020.07.07</time></p>
-                        <h4 class="card_ttl">タイトルが入ります。</h4>
-                        <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                            datetime="<?php echo convertDate( $value['publishAt'], '-'); ?>"><?php echo convertDate( $value['publishAt'], '.'); ?></time></p>
+                        <h4 class="card_ttl"><?php echo $value['name']; ?></h4>
+                        <!-- <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p> -->
                       </div>
                     </div>
                   </article>
                 </a>
               </li>
 
-              <li class="l-grid_item l-grid_item-3 l-grid_item-4-tab l-grid_item-12-sp">
-                <a href="#">
-                  <article class="card">
-                    <div class="card_inner">
-                      <div class="card_img">
-                        <img src="./images/thumb-sample.jpg" alt="">
-                      </div>
-                      <div class="card_body">
-                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time
-                            datetime="2020-07-07">2020.07.07</time></p>
-                        <h4 class="card_ttl">タイトルが入ります。</h4>
-                        <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
-                      </div>
-                    </div>
-                  </article>
-                </a>
-              </li>
-              <li class="l-grid_item l-grid_item-3 l-grid_item-4-tab l-grid_item-12-sp">
-                <a href="#">
-                  <article class="card">
-                    <div class="card_inner">
-                      <div class="card_img">
-                        <img src="./images/thumb-sample.jpg" alt="">
-                      </div>
-                      <div class="card_body">
-                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time
-                            datetime="2020-07-07">2020.07.07</time></p>
-                        <h4 class="card_ttl">タイトルが入ります。</h4>
-                        <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
-                      </div>
-                    </div>
-                  </article>
-                </a>
-              </li>
-              <li class="l-grid_item l-grid_item-3 l-grid_item-4-tab l-grid_item-12-sp">
-                <a href="#">
-                  <article class="card">
-                    <div class="card_inner">
-                      <div class="card_img">
-                        <img src="./images/thumb-sample.jpg" alt="">
-                      </div>
-                      <div class="card_body">
-                        <p class="card_date"><i class="fa fa-clock-o" aria-hidden="true"></i> <time
-                            datetime="2020-07-07">2020.07.07</time></p>
-                        <h4 class="card_ttl">タイトルが入ります。</h4>
-                        <p class="card_txt">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
-                      </div>
-                    </div>
-                  </article>
-                </a>
-              </li>
+              <?php
+                }
+              ?>
             </ul>
           </div>
         </div>
