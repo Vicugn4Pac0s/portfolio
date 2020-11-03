@@ -122,16 +122,16 @@ $Page = 'top';
           <div class="topSec_body">
             <ul class="topSec_list worksList l-grid">
               <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
-                <a href="http://my-youtube.yoshikieee.com/" target="_blank">
+                <a href="http://html-template.yoshikieee.com/demo/" target="_blank">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
                       <div class="worksCont_img">
-                        <img src="./images/works.png" alt="My Youtube">
+                        <img src="./images/works03.png" alt="HTML TEMPLATE">
                       </div>
                       <div class="worksCont_body menuAnim_body">
-                        <h4 class="worksCont_ttl">My Youtube</h4>
+                        <h4 class="worksCont_ttl">HTML TEMPLATE</h4>
                         <p class="worksCont_txt">
-                          自分専用Youtubeサイト。Vue CLIで作成しました。<br>イイネ機能とコメント機能があります。ここなら誹謗中傷コメントも自由です。
+                          HTMLのオリジナルテンプレートセットです。
                         </p>
                       </div>
                     </div>
@@ -149,6 +149,23 @@ $Page = 'top';
                         <h4 class="worksCont_ttl">jQueryAnchorScroll</h4>
                         <p class="worksCont_txt">
                           「jQueryAnchorScroll」は、ページ内スムーススクロールのjQueryプラグインです。<br>カスタマイズ性があり、セクション・画面サイズによってスクロール位置を柔軟に変更することが可能です。
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
+                <a href="http://my-youtube.yoshikieee.com/" target="_blank">
+                  <article class="worksCont menuAnim">
+                    <div class="worksCont_inner">
+                      <div class="worksCont_img">
+                        <img src="./images/works.png" alt="My Youtube">
+                      </div>
+                      <div class="worksCont_body menuAnim_body">
+                        <h4 class="worksCont_ttl">My Youtube</h4>
+                        <p class="worksCont_txt">
+                          自分専用Youtubeサイト。Vue CLIで作成しました。<br>イイネ機能とコメント機能があります。ここなら誹謗中傷コメントも自由です。
                         </p>
                       </div>
                     </div>
