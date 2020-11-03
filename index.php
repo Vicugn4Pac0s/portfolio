@@ -14,11 +14,12 @@ $Page = 'top';
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title></title>
+  <title>Yoshiki's portfolio site</title>
+  <meta name="description" content="YOSHIKIのポートフォリオサイト。独学でWebサイト制作を学び、Web制作会社に入社、数々の大手企業のWebサイト制作に携わってきました。煩わしいこと・めんどくさいことが大嫌いすぎて、快適なPC環境を求めて日々模索中。">
 
   <?php
   require_once($Root . "/assets/parts/ogp.php");
-  echo ogpSouceCode('');
+  echo ogpSouceCode("");
   ?>
   <link rel="stylesheet" href="/assets/fonts/font_awesome/font-awesome.min.css">
   <link rel="stylesheet"
