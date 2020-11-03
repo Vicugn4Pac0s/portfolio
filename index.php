@@ -62,7 +62,7 @@ $Page = 'top';
             <div class="topicsCont_inner">
               <h3 class="topicsCont_ttl headingA headingA-s">TOPICS</h3>
               <div class="topicsCont_body">
-                <p class="topicsCont_topics">2020.07.11　Webサイトを公開しました。</p>
+                <p class="topicsCont_topics">2020.11.03　Webサイトを公開しました。</p>
               </div>
             </div>
           </section>
