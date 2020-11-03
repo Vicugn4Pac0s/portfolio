@@ -59,6 +59,14 @@
 
 .aboutCont {
   position: relative;
+  a {
+    color: $base-color;
+    text-decoration: underline;
+    transition: .35s;
+    &:hover {
+      opacity: .5;
+    }
+  }
   .aboutCont_inner {
     background: #f9f9f9;
     box-sizing: border-box;
