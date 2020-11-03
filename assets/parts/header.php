@@ -33,7 +33,7 @@
                     <a href="#anchor-works">WORKS</a>
                 </li>
                 <li class="gMenu_li gMenu_li-blog">
-                    <a href="#anchor-blog">BLOG</a>
+                    <a href="#anchor-blog">NOTE</a>
                 </li>
                 <li class="gMenu_li gMenu_li-footer">
                     <a href="#footer">CONTACT</a>
