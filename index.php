@@ -139,7 +139,7 @@ $Page = 'top';
                 </a>
               </li>
               <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
-                <a href="#">
+                <a href="https://jquery-anchor-scroll.yoshikieee.com/" target="_blank">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
                       <div class="worksCont_img">
