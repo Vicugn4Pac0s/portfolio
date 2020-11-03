@@ -122,7 +122,7 @@ $Page = 'top';
           <div class="topSec_body">
             <ul class="topSec_list worksList l-grid">
               <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
-                <a href="http://html-template.yoshikieee.com/demo/" target="_blank">
+                <a href="https://html-template.yoshikieee.com/demo/" target="_blank">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
                       <div class="worksCont_img">
@@ -132,6 +132,23 @@ $Page = 'top';
                         <h4 class="worksCont_ttl">HTML TEMPLATE</h4>
                         <p class="worksCont_txt">
                           HTMLのオリジナルテンプレートセットです。
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
+              <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
+                <a href="https://css-style-guide.yoshikieee.com/" target="_blank">
+                  <article class="worksCont menuAnim">
+                    <div class="worksCont_inner">
+                      <div class="worksCont_img">
+                        <img src="./images/works04.png" alt="CSS STYLE GUIDE">
+                      </div>
+                      <div class="worksCont_body menuAnim_body">
+                        <h4 class="worksCont_ttl">CSS STYLE GUIDE</h4>
+                        <p class="worksCont_txt">
+                          HTML TEMPLATEのCSSスタイルガイドです。
                         </p>
                       </div>
                     </div>
@@ -156,7 +173,7 @@ $Page = 'top';
                 </a>
               </li>
               <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
-                <a href="http://my-youtube.yoshikieee.com/" target="_blank">
+                <a href="https://my-youtube.yoshikieee.com/" target="_blank">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
                       <div class="worksCont_img">
