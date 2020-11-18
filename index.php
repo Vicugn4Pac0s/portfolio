@@ -213,7 +213,7 @@ $Page = 'top';
                     return $result;
                 }
 
-                $json = file_get_contents('https://note.com/api/v2/creators/vicugnapacos/contents?kind=note&page=1');
+                $json = file_get_contents('https://note.com/api/v2/creators/yoshikieee/contents?kind=note&page=1');
                 $json = mb_convert_encoding($json, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
                 $arr = json_decode($json, true);
                 $data = $arr['data']['contents'];
@@ -221,7 +221,7 @@ $Page = 'top';
                 foreach ($data as $key => $value) {
                     ?>
               <li class="l-grid_item l-grid_item-3 l-grid_item-4-tab l-grid_item-12-sp">
-                <a href="https://note.com/vicugnapacos/n/<?php echo $value['key']; ?>"
+                <a href="https://note.com/yoshikieee/n/<?php echo $value['key']; ?>"
                   target="_blank">
                   <article class="card">
                     <div class="card_inner">
@@ -268,7 +268,7 @@ $Page = 'top';
                     </div>
                     <ul class="snsCont_btns l-grid l-gutter-s">
                       <li class="l-grid_item l-grid_item-6">
-                        <a href="https://twitter.com/___jihui" target="_blank">
+                        <a href="https://twitter.com/___yoshikieee" target="_blank">
                           <img src="/assets/images/btn-twitter.png" alt="">
                         </a>
                       </li>
