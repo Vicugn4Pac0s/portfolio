@@ -173,16 +173,16 @@ $Page = 'top';
                 </a>
               </li>
               <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
-                <a href="https://my-youtube.yoshikieee.com/" target="_blank">
+                <a href="https://vuetube.yoshikieee.com/" target="_blank">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
                       <div class="worksCont_img">
-                        <img src="./images/works.png" alt="My Youtube">
+                        <img src="./images/works.png" alt="VueTube">
                       </div>
                       <div class="worksCont_body menuAnim_body">
-                        <h4 class="worksCont_ttl">My Youtube</h4>
+                        <h4 class="worksCont_ttl">VueTube</h4>
                         <p class="worksCont_txt">
-                          自分専用Youtubeサイト。Vue CLIで作成しました。<br>イイネ機能とコメント機能があります。ここなら誹謗中傷コメントも自由です。
+                          自分専用Youtubeサイト。Vue CLIとFirebaseで作成しました。<br>イイネ機能とコメント機能があります。ここなら誹謗中傷コメントも自由です。
                         </p>
                       </div>
                     </div>
