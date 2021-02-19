@@ -62,7 +62,6 @@
       document.addEventListener("wheel", this.noScroll, { passive: false });
       document.addEventListener("touchmove", this.noScroll, { passive: false });
       this.isScroll = 0;
-      scrollTo(0, 0);
     },
   }
 
