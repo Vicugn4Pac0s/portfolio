@@ -219,6 +219,23 @@ $Page = 'top';
                   </article>
                 </a>
               </li>
+              <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
+                <a href="/dev/easy-parallax/" target="_blank">
+                  <article class="worksCont menuAnim">
+                    <div class="worksCont_inner">
+                      <div class="worksCont_img">
+                        <img src="./images/works06.png" alt="Easy Parallax">
+                      </div>
+                      <div class="worksCont_body menuAnim_body">
+                        <h4 class="worksCont_ttl">Easy Parallax</h4>
+                        <p class="worksCont_txt">
+                          「Easy Parallax」は、簡単にパララックスが実装できるjQueryプラグインです。
+                        </p>
+                      </div>
+                    </div>
+                  </article>
+                </a>
+              </li>
             </ul>
           </div>
         </div>
