@@ -40,6 +40,19 @@ $Page = 'top';
 	<script src="/assets/js/html5shiv.js"></script>
   <![endif]-->
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SLLKWPELBY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'G-SLLKWPELBY');
+  </script>
+
 </head>
 
 <body>
@@ -199,7 +212,7 @@ $Page = 'top';
                       <div class="worksCont_body menuAnim_body">
                         <h4 class="worksCont_ttl">Google Map Modal</h4>
                         <p class="worksCont_txt">
-                        「Google Map Modal」はモーダルウインドウでGoogleMapを表示させるプログラムです。
+                          「Google Map Modal」はモーダルウインドウでGoogleMapを表示させるプログラムです。
                         </p>
                       </div>
                     </div>
