@@ -135,7 +135,7 @@ $Page = 'top';
           <div class="topSec_body">
             <ul class="topSec_list worksList l-grid">
               <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
-                <a href="https://html-template.yoshikieee.com/demo/" target="_blank">
+                <a href="/dev/html-template/demo/" target="_blank">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
                       <div class="worksCont_img">
@@ -152,7 +152,7 @@ $Page = 'top';
                 </a>
               </li>
               <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
-                <a href="https://css-style-guide.yoshikieee.com/" target="_blank">
+                <a href="/dev/css-style-guide/" target="_blank">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
                       <div class="worksCont_img">
@@ -169,7 +169,7 @@ $Page = 'top';
                 </a>
               </li>
               <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
-                <a href="https://jquery-anchor-scroll.yoshikieee.com/" target="_blank">
+                <a href="/dev/jquery-anchor-scroll/" target="_blank">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
                       <div class="worksCont_img">
@@ -186,7 +186,7 @@ $Page = 'top';
                 </a>
               </li>
               <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
-                <a href="https://vuetube.yoshikieee.com/" target="_blank">
+                <a href="https://yoshikieee-vuetube.herokuapp.com/" target="_blank">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
                       <div class="worksCont_img">
@@ -203,7 +203,7 @@ $Page = 'top';
                 </a>
               </li>
               <li class="l-grid_item l-grid_item-6 l-grid_item-12-sp">
-                <a href="https://google-map-modal.yoshikieee.com/" target="_blank">
+                <a href="/dev/google-map-modal" target="_blank">
                   <article class="worksCont menuAnim">
                     <div class="worksCont_inner">
                       <div class="worksCont_img">
