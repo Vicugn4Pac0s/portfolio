@@ -1,0 +1,95 @@
+---
+import SectionLabel from './SectionLabel.astro';
+
+interface HistoryItem {
+  title: string;
+  text: string;
+}
+
+interface Props {
+  histories: HistoryItem[];
+}
+
+const { histories } = Astro.props;
+---
+
+<section id="history" class="history section-block section-block--bordered">
+  <div class="site-container">
+    <SectionLabel label="HISTORY" />
+    <div class="history__list">
+      {histories.map((item) => (
+        <article class="history__item">
+          <h3 class="history__title">{item.title}</h3>
+          <p class="history__text">{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .history {
+    &__list {
+      position: relative;
+      display: grid;
+      gap: 26px;
+      max-width: 850px;
+      padding-left: 88px;
+
+      &::before {
+        position: absolute;
+        top: 8px;
+        bottom: 8px;
+        left: 38px;
+        width: 2px;
+        content: "";
+        background: #b9d8f5;
+      }
+    }
+
+    &__item {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        top: 4px;
+        left: -57px;
+        width: 12px;
+        height: 12px;
+        border-radius: 999px;
+        background: var(--color-blue);
+        content: "";
+      }
+    }
+
+    &__title {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    &__text {
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 14px;
+      font-weight: 650;
+      line-height: 2;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .history {
+      &__list {
+        padding-left: 54px;
+
+        &::before {
+          left: 18px;
+        }
+      }
+
+      &__item::before {
+        left: -41px;
+      }
+    }
+  }
+</style>

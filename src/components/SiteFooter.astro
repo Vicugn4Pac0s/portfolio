@@ -1,0 +1,64 @@
+---
+---
+
+<footer class="site-footer">
+  <div class="site-footer__inner site-container">
+    <a class="site-footer__logo" href="/">
+      yoshiki.<span class="site-footer__logo-accent">rundev</span>
+    </a>
+    <p class="site-footer__copy">© 2024 yoshiki.rundev All rights reserved.</p>
+    <a class="site-footer__back-top" href="#" aria-label="Back to top">↑</a>
+  </div>
+</footer>
+
+<style lang="scss">
+  .site-footer {
+    border-top: 1px solid rgba(219, 229, 240, 0.8);
+    padding-block: 36px;
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #64748b;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    &__logo {
+      color: var(--color-ink);
+      font-size: 16px;
+      font-weight: 650;
+    }
+
+    &__logo-accent {
+      color: var(--color-blue);
+    }
+
+    &__copy {
+      margin: 0;
+    }
+
+    &__back-top {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--color-line);
+      border-radius: 999px;
+      color: var(--color-ink);
+      font-size: 18px;
+      place-items: center;
+      box-shadow: var(--shadow-soft);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .site-footer {
+      &__inner {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+  }
+</style>

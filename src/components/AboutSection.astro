@@ -1,0 +1,57 @@
+---
+import SectionLabel from './SectionLabel.astro';
+---
+
+<section id="about" class="about section-block">
+  <div class="site-container">
+    <SectionLabel label="ABOUT" />
+    <div class="about__grid">
+      <h2 class="section-title">
+        10 年の制作・開発経験。<br />
+        改善し続けるフロントエンド。
+      </h2>
+      <div class="about__body">
+        <p>2016 年、独学で Web 制作会社へ入社。</p>
+        <p>小さなチームで実制作を重ね、現在では 20 名規模の会社で、実装・設計・改善・チーム支援まで幅広く担当してきました。</p>
+        <p>長期運用されるプロダクトをつくるために、設計・状態管理・運用・チーム改善に取り組んできました。</p>
+        <p>これからも、プロダクトの価値を最大化するフロントエンドエンジニアであり続けます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .about {
+    &__grid {
+      display: grid;
+      grid-template-columns: 0.78fr 1fr;
+      gap: 80px;
+    }
+
+    &__body {
+      display: grid;
+      gap: 20px;
+      color: var(--color-muted);
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 2.2;
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .about {
+      &__grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      &__body {
+        font-size: 14px;
+      }
+    }
+  }
+</style>

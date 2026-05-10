@@ -1,0 +1,74 @@
+---
+const navItems = [
+  { label: 'About', href: '#about' },
+  { label: 'Strengths', href: '#strengths' },
+  { label: 'Case Studies', href: '#case-studies' },
+  { label: 'Evolution', href: '#evolution' },
+  { label: 'History', href: '#history' },
+  { label: 'Personal', href: '#personal' },
+  { label: 'Contact', href: '#contact' },
+];
+---
+
+<header class="site-header">
+  <div class="site-header__inner site-container">
+    <a class="site-header__logo" href="/">
+      yoshiki.<span class="site-header__logo-accent">rundev</span>
+    </a>
+    <nav class="site-header__nav">
+      {navItems.map((item) => (
+        <a class="site-header__nav-link" href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style lang="scss">
+  .site-header {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 20;
+
+    &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    &__logo {
+      color: var(--color-ink);
+      font-size: 18px;
+      font-weight: 650;
+    }
+
+    &__logo-accent {
+      color: var(--color-blue);
+    }
+
+    &__nav {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      color: var(--color-ink);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    &__nav-link {
+      transition: color 160ms ease;
+
+      &:hover {
+        color: var(--color-blue);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .site-header {
+      &__nav {
+        display: none;
+      }
+    }
+  }
+</style>

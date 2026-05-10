@@ -1,0 +1,27 @@
+---
+import AboutSection from '../components/AboutSection.astro';
+import CaseStudiesSection from '../components/CaseStudiesSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import HeroSection from '../components/HeroSection.astro';
+import HistorySection from '../components/HistorySection.astro';
+import PersonalSection from '../components/PersonalSection.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import StrengthsSection from '../components/StrengthsSection.astro';
+import { histories, strengths, studies } from '../data/portfolio';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="yoshiki.rundev | Frontend Engineer" description="保守性の高いシステム設計とプロダクト思考で、長く価値を生むフロントエンド開発を行うポートフォリオです。">
+  <SiteHeader />
+  <main>
+    <HeroSection />
+    <AboutSection />
+    <StrengthsSection strengths={strengths} />
+    <CaseStudiesSection studies={studies} />
+    <HistorySection histories={histories} />
+    <PersonalSection />
+    <ContactSection />
+  </main>
+  <SiteFooter />
+</BaseLayout>

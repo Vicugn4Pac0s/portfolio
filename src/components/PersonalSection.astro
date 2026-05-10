@@ -1,0 +1,85 @@
+---
+import SectionLabel from './SectionLabel.astro';
+
+const cards = [
+  {
+    title: 'Running',
+    text: 'ランニング・マラソンを継続。継続改善・長期視点・自己管理を大切にしています。',
+    image: 'https://images.unsplash.com/photo-1502224562085-639556652f33?auto=format&fit=crop&w=1000&q=80',
+  },
+  {
+    title: 'Strength Training',
+    text: '筋トレを通じて、小さな積み上げの重要性を実感。日々の積み重ねを大切にしています。',
+    image: 'https://images.unsplash.com/photo-1598632640487-6ea4a4e8b963?auto=format&fit=crop&w=1000&q=80',
+  },
+];
+---
+
+<section id="personal" class="personal section-block section-block--soft">
+  <div class="site-container">
+    <SectionLabel label="PERSONAL" />
+    <div class="personal__list">
+      {cards.map((card) => (
+        <article
+          class="personal__card"
+          style={`background-image: linear-gradient(90deg, rgba(247,251,255,0.96) 0%, rgba(247,251,255,0.78) 45%, rgba(247,251,255,0.1) 100%), url(${card.image});`}
+        >
+          <div class="personal__body">
+            <h3 class="personal__title">{card.title}</h3>
+            <p class="personal__text">{card.text}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  .personal {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+    }
+
+    &__card {
+      min-height: 210px;
+      border: 1px solid var(--color-line);
+      border-radius: 8px;
+      background-position: center;
+      background-size: cover;
+      box-shadow: var(--shadow-soft);
+    }
+
+    &__body {
+      width: min(62%, 340px);
+      padding: 40px 28px;
+    }
+
+    &__title {
+      margin: 0 0 22px;
+      font-size: 24px;
+      font-weight: 650;
+    }
+
+    &__text {
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 14px;
+      font-weight: 650;
+      line-height: 2.1;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .personal {
+      &__list {
+        grid-template-columns: 1fr;
+      }
+
+      &__body {
+        width: 72%;
+      }
+    }
+  }
+</style>
