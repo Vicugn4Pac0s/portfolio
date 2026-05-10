@@ -13,6 +13,12 @@ interface Props {
 }
 
 const { studies } = Astro.props;
+
+const placeholderImageByVariant = {
+  traffic: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80',
+  route: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=80',
+  chat: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
+} as const;
 ---
 
 <section id="case-studies" class="case-studies section-block section-block--bordered">
@@ -26,36 +32,13 @@ const { studies } = Astro.props;
     <div class="case-studies__list">
       {studies.map((study) => (
         <article class="case-studies__card">
-          <div class:list={['case-studies__visual', `case-studies__visual--${study.variant}`]}>
-            <span class="case-studies__number">{study.number}</span>
-            <div class="case-studies__map-dots" aria-hidden="true"></div>
-            {study.variant === 'traffic' && (
-              <>
-                <div class="case-studies__traffic-line" aria-hidden="true"></div>
-                <div class="case-studies__mini-chart" aria-hidden="true">
-                  {Array.from({ length: 16 }).map((_, index) => <span style={`height:${18 + ((index * 11) % 42)}px`}></span>)}
-                </div>
-              </>
-            )}
-            {study.variant === 'route' && (
-              <>
-                <div class="case-studies__route-line" aria-hidden="true"></div>
-                <div class="case-studies__route-stat case-studies__route-stat--top" aria-hidden="true"><small>Current</small><strong>32</strong><span>min</span></div>
-                <div class="case-studies__route-stat case-studies__route-stat--bottom" aria-hidden="true"><small>Average</small><strong>28</strong><span>min</span></div>
-              </>
-            )}
-            {study.variant === 'chat' && (
-              <div class="case-studies__chat-panel" aria-hidden="true">
-                <div class="case-studies__chat-row"><span>From</span><b>Tokyo IC</b></div>
-                <div class="case-studies__chat-row"><span>To</span><b>Osaka IC</b></div>
-                <button>検索する</button>
-                <ul>
-                  <li><span>Route 01</span><b>26 min</b></li>
-                  <li><span>Route 02</span><b>34 min</b></li>
-                  <li><span>Route 03</span><b>42 min</b></li>
-                </ul>
-              </div>
-            )}
+          <div class="case-studies__visual">
+            <img
+              class="case-studies__image"
+              src={placeholderImageByVariant[study.variant]}
+              alt={`${study.title} preview`}
+              loading="lazy"
+            />
           </div>
           <div class="case-studies__body">
             <h3 class="case-studies__title">{study.title}</h3>
@@ -98,195 +81,16 @@ const { studies } = Astro.props;
       position: relative;
       height: 250px;
       overflow: hidden;
-      background:
-        linear-gradient(120deg, rgba(255, 255, 255, 0.98), rgba(246, 250, 255, 0.68)),
-        radial-gradient(circle at 20% 24%, rgba(255, 191, 0, 0.46) 0 1.5px, transparent 2px),
-        radial-gradient(circle at 76% 34%, rgba(22, 131, 247, 0.42) 0 1.5px, transparent 2px),
-        radial-gradient(circle at 54% 68%, rgba(38, 197, 101, 0.36) 0 1.5px, transparent 2px);
-
-      &::before {
-        position: absolute;
-        inset: -20%;
-        content: "";
-        background-image:
-          linear-gradient(rgba(97, 132, 166, 0.08) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(97, 132, 166, 0.08) 1px, transparent 1px);
-        background-size: 42px 42px;
-        transform: rotate(-16deg);
-      }
+      background: #e2e8f0;
     }
 
-    &__number {
-      position: absolute;
-      z-index: 2;
-      top: 24px;
-      left: 24px;
-      font-size: 18px;
-      font-weight: 800;
+    &__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-
-    &__map-dots {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background-image:
-        radial-gradient(circle, #ffb020 0 2px, transparent 2.5px),
-        radial-gradient(circle, #1683f7 0 2px, transparent 2.5px),
-        radial-gradient(circle, #28c76f 0 2px, transparent 2.5px);
-      background-position:
-        22px 84px,
-        64px 14px,
-        118px 52px;
-      background-size:
-        104px 94px,
-        136px 122px,
-        178px 146px;
-      opacity: 0.55;
-    }
-
-    &__traffic-line,
-    &__route-line {
-      position: absolute;
-      z-index: 2;
-      inset: 58px 24px 64px;
-
-      &::before {
-        position: absolute;
-        inset: 0;
-        content: "";
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-      }
-    }
-
-    &__traffic-line::before {
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 320 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 118 C42 104 48 126 78 98 S132 66 160 58 S218 64 244 28 S284 42 312 8' fill='none' stroke='%2318c95b' stroke-width='4'/%3E%3Cpath d='M8 118 C42 104 48 126 78 98 S132 66 160 58' fill='none' stroke='%23ffb300' stroke-width='4'/%3E%3Cpath d='M8 118 C28 110 40 108 56 112' fill='none' stroke='%23ff5b3c' stroke-width='4'/%3E%3C/svg%3E");
-    }
-
-    &__route-line::before {
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 320 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 132 C54 118 68 122 90 98 S124 68 154 74 S202 70 228 38 S278 40 304 8' fill='none' stroke='%231683f7' stroke-width='4'/%3E%3C/svg%3E");
-    }
-
-    &__mini-chart {
-      position: absolute;
-      z-index: 3;
-      right: 28px;
-      bottom: 30px;
-      display: flex;
-      align-items: end;
-      gap: 4px;
-      width: 146px;
-      height: 80px;
-      padding: 18px 14px 12px;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.94);
-      box-shadow: 0 12px 34px rgba(15, 33, 64, 0.12);
-
-      span {
-        width: 5px;
-        border-radius: 2px 2px 0 0;
-        background: linear-gradient(#ffb020, #1683f7);
-      }
-    }
-
-    &__route-stat {
-      position: absolute;
-      z-index: 3;
-      right: 24px;
-      display: grid;
-      grid-template-columns: auto auto 1fr;
-      align-items: baseline;
-      column-gap: 4px;
-      width: 108px;
-      padding: 14px 16px;
-      border-radius: 6px;
-      background: rgba(255, 255, 255, 0.94);
-      box-shadow: 0 12px 34px rgba(15, 33, 64, 0.12);
-
-      &--top {
-        bottom: 88px;
-      }
-
-      &--bottom {
-        bottom: 26px;
-      }
-
-      small {
-        grid-column: 1 / -1;
-        color: #8ca0b7;
-        font-size: 10px;
-        font-weight: 700;
-      }
-
-      strong {
-        font-size: 21px;
-        font-weight: 800;
-      }
-
-      span {
-        color: var(--color-muted);
-        font-size: 11px;
-        font-weight: 700;
-      }
-    }
-
-    &__chat-panel {
-      position: absolute;
-      z-index: 3;
-      top: 30px;
-      right: 24px;
-      width: 176px;
-
-      button {
-        width: 100%;
-        margin-bottom: 10px;
-        border: 0;
-        border-radius: 999px;
-        background: var(--color-blue);
-        color: white;
-        font-size: 11px;
-        font-weight: 800;
-        line-height: 32px;
-      }
-
-      ul {
-        margin: 0;
-        padding: 14px 16px;
-        border-radius: 7px;
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 12px 34px rgba(15, 33, 64, 0.12);
-        list-style: none;
-      }
-
-      li {
-        display: flex;
-        justify-content: space-between;
-        color: var(--color-muted);
-        font-size: 11px;
-        font-weight: 700;
-        line-height: 2.2;
-      }
-    }
-
-    &__chat-row {
-      margin-bottom: 8px;
-      padding: 14px 16px;
-      border-radius: 7px;
-      background: rgba(255, 255, 255, 0.95);
-      box-shadow: 0 12px 34px rgba(15, 33, 64, 0.12);
-
-      span {
-        display: block;
-        color: #8ca0b7;
-        font-size: 10px;
-        font-weight: 700;
-      }
-
-      b {
-        font-size: 12px;
-      }
-    }
-
+    
     &__body {
       padding: 26px 24px 28px;
     }
