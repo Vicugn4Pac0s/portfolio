@@ -19,6 +19,7 @@ const { title, text } = Astro.props;
 
 <script>
   import { initAnimatedDetailsAccordion } from '../../../scripts/initAnimatedDetailsAccordion';
+  import { initCursorFollower } from '../../../scripts/initCursorFollower';
 
   document.querySelectorAll<HTMLElement>('.history-item').forEach((root) => {
     if (root.dataset.accordionInitialized === 'true') {
@@ -26,8 +27,9 @@ const { title, text } = Astro.props;
     }
 
     const details = root.querySelector<HTMLDetailsElement>('.history-item__details');
+    const summary = root.querySelector<HTMLElement>('.history-item__summary');
 
-    if (!details) {
+    if (!details || !summary) {
       return;
     }
 
@@ -38,6 +40,9 @@ const { title, text } = Astro.props;
       openDuration: 280,
       closeDuration: 240,
       easing: 'ease-out',
+    });
+    initCursorFollower(summary, {
+      getLabel: () => (details.open ? 'CLOSE' : 'VIEW DETAIL'),
     });
   });
 </script>
