@@ -52,19 +52,23 @@ export const studies = [
 
 export const histories = [
   {
-    title: '2016',
+    title: '2016-2017',
     text: '独学で Web 制作会社へ入社。',
   },
   {
-    title: 'Early Career',
+    title: '2018-2019',
     text: 'HTML / CSS / JavaScript / PHP を用いた幅広い案件に携わる。WordPress、LP、投票システム、注文フォーム、インタラクティブサイトなど。',
   },
   {
-    title: 'Growth',
+    title: '2020-2021',
     text: 'React / TypeScript を中心に、状態管理・設計・API 連携を強化。',
   },
   {
-    title: 'Current',
+    title: '2022-2023',
     text: 'リアルタイムデータや地図を用いた、継続運用型フロントエンド開発を担当。',
   },
+  {
+    title: '2024-',
+    text: 'チームリードとして、設計・コードレビュー・メンバー育成を担当。',
+  }
 ];
