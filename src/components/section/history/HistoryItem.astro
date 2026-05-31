@@ -18,116 +18,27 @@ const { title, text } = Astro.props;
 </article>
 
 <script>
-  class HistoryItemAccordion {
-    private animation: Animation | null = null;
-    private isClosing = false;
-    private isExpanding = false;
-    private readonly details: HTMLDetailsElement;
-    private readonly summary: HTMLElement;
-    private readonly content: HTMLElement;
-
-    constructor(root: HTMLElement) {
-      const details = root.querySelector<HTMLDetailsElement>('.history-item__details');
-      const summary = root.querySelector<HTMLElement>('.history-item__summary');
-      const content = root.querySelector<HTMLElement>('.history-item__detail');
-
-      if (!details || !summary || !content) {
-        throw new Error('History item elements are missing.');
-      }
-
-      this.details = details;
-      this.summary = summary;
-      this.content = content;
-
-      this.summary.addEventListener('click', (event) => this.handleClick(event));
-    }
-
-    private handleClick(event: MouseEvent) {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        return;
-      }
-
-      event.preventDefault();
-      this.details.style.overflow = 'hidden';
-
-      if (this.isClosing || !this.details.open) {
-        this.open();
-        return;
-      }
-
-      this.shrink();
-    }
-
-    private shrink() {
-      this.isClosing = true;
-
-      const startHeight = `${this.details.offsetHeight}px`;
-      const endHeight = `${this.summary.offsetHeight}px`;
-
-      this.animation?.cancel();
-      this.animation = this.details.animate(
-        {
-          height: [startHeight, endHeight],
-        },
-        {
-          duration: 240,
-          easing: 'ease-out',
-        },
-      );
-
-      this.animation.onfinish = () => this.finishAnimation(false);
-      this.animation.oncancel = () => {
-        this.isClosing = false;
-      };
-    }
-
-    private open() {
-      this.details.style.height = `${this.details.offsetHeight}px`;
-      this.details.open = true;
-
-      requestAnimationFrame(() => this.expand());
-    }
-
-    private expand() {
-      this.isExpanding = true;
-
-      const startHeight = `${this.details.offsetHeight}px`;
-      const endHeight = `${this.summary.offsetHeight + this.content.scrollHeight}px`;
-
-      this.animation?.cancel();
-      this.animation = this.details.animate(
-        {
-          height: [startHeight, endHeight],
-        },
-        {
-          duration: 280,
-          easing: 'ease-out',
-        },
-      );
-
-      this.animation.onfinish = () => this.finishAnimation(true);
-      this.animation.oncancel = () => {
-        this.isExpanding = false;
-      };
-    }
-
-    private finishAnimation(open: boolean) {
-      this.details.open = open;
-      this.animation = null;
-      this.isClosing = false;
-      this.isExpanding = false;
-      this.details.style.height = '';
-      this.details.style.overflow = '';
-    }
-  }
+  import { initAnimatedDetailsAccordion } from '../../../scripts/initAnimatedDetailsAccordion';
 
   document.querySelectorAll<HTMLElement>('.history-item').forEach((root) => {
     if (root.dataset.accordionInitialized === 'true') {
       return;
     }
 
+    const details = root.querySelector<HTMLDetailsElement>('.history-item__details');
+
+    if (!details) {
+      return;
+    }
+
     root.dataset.accordionInitialized = 'true';
-    new HistoryItemAccordion(root);
+    initAnimatedDetailsAccordion(details, {
+      summarySelector: '.history-item__summary',
+      contentSelector: '.history-item__detail',
+      openDuration: 280,
+      closeDuration: 240,
+      easing: 'ease-out',
+    });
   });
 </script>
 
