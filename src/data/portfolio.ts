@@ -53,7 +53,7 @@ export const studies = [
 export const histories = [
   {
     title: '2016-2017',
-    text: 'フロントエンドエンジニアとして、HTML / CSS / JavaScript / WordPressを中心に、実務に必要な基礎力を身につける。',
+    text: 'フロントエンドエンジニアとして、HTML / CSS / JavaScript / WordPressを中心に、大手企業案件を通じて実務に必要な基礎力を身につける。',
   },
   {
     title: '2018-2019',
