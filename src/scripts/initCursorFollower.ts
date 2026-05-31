@@ -6,6 +6,7 @@ interface CursorFollowerState {
   currentY: number;
   targetX: number;
   targetY: number;
+  activeTrigger: HTMLElement | null;
 }
 
 declare global {
@@ -36,6 +37,7 @@ const createCursorFollower = () => {
     currentY: window.innerHeight / 2,
     targetX: window.innerWidth / 2,
     targetY: window.innerHeight / 2,
+    activeTrigger: null,
   };
 
   const tick = () => {
@@ -62,6 +64,7 @@ const createCursorFollower = () => {
     state.element.dataset.visible = 'false';
     state.element.dataset.active = 'false';
     state.label.textContent = '';
+    state.activeTrigger = null;
   });
 
   return state;
@@ -77,6 +80,13 @@ const getCursorFollowerState = () => {
 
 const getCursorLabel = (trigger: HTMLElement) => {
   return trigger.dataset.cursorLabel ?? '';
+};
+
+const syncFollowerContent = (state: CursorFollowerState) => {
+  const label = state.activeTrigger ? getCursorLabel(state.activeTrigger) : '';
+
+  state.label.textContent = label;
+  state.element.dataset.active = label ? 'true' : 'false';
 };
 
 const findTrigger = (target: EventTarget | null) => {
@@ -106,8 +116,8 @@ export const initCursorFollower = () => {
       return;
     }
 
-    state.label.textContent = getCursorLabel(trigger);
-    state.element.dataset.active = state.label.textContent ? 'true' : 'false';
+    state.activeTrigger = trigger;
+    syncFollowerContent(state);
   });
 
   document.addEventListener('pointerout', (event) => {
@@ -118,7 +128,23 @@ export const initCursorFollower = () => {
       return;
     }
 
-    state.element.dataset.active = 'false';
-    state.label.textContent = '';
+    state.activeTrigger = null;
+    syncFollowerContent(state);
+  });
+
+  const observer = new MutationObserver((mutations) => {
+    const hasActiveTriggerUpdate = mutations.some((mutation) => mutation.target === state.activeTrigger);
+
+    if (!hasActiveTriggerUpdate) {
+      return;
+    }
+
+    syncFollowerContent(state);
+  });
+
+  observer.observe(document.body, {
+    subtree: true,
+    attributes: true,
+    attributeFilter: ['data-cursor-label'],
   });
 };

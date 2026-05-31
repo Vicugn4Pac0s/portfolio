@@ -40,6 +40,13 @@ const { title, text } = Astro.props;
       closeDuration: 240,
       easing: 'ease-out',
     });
+
+    const syncCursorLabel = () => {
+      summary.dataset.cursorLabel = details.open ? '' : 'VIEW DETAIL';
+    };
+
+    syncCursorLabel();
+    details.addEventListener('toggle', syncCursorLabel);
   });
 </script>
 
