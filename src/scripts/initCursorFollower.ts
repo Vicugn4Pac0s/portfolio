@@ -79,7 +79,21 @@ const getCursorFollowerState = () => {
 };
 
 const getCursorLabel = (trigger: HTMLElement) => {
-  return trigger.dataset.cursorLabel ?? '';
+  if (trigger.dataset.cursorLabel) {
+    return trigger.dataset.cursorLabel;
+  }
+
+  if (trigger instanceof HTMLAnchorElement) {
+    const href = trigger.getAttribute('href');
+
+    if (!href || href.startsWith('#') || href.startsWith('/')) {
+      return '';
+    }
+
+    return 'VIEW MORE';
+  }
+
+  return '';
 };
 
 const syncFollowerContent = (state: CursorFollowerState) => {
@@ -94,7 +108,7 @@ const findTrigger = (target: EventTarget | null) => {
     return null;
   }
 
-  return target.closest<HTMLElement>('[data-cursor-label]');
+  return target.closest<HTMLElement>('[data-cursor-label], a[href]');
 };
 
 export const initCursorFollower = () => {
