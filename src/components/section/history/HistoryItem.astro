@@ -1,0 +1,82 @@
+---
+interface Props {
+  title: string;
+  text: string;
+}
+
+const { title, text } = Astro.props;
+---
+
+<article class="history-item">
+  <details class="history-item__details">
+    <summary class="history-item__summary">
+      <h3 class="history-item__title">{title}</h3>
+      <p class="history-item__text">{text}</p>
+    </summary>
+    <div class="history-item__detail">詳細が入ります</div>
+  </details>
+</article>
+
+<style lang="scss">
+  .history-item {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 6px;
+      left: -55px;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: var(--color-blue);
+      content: "";
+    }
+
+    &__details {
+      margin: 0;
+      padding: 0;
+    }
+
+    &__summary {
+      appearance: none;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      list-style: none;
+      list-style-type: none;
+
+      &::marker,
+      &::-webkit-details-marker {
+        display: none;
+        content: "";
+      }
+    }
+
+    &__title {
+      margin: 0 0 10px;
+      font-size: 15px;
+      font-weight: 800;
+    }
+
+    &__text {
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 14px;
+      font-weight: 650;
+      line-height: 2;
+    }
+    &__detail {
+      font-size: 14px;
+      margin-top: 12px;
+      padding: 12px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .history-item {
+      &::before {
+        left: -41px;
+      }
+    }
+  }
+</style>
