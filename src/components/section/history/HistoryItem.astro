@@ -9,7 +9,7 @@ const { title, text } = Astro.props;
 
 <article class="history-item">
   <details class="history-item__details">
-    <summary class="history-item__summary">
+    <summary class="history-item__summary" data-cursor-label="VIEW DETAIL">
       <h3 class="history-item__title">{title}</h3>
       <p class="history-item__text">{text}</p>
     </summary>
@@ -19,7 +19,6 @@ const { title, text } = Astro.props;
 
 <script>
   import { initAnimatedDetailsAccordion } from '../../../scripts/initAnimatedDetailsAccordion';
-  import { initCursorFollower } from '../../../scripts/initCursorFollower';
 
   document.querySelectorAll<HTMLElement>('.history-item').forEach((root) => {
     if (root.dataset.accordionInitialized === 'true') {
@@ -40,9 +39,6 @@ const { title, text } = Astro.props;
       openDuration: 280,
       closeDuration: 240,
       easing: 'ease-out',
-    });
-    initCursorFollower(summary, {
-      getLabel: () => (details.open ? 'CLOSE' : 'VIEW DETAIL'),
     });
   });
 </script>

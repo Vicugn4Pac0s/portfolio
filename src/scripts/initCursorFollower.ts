@@ -1,7 +1,3 @@
-interface CursorFollowerOptions {
-  getLabel?: () => string;
-}
-
 interface CursorFollowerState {
   element: HTMLDivElement;
   label: HTMLSpanElement;
@@ -15,6 +11,7 @@ interface CursorFollowerState {
 declare global {
   interface Window {
     __historyCursorFollower?: CursorFollowerState;
+    __cursorFollowerInitialized?: boolean;
   }
 }
 
@@ -78,20 +75,49 @@ const getCursorFollowerState = () => {
   return window.__historyCursorFollower;
 };
 
-export const initCursorFollower = (trigger: HTMLElement, options: CursorFollowerOptions = {}) => {
+const getCursorLabel = (trigger: HTMLElement) => {
+  return trigger.dataset.cursorLabel ?? '';
+};
+
+const findTrigger = (target: EventTarget | null) => {
+  if (!(target instanceof HTMLElement)) {
+    return null;
+  }
+
+  return target.closest<HTMLElement>('[data-cursor-label]');
+};
+
+export const initCursorFollower = () => {
   if (!supportsFinePointer()) {
     return;
   }
 
-  const state = getCursorFollowerState();
-  const getLabel = options.getLabel ?? (() => '');
+  if (window.__cursorFollowerInitialized) {
+    return;
+  }
 
-  trigger.addEventListener('pointerenter', () => {
-    state.label.textContent = getLabel();
+  window.__cursorFollowerInitialized = true;
+  const state = getCursorFollowerState();
+
+  document.addEventListener('pointerover', (event) => {
+    const trigger = findTrigger(event.target);
+
+    if (!trigger) {
+      return;
+    }
+
+    state.label.textContent = getCursorLabel(trigger);
     state.element.dataset.active = state.label.textContent ? 'true' : 'false';
   });
 
-  trigger.addEventListener('pointerleave', () => {
+  document.addEventListener('pointerout', (event) => {
+    const trigger = findTrigger(event.target);
+    const relatedTrigger = findTrigger(event.relatedTarget);
+
+    if (!trigger || trigger === relatedTrigger) {
+      return;
+    }
+
     state.element.dataset.active = 'false';
     state.label.textContent = '';
   });
