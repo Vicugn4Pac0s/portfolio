@@ -29,30 +29,6 @@ export const strengths = [
   },
 ];
 
-export const studies = [
-  {
-    slug: 'traffic-prediction',
-    number: '01',
-    title: 'Traffic Prediction Visualization',
-    text: '渋滞予測データを地図上に可視化し、リアルタイムに状況把握できるシステム。',
-    variant: 'traffic' as const,
-  },
-  {
-    slug: 'route-visualization',
-    number: '02',
-    title: 'Real-time Route Visualization',
-    text: '本番・迂回ルートの現在の所要時間を可視化。動的データと静的データを分離した設計。',
-    variant: 'route' as const,
-  },
-  {
-    slug: 'route-checker-chatbot',
-    number: '03',
-    title: 'Route Checker Chatbot',
-    text: 'チャット形式で最適な迂回ルートを提案。対話型 UI で運転時の体験を支援。',
-    variant: 'chat' as const,
-  },
-];
-
 export const histories = [
   {
     title: '2016-2017',

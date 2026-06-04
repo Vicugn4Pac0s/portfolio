@@ -3,10 +3,9 @@ import SectionLabel from '../ui/SectionLabel.astro';
 
 interface Study {
   slug: string;
-  number: string;
   title: string;
-  text: string;
-  variant: 'traffic' | 'route' | 'chat';
+  description: string;
+  image: string;
 }
 
 interface Props {
@@ -14,12 +13,6 @@ interface Props {
 }
 
 const { studies } = Astro.props;
-
-const placeholderImageByVariant = {
-  traffic: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=1200&q=80',
-  route: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=80',
-  chat: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80',
-} as const;
 ---
 
 <section id="case-studies" class="case-studies section-block">
@@ -36,14 +29,14 @@ const placeholderImageByVariant = {
           <div class="case-studies__visual">
             <img
               class="case-studies__image"
-              src={placeholderImageByVariant[study.variant]}
+              src={study.image}
               alt={`${study.title} preview`}
               loading="lazy"
             />
           </div>
           <div class="case-studies__body">
             <h3 class="case-studies__title">{study.title}</h3>
-            <p class="case-studies__text">{study.text}</p>
+            <p class="case-studies__text">{study.description}</p>
             <a class="case-studies__link" href={`/case-studies/${study.slug}`}>View Case Study <span aria-hidden="true">→</span></a>
           </div>
         </article>
