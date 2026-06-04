@@ -1,24 +1,340 @@
 ---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteFooter from '../components/ui/SiteFooter.astro';
 import SiteHeader from '../components/ui/SiteHeader.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-  return [
-    { params: { slug: 'case-study' } }
-  ];
+  const studies = await getCollection('case-studies');
+  return studies.map((study) => ({
+    params: { slug: study.id.replace(/\.md$/, '') },
+    props: { study },
+  }));
 }
 
-const { page } = Astro.props;
+const { study } = Astro.props;
+const { Content } = await render(study);
+const { number, title, description, period, role, tags, image } = study.data;
 ---
 
-<BaseLayout title={""} description={""}>
+<BaseLayout title={`${title} | Case Study`} description={description}>
   <SiteHeader />
-  <main>
+  <main class="cs-detail">
+    <div class="site-container">
 
+      <a class="cs-detail__back" href="/#case-studies">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 3L5 8l5 5"/>
+        </svg>
+        Back to Portfolio
+      </a>
+
+      <header class="cs-detail__header">
+        <div class="cs-detail__meta-top">
+          <span class="cs-detail__number">CASE STUDY {number}</span>
+          <ul class="cs-detail__tags" aria-label="使用技術">
+            {tags.map((tag) => <li class="cs-detail__tag">{tag}</li>)}
+          </ul>
+        </div>
+        <h1 class="cs-detail__title">{title}</h1>
+        <p class="cs-detail__description">{description}</p>
+      </header>
+
+      <figure class="cs-detail__hero">
+        <img
+          class="cs-detail__hero-image"
+          src={image}
+          alt={`${title} - プロジェクトイメージ`}
+          loading="eager"
+        />
+      </figure>
+
+      <div class="cs-detail__body">
+        <aside class="cs-detail__sidebar">
+          <dl class="cs-detail__info">
+            <div class="cs-detail__info-item">
+              <dt class="cs-detail__info-label">期間</dt>
+              <dd class="cs-detail__info-value">{period}</dd>
+            </div>
+            <div class="cs-detail__info-item">
+              <dt class="cs-detail__info-label">役割</dt>
+              <dd class="cs-detail__info-value">{role}</dd>
+            </div>
+            <div class="cs-detail__info-item">
+              <dt class="cs-detail__info-label">技術スタック</dt>
+              <dd class="cs-detail__info-value">
+                <ul class="cs-detail__stack">
+                  {tags.map((tag) => <li>{tag}</li>)}
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </aside>
+
+        <div class="cs-detail__content">
+          <Content />
+        </div>
+      </div>
+
+    </div>
   </main>
   <SiteFooter />
 </BaseLayout>
 
 <style lang="scss">
+  .cs-detail {
+    padding: 60px 0 120px;
+
+    &__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 48px;
+      color: var(--color-blue);
+      font-size: 13px;
+      font-weight: 800;
+      transition: opacity 160ms ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    &__header {
+      max-width: 780px;
+      margin-bottom: 40px;
+    }
+
+    &__meta-top {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    &__number {
+      color: var(--color-blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    &__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    &__tag {
+      padding: 4px 12px;
+      border: 1px solid var(--color-line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--color-muted);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    &__title {
+      margin: 0 0 20px;
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    &__description {
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 2;
+    }
+
+    &__hero {
+      margin: 0 0 56px;
+      border: 1px solid var(--color-line);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    &__hero-image {
+      display: block;
+      width: 100%;
+      height: clamp(280px, 40vw, 520px);
+      object-fit: cover;
+    }
+
+    &__body {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    &__sidebar {
+      position: sticky;
+      top: 80px;
+    }
+
+    &__info {
+      margin: 0;
+      padding: 28px 24px;
+      border: 1px solid var(--color-line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.8);
+      box-shadow: var(--shadow-soft);
+    }
+
+    &__info-item {
+      padding: 16px 0;
+
+      & + & {
+        border-top: 1px solid var(--color-line);
+      }
+
+      &:first-child {
+        padding-top: 0;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    &__info-label {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--color-blue);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    &__info-value {
+      margin: 0;
+      color: var(--color-ink);
+      font-size: 13px;
+      font-weight: 650;
+      line-height: 1.8;
+    }
+
+    &__stack {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    &__content {
+      :global(h2) {
+        margin: 0 0 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--color-line);
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 1.5;
+      }
+
+      :global(h2 + *) {
+        margin-top: 0;
+      }
+
+      :global(p) {
+        margin: 0 0 20px;
+        color: var(--color-muted);
+        font-size: 15px;
+        font-weight: 650;
+        line-height: 2.1;
+      }
+
+      :global(ul),
+      :global(ol) {
+        margin: 0 0 20px;
+        padding-left: 20px;
+        color: var(--color-muted);
+        font-size: 15px;
+        font-weight: 650;
+        line-height: 2.1;
+      }
+
+      :global(section),
+      :global(> * + h2) {
+        margin-top: 48px;
+      }
+
+      :global(* + h2) {
+        margin-top: 48px;
+      }
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .cs-detail {
+      &__body {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      &__sidebar {
+        position: static;
+      }
+
+      &__info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+      }
+
+      &__info-item {
+        padding: 0 20px;
+
+        & + & {
+          border-top: 0;
+          border-left: 1px solid var(--color-line);
+        }
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .cs-detail {
+      padding-top: 40px;
+
+      &__info {
+        grid-template-columns: 1fr;
+      }
+
+      &__info-item {
+        padding: 16px 0;
+
+        & + & {
+          border-left: 0;
+          border-top: 1px solid var(--color-line);
+        }
+
+        &:first-child {
+          padding-top: 0;
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
 </style>
