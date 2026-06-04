@@ -1,8 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
-import BaseLayout from '../layouts/BaseLayout.astro';
-import SiteFooter from '../components/ui/SiteFooter.astro';
-import SiteHeader from '../components/ui/SiteHeader.astro';
+import SiteFooter from '../../components/ui/SiteFooter.astro';
+import SiteHeader from '../../components/ui/SiteHeader.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
   const studies = await getCollection('case-studies');
@@ -21,10 +21,9 @@ const { number, title, description, period, role, tags, image } = study.data;
   <SiteHeader />
   <main class="cs-detail">
     <div class="site-container">
-
       <a class="cs-detail__back" href="/#case-studies">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M10 3L5 8l5 5"/>
+          <path d="M10 3L5 8l5 5" />
         </svg>
         Back to Portfolio
       </a>
@@ -75,7 +74,6 @@ const { number, title, description, period, role, tags, image } = study.data;
           <Content />
         </div>
       </div>
-
     </div>
   </main>
   <SiteFooter />
@@ -224,53 +222,44 @@ const { number, title, description, period, role, tags, image } = study.data;
     }
 
     &__stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
       margin: 0;
       padding: 0;
       list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
     }
 
     &__content {
+      min-width: 0;
+
       :global(h2) {
-        margin: 0 0 16px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid var(--color-line);
+        margin: 56px 0 16px;
+        font-size: 24px;
+        font-weight: 800;
+      }
+
+      :global(h3) {
+        margin: 40px 0 14px;
         font-size: 18px;
         font-weight: 800;
-        line-height: 1.5;
       }
 
-      :global(h2 + *) {
-        margin-top: 0;
-      }
-
-      :global(p) {
-        margin: 0 0 20px;
+      :global(p),
+      :global(li) {
         color: var(--color-muted);
         font-size: 15px;
         font-weight: 650;
-        line-height: 2.1;
+        line-height: 2;
       }
 
       :global(ul),
       :global(ol) {
-        margin: 0 0 20px;
-        padding-left: 20px;
-        color: var(--color-muted);
-        font-size: 15px;
-        font-weight: 650;
-        line-height: 2.1;
+        padding-left: 1.4em;
       }
 
-      :global(section),
-      :global(> * + h2) {
-        margin-top: 48px;
-      }
-
-      :global(* + h2) {
-        margin-top: 48px;
+      :global(strong) {
+        color: var(--color-ink);
       }
     }
   }
@@ -279,61 +268,33 @@ const { number, title, description, period, role, tags, image } = study.data;
     .cs-detail {
       &__body {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
       }
 
       &__sidebar {
         position: static;
-      }
-
-      &__info {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
-      }
-
-      &__info-item {
-        padding: 0 20px;
-
-        & + & {
-          border-top: 0;
-          border-left: 1px solid var(--color-line);
-        }
-
-        &:first-child {
-          padding-left: 0;
-        }
-
-        &:last-child {
-          padding-right: 0;
-        }
       }
     }
   }
 
   @media (max-width: 767px) {
     .cs-detail {
-      padding-top: 40px;
+      padding: 40px 0 96px;
 
-      &__info {
-        grid-template-columns: 1fr;
+      &__back {
+        margin-bottom: 32px;
       }
 
-      &__info-item {
-        padding: 16px 0;
+      &__header {
+        margin-bottom: 32px;
+      }
 
-        & + & {
-          border-left: 0;
-          border-top: 1px solid var(--color-line);
-        }
+      &__hero {
+        margin-bottom: 40px;
+      }
 
-        &:first-child {
-          padding-top: 0;
-        }
-
-        &:last-child {
-          padding-bottom: 0;
-        }
+      &__info {
+        padding: 24px 20px;
       }
     }
   }

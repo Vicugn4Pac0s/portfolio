@@ -2,6 +2,7 @@
 import SectionLabel from '../ui/SectionLabel.astro';
 
 interface Study {
+  slug: string;
   number: string;
   title: string;
   text: string;
@@ -43,7 +44,7 @@ const placeholderImageByVariant = {
           <div class="case-studies__body">
             <h3 class="case-studies__title">{study.title}</h3>
             <p class="case-studies__text">{study.text}</p>
-            <a class="case-studies__link" href="#case-studies">View Case Study <span aria-hidden="true">→</span></a>
+            <a class="case-studies__link" href={`/case-studies/${study.slug}`}>View Case Study <span aria-hidden="true">→</span></a>
           </div>
         </article>
       ))}
