@@ -16,6 +16,7 @@
     </div>
     <div class="hero__image">
       <img src="/images/hero-img.webp" alt="" />
+      <p class="hero__image-caption">テキストが入ります。テキストが入ります。</p>
     </div>
     <div class="hero__bg-particle hero__bg-particle--1"></div>
     <div class="hero__bg-particle hero__bg-particle--2"></div>
@@ -65,7 +66,16 @@
       img {
         height: auto;
         width: 100%;
+        vertical-align: middle;
       }
+    }
+
+    &__image-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-100%);
+      font-size: 1.4rem;
     }
 
     &__bg-particle {
