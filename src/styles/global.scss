@@ -11,9 +11,11 @@
   --color-muted: #56677e;
   --color-blue: #1683f7;
   --color-line: #dbe5f0;
-  --color-bg: #f5f5f7;
+
   --color-primary: #7EDDD6;
   --color-accent: #C9F85A;
+  --color-base-white: #ffffff;
+  --color-bg-gray: #f5f5f7;
   --shadow-soft: 0 20px 60px rgba(22, 56, 96, 0.08);
 }
 
@@ -24,7 +26,7 @@ html {
 }
 body {
   margin: 0;
-  background: var(--color-bg);
+  background: var(--color-base-white);
   color: var(--color-ink);
   font-size: 1.6rem;
   font-family: var(--font-sans);
@@ -58,7 +60,11 @@ select {
 }
 
 .section-block {
-  margin: 120px 0;
+  padding: 9.6rem 0;
+
+  &--grey {
+    background: var(--color-bg-gray);
+  }
 }
 
 .section-title {

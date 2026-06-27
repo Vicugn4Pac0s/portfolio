@@ -15,7 +15,7 @@ const cards = [
 ];
 ---
 
-<section id="personal" class="personal section-block">
+<section id="personal" class="personal section-block section-block--grey">
   <div class="site-container">
     <SectionLabel label="PERSONAL" />
     <div class="personal__list">
@@ -45,10 +45,7 @@ const cards = [
     &__card {
       display: flex;
       overflow: hidden;
-      border: 1px solid var(--color-line);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.8);
-      box-shadow: var(--shadow-soft);
+      background: var(--color-base-white);
     }
 
     &__body {
