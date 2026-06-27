@@ -14,7 +14,7 @@ const { label, align = 'left' } = Astro.props;
 
 <style lang="scss">
   .section-label {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: flex-start;
     gap: 24px;
@@ -24,6 +24,7 @@ const { label, align = 'left' } = Astro.props;
     font-style: italic;
     font-weight: 600;
     letter-spacing: 0.04em;
+    position: relative;
 
     &--between {
       justify-content: space-between;
@@ -31,6 +32,18 @@ const { label, align = 'left' } = Astro.props;
 
     &__text {
       display: inline-block;
+    }
+
+    &::after {
+      content: '';
+      background-color: var(--color-accent);
+      display: block;
+      height: 3px;
+      width: 7.2rem;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translate(1.2rem, -50%) skewX(-45deg);
     }
   }
 
