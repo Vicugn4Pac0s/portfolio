@@ -14,14 +14,18 @@
         テキストが入ります。テキストが入ります。
       </p>
     </div>
+    <div class="hero__image">
+      <img src="/images/hero-img.webp" alt="" />
+    </div>
+    <div class="hero__bg-particle hero__bg-particle--1"></div>
+    <div class="hero__bg-particle hero__bg-particle--2"></div>
   </div>
 </section>
 
 <style lang="scss">
   .hero {
-    min-height: 680px;
+    padding-top: 80px;
     overflow: hidden;
-    background-color: #f1f5f9;
 
     &__inner {
       position: relative;
@@ -29,10 +33,11 @@
       display: flex;
       align-items: center;
       min-height: 680px;
-      padding-top: 80px;
     }
 
     &__content {
+      position: relative;
+      z-index: 1;
     }
 
     &__title {
@@ -47,9 +52,43 @@
       font-size: 2.4rem;
     }
     &__lead {
-      color: #1e293b;
-      font-weight: 650;
       line-height: 1.8;
+    }
+
+    &__image {
+      position: absolute;
+      top: 50%;
+      right: 4rem;
+      transform: translateY(-50%);
+      width: 38rem;
+
+      img {
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    &__bg-particle {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);      
+      z-index: 0;
+
+      &--1 {
+        background: var(--color-primary);
+        height: 2800px;
+        width: 900px;
+        left: -650px;
+        opacity: 0.1;
+      }
+
+      &--2 {
+        background: var(--color-accent);
+        height: 1200px;
+        width: 90px;
+        right: -285px;
+        opacity: 0.5;
+      }
     }
   }
 
