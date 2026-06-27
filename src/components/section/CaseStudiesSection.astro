@@ -1,5 +1,5 @@
 ---
-import SectionLabel from '../ui/SectionLabel.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
 
 interface Study {
   slug: string;
@@ -17,12 +17,7 @@ const { studies } = Astro.props;
 
 <section id="case-studies" class="case-studies section-block section-block--grey">
   <div class="site-container">
-    <SectionLabel label="FEATURED CASE STUDIES" align="between">
-      <a class="case-studies__all-link" href="/case-studies">
-        View all Case Studies
-        <span aria-hidden="true">→</span>
-      </a>
-    </SectionLabel>
+    <SectionHeading>FEATURED CASE STUDIES</SectionHeading>
     <div class="case-studies__list">
       {studies.map((study) => (
         <article class="case-studies__card">

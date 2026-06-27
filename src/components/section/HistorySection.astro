@@ -1,5 +1,5 @@
 ---
-import SectionLabel from '../ui/SectionLabel.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
 import HistoryItem from './history/HistoryItem.astro';
 
 interface HistoryItem {
@@ -16,7 +16,7 @@ const { histories } = Astro.props;
 
 <section id="history" class="history section-block">
   <div class="site-container">
-    <SectionLabel label="HISTORY" />
+    <SectionHeading>HISTORY</SectionHeading>
     <div class="history__list">
       {histories.map((item) => (
         <HistoryItem title={item.title} text={item.text} />

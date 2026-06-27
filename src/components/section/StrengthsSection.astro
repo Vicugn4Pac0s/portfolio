@@ -1,5 +1,5 @@
 ---
-import SectionLabel from '../ui/SectionLabel.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
 
 interface Strength {
   title: string;
@@ -16,7 +16,7 @@ const { strengths } = Astro.props;
 
 <section id="strengths" class="strengths section-block">
   <div class="site-container">
-    <SectionLabel label="STRENGTHS" />
+    <SectionHeading>STRENGTHS</SectionHeading>
     <div class="strengths__list">
       {strengths.map((strength) => (
         <article class="strengths__item">

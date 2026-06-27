@@ -1,0 +1,43 @@
+---
+interface Props {
+  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+}
+
+const { as: Tag = 'h2' } = Astro.props;
+---
+
+<Tag class="section-heading">
+  <span>
+    <slot />
+  </span>
+</Tag>
+
+<style lang="scss">
+  .section-heading {
+    margin: 0 0 4.8rem;
+    color: var(--color-primary);
+    font-size: 2.4rem;
+    font-style: italic;
+    font-weight: 600;
+    
+    span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 24px;
+      position: relative;
+    }
+
+    span::after {
+      content: '';
+      background-color: var(--color-accent);
+      display: block;
+      height: 3px;
+      width: 7.2rem;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translate(1.2rem, -50%) skewX(-45deg);
+    }
+  }
+</style>
