@@ -44,6 +44,20 @@ const { slug, title, description, image } = Astro.props;
       position: relative;
       aspect-ratio: 16 / 9;
       overflow: hidden;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: -45%;
+        z-index: 1;
+        width: 36%;
+        height: 240%;
+        background: var(--color-primary);
+        opacity: 0.25;
+        content: '';
+        pointer-events: none;
+        transform: translateY(-50%) rotate(45deg);
+      }
     }
 
     &__image {
@@ -54,17 +68,37 @@ const { slug, title, description, image } = Astro.props;
     }
 
     &__body {
+      position: relative;
       flex: 1;
       padding: 2.8rem 2rem;
+      background-color: var(--color-base-white);
+      overflow: hidden;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        right: -8%;
+        width: 10%;
+        height: 180%;
+        background: var(--color-accent);
+        opacity: 0.5;
+        content: '';
+        pointer-events: none;
+        transform: translateY(-50%) rotate(45deg);
+      }
     }
 
     &__title {
+      position: relative;
+      z-index: 1;
       margin: 0 0 2rem;
       font-size: 1.8rem;
       font-weight: 800;
     }
 
     &__text {
+      position: relative;
+      z-index: 1;
       min-height: 6.2rem;
       margin: 0;
       color: var(--color-muted);
