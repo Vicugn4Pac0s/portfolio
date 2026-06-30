@@ -1,4 +1,5 @@
 ---
+import CaseStudyCard from '../ui/CaseStudyCard.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
 
 interface Study {
@@ -18,86 +19,34 @@ const { studies } = Astro.props;
 <section id="case-studies" class="case-studies section-block section-block--grey">
   <div class="site-container">
     <SectionHeading>FEATURED CASE STUDIES</SectionHeading>
-    <div class="case-studies__list">
+    <ul class="case-studies__list">
       {studies.map((study) => (
-        <article class="case-studies__card">
-          <div class="case-studies__visual">
-            <img
-              class="case-studies__image"
-              src={study.image}
-              alt={`${study.title} preview`}
-              loading="lazy"
-            />
-          </div>
-          <div class="case-studies__body">
-            <h3 class="case-studies__title">{study.title}</h3>
-            <p class="case-studies__text">{study.description}</p>
-            <a class="case-studies__link" href={`/case-studies/${study.slug}`}>View Case Study <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
+        <li class="case-studies__item">
+          <CaseStudyCard
+            slug={study.slug}
+            title={study.title}
+            description={study.description}
+            image={study.image}
+          />
+        </li>
       ))}
-    </div>
+    </ul>
   </div>
 </section>
 
 <style lang="scss">
   .case-studies {
-    &__all-link,
-    &__link {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--color-blue);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
     &__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    &__card {
-      overflow: hidden;
-      background: var(--color-base-white);
-    }
-
-    &__visual {
-      position: relative;
-      height: 250px;
-      overflow: hidden;
-      background: #e2e8f0;
-    }
-
-    &__image {
-      display: block;
-      width: 100%;
+    &__item {
       height: 100%;
-      object-fit: cover;
-    }
-    
-    &__body {
-      padding: 26px 24px 28px;
-    }
-
-    &__title {
-      margin: 0 0 20px;
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    &__text {
-      min-height: 62px;
-      margin: 0;
-      color: var(--color-muted);
-      font-size: 13px;
-      font-weight: 650;
-      line-height: 2;
-    }
-
-    &__link {
-      margin-top: 24px;
     }
   }
 
@@ -105,14 +54,6 @@ const { studies } = Astro.props;
     .case-studies {
       &__list {
         grid-template-columns: 1fr;
-      }
-    }
-  }
-
-  @media (max-width: 767px) {
-    .case-studies {
-      &__visual {
-        height: 220px;
       }
     }
   }

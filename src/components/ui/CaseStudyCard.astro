@@ -1,0 +1,76 @@
+---
+interface Props {
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+const { slug, title, description, image } = Astro.props;
+---
+
+<article class="case-studies__card">
+  <a href={`/case-studies/${slug}`}>
+    <div class="case-studies__visual">
+      <img
+        class="case-studies__image"
+        src={image}
+        alt={`${title} preview`}
+        loading="lazy"
+      />
+    </div>
+    <div class="case-studies__body">
+      <h3 class="case-studies__title">{title}</h3>
+      <p class="case-studies__text">{description}</p>
+    </div>
+  </a>
+</article>
+
+<style lang="scss">
+  .case-studies {
+    > a {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    &__card {
+      height: 100%;
+      overflow: hidden;
+      background: var(--color-base-white);
+    }
+
+    &__visual {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+    }
+
+    &__image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &__body {
+      flex: 1;
+      padding: 2.8rem 2rem;
+    }
+
+    &__title {
+      margin: 0 0 2rem;
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    &__text {
+      min-height: 6.2rem;
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 1.4rem;
+      line-height: 2;
+    }
+  }
+
+</style>
