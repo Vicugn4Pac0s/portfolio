@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import CaseStudyCard from '../../components/ui/CaseStudyCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteFooter from '../../components/ui/SiteFooter.astro';
 import SiteHeader from '../../components/ui/SiteHeader.astro';
@@ -35,33 +36,13 @@ const studies = allStudies
 
       <ul class="cs-index__list">
         {studies.map((study) => (
-          <li>
-            <a class="cs-index__card" href={`/case-studies/${study.slug}`}>
-              <div class="cs-index__visual">
-                <img
-                  class="cs-index__image"
-                  src={study.image}
-                  alt={`${study.title} preview`}
-                  loading="lazy"
-                />
-              </div>
-              <div class="cs-index__body">
-                <div class="cs-index__meta">
-                  <span class="cs-index__number">CASE STUDY {study.number}</span>
-                  <span class="cs-index__period">{study.period}</span>
-                </div>
-                <h2 class="cs-index__card-title">{study.title}</h2>
-                <p class="cs-index__text">{study.description}</p>
-                <ul class="cs-index__tags" aria-label="使用技術">
-                  {study.tags.map((tag) => (
-                    <li class="cs-index__tag">{tag}</li>
-                  ))}
-                </ul>
-                <span class="cs-index__link">
-                  View Case Study <span aria-hidden="true">→</span>
-                </span>
-              </div>
-            </a>
+          <li class="cs-index__item">
+            <CaseStudyCard
+              slug={study.slug}
+              title={study.title}
+              description={study.description}
+              image={study.image}
+            />
           </li>
         ))}
       </ul>
@@ -119,150 +100,30 @@ const studies = allStudies
     }
 
     &__list {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
 
-    &__card {
-      display: grid;
-      grid-template-columns: 360px 1fr;
-      overflow: hidden;
-      border: 1px solid var(--color-line);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.8);
-      box-shadow: var(--shadow-soft);
-      transition: box-shadow 200ms ease, transform 200ms ease;
-
-      &:hover {
-        box-shadow: 0 24px 64px rgba(22, 56, 96, 0.13);
-        transform: translateY(-2px);
-
-        .cs-index__link {
-          color: var(--color-ink);
-        }
-      }
-    }
-
-    &__visual {
-      height: 300px;
-      overflow: hidden;
-      background: #e2e8f0;
-    }
-
-    &__image {
-      display: block;
-      width: 100%;
+    &__item {
       height: 100%;
-      object-fit: cover;
-      transition: transform 400ms ease;
-
-      .cs-index__card:hover & {
-        transform: scale(1.04);
-      }
-    }
-
-    &__body {
-      display: flex;
-      flex-direction: column;
-      padding: 36px 40px;
-    }
-
-    &__meta {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    &__number {
-      color: var(--color-blue);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }
-
-    &__period {
-      color: var(--color-muted);
-      font-size: 12px;
-      font-weight: 650;
-    }
-
-    &__card-title {
-      margin: 0 0 16px;
-      font-size: 22px;
-      font-weight: 800;
-      line-height: 1.4;
-    }
-
-    &__text {
-      margin: 0 0 24px;
-      color: var(--color-muted);
-      font-size: 14px;
-      font-weight: 650;
-      line-height: 2;
-    }
-
-    &__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 0 0 auto;
-      padding: 0;
-      list-style: none;
-    }
-
-    &__tag {
-      padding: 4px 12px;
-      border: 1px solid var(--color-line);
-      border-radius: 999px;
-      color: var(--color-muted);
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    &__link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 28px;
-      color: var(--color-blue);
-      font-size: 13px;
-      font-weight: 800;
-      transition: color 160ms ease;
     }
   }
 
   @media (max-width: 1023px) {
     .cs-index {
-      &__card {
-        grid-template-columns: 280px 1fr;
-      }
-
-      &__visual {
-        height: auto;
-        min-height: 240px;
+      &__list {
+        grid-template-columns: 1fr;
       }
     }
   }
 
   @media (max-width: 767px) {
     .cs-index {
-      &__card {
-        grid-template-columns: 1fr;
-      }
-
-      &__visual {
-        height: 220px;
-        min-height: unset;
-      }
-
-      &__body {
-        padding: 24px 20px;
-      }
+      padding: 40px 0 80px;
     }
   }
 </style>
