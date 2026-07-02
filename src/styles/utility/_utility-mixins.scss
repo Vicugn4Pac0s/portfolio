@@ -1,0 +1,26 @@
+@use '../global' as *;
+
+
+@mixin responsive-class($class, $styles) {
+  .#{$class} {
+    @each $prop, $val in $styles {
+      #{$prop}: $val !important;
+    }
+  }
+
+  @media (min-width: ($bp-sp + 1)) and (max-width: $bp-tab) {
+    body .#{$class}-tab {
+      @each $prop, $val in $styles {
+        #{$prop}: $val !important;
+      }
+    }
+  }
+
+  @media (max-width: $bp-sp) {
+    body .#{$class}-sp {
+      @each $prop, $val in $styles {
+        #{$prop}: $val !important;
+      }
+    }
+  }
+}

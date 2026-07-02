@@ -1,0 +1,38 @@
+@use '../global' as *;
+
+$accordion-transition-duration: 500ms;
+
+/**
+ * アコーディオンのベース: details / summary のリセットと開閉アニメーションのみを定義します。
+ */
+details {
+  interpolate-size: allow-keywords;
+  &::details-content {
+    overflow: clip;
+    transition-property: content-visibility, block-size;
+    transition-duration: $accordion-transition-duration;
+    transition-behavior: allow-discrete;
+  }
+
+  &:not(:open)::details-content {
+    block-size: 0;
+    content-visibility: hidden;
+  }
+
+  summary {
+    position: relative;
+    cursor: pointer;
+  
+    &::marker {
+      content: "";
+    }
+  
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+}
+
+/**
+ * ここから下に、オリジナルアコーディオンスタイルを追加します。
+ */

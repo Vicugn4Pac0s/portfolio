@@ -1,0 +1,99 @@
+/**
+ * メニューのトグルボタン: メニューの開閉を切り替えるボタンのスタイルを定義しています。
+ */
+.menu-toggle-button {
+  --menu-toggle-button-size: 48px;
+  --menu-toggle-icon-width: 24px;
+  --menu-toggle-line-thickness: 2px;
+  --menu-toggle-line-gap: 6px;
+  --menu-toggle-hover-bg: #eee;  
+
+  position: relative;
+  display: grid;
+  flex: 0 0 var(--menu-toggle-button-size);
+  place-items: center;
+  inline-size: var(--menu-toggle-button-size);
+  block-size: var(--menu-toggle-button-size);
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  background-image: linear-gradient(currentColor 0 0);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: var(--menu-toggle-icon-width) var(--menu-toggle-line-thickness);
+  cursor: pointer;
+  transition: background-color 0.2s, background-size 0.2s ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--menu-toggle-hover-bg);
+    }
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    width: var(--menu-toggle-icon-width);
+    height: var(--menu-toggle-line-thickness);
+    border-radius: 999px;
+    background: currentColor;
+    content: '';
+    transition: rotate 0.2s ease, translate 0.2s ease;
+  }
+
+  &::before {
+    translate: 0 calc(var(--menu-toggle-line-gap) * -1);
+  }
+
+  &::after {
+    translate: 0 var(--menu-toggle-line-gap);
+  }
+
+  &.is-open {
+    background-size: 0 var(--menu-toggle-line-thickness);
+    transition: background-color 0.2s, background-size 0.2s ease, rotate 0.2s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        rotate: 90deg;
+      }
+    }
+
+    &::before {
+      translate: 0 0;
+      rotate: 45deg;
+    }
+
+    &::after {
+      translate: 0 0;
+      rotate: -45deg;
+    }
+  }
+}
+
+/**
+ * メニュー本体のベース: メニューのベーススタイルとモーダル表示のアニメーションを定義しています。
+ */
+.full-menu {
+  --tranlate-distance: 24px;
+  --full-menu-transition-duration: 300ms;
+  
+  background: var(--color-base-white);
+  height: 100vh;
+  width: 100%;
+  transition: opacity var(--full-menu-transition-duration) ease, translate var(--full-menu-transition-duration) ease;
+
+  &::backdrop {
+    background: transparent;
+  }
+
+  &[open] {
+    opacity: 1;
+    translate: 0 0;
+
+    @starting-style {
+      opacity: 0;
+      translate: 0 calc(var(--tranlate-distance) * -1);
+    }
+  }
+}

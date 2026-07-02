@@ -1,0 +1,20 @@
+@use './utility-config' as *;
+@use './utility-mixins' as *;
+
+.u-justify-center {
+  justify-content: center !important;
+}
+.u-justify-between {
+  justify-content: space-between !important;
+}
+.u-items-center {
+  align-items: center !important;
+}
+
+// flex-direction
+@include responsive-class('u-flex-row', (
+  flex-direction: row
+));
+@include responsive-class('u-flex-col', (
+  flex-direction: column
+));

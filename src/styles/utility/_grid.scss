@@ -1,0 +1,34 @@
+@use './utility-config' as *;
+@use './utility-mixins' as *;
+@use "sass:math";
+
+// grid-template-columns
+@include responsive-class('u-grid-cols-none', (
+  grid-template-columns: none
+));
+@for $i from 1 through 6 {
+  @include responsive-class('u-grid-cols-#{$i}', (
+    grid-template-columns: repeat(#{$i}, 1fr)
+  ));
+}
+
+@each $val in $AUTOFIT_WIDTH_VALUES {
+  .u-grid-autofit-#{$val} {
+    grid-template-columns: repeat(auto-fit, minmax(#{$val}px, 1fr));
+  }
+}
+
+// grid-colulmn, start/end
+@include responsive-class('u-col-span-full', (
+  grid-column: span 1 / -1
+));
+@for $i from 1 through 6 {
+  @include responsive-class('u-col-span-#{$i}', (
+    grid-column: span #{$i} / span #{$i}
+  ));
+}
+
+// gap
+@each $val in $GAP_VALUES {
+  @include responsive-class("u-gap-#{$val}", (gap: #{math.div($val, 10) * 1rem}));
+}

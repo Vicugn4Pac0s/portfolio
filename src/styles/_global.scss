@@ -1,0 +1,96 @@
+@use 'sass:math';
+
+/**
+ * ▼ メディアクエリ用ブレイクポイント
+ *
+ * - $bp-sp:
+ *   スマホの上限幅（例: ~767px）
+ * - $bp-tab:
+ *   タブレットの上限幅（例: ~1023px）
+ */
+$bp-sp: 767px;
+$bp-tab: 1023px;
+
+/**
+ * ▼ メディアクエリミックスイン
+ *
+ * - media-pc:
+ *   PC向けのスタイルを適用するためのメディアクエリ。
+ * - media-tab:
+ *   タブレット向けのスタイルを適用するためのメディアクエリ。
+ * - media-sp:
+ *   スマホ向けのスタイルを適用するためのメディアクエリ。
+ */
+@mixin media-pc {
+  @media (min-width: #{$bp-tab + 1}) {
+    @content;
+  }
+}
+@mixin media-tab {
+  @media (min-width: #{ $bp-sp + 1 }) and (max-width: #{$bp-tab}) {
+    @content;
+  }
+}
+
+@mixin media-sp {
+  @media (max-width: $bp-sp) {
+    @content;
+  }
+}
+
+/**
+ * ▼ fluidスケーリングに関する設定
+ *
+ * - $fluid-vw-min / $fluid-vw-max:
+ *   clamp()で滑らかに変化させる際のビューポート最小・最大値。
+ *   → 通常はスマホ〜PCの幅（375〜1280pxなど）を想定。
+ */
+$fluid-vw-min: 375;
+$fluid-vw-max: 1280;
+
+/**
+ * ▼ fluid()
+ *
+ * - clamp()を生成するSass関数。
+ * - 引数に最小サイズ・最大サイズを渡すことで、
+ *   指定したビューポート範囲内で値を滑らかに変化させる。
+ *
+ * 使用例:
+ *   font-size: fluid(14, 20);
+ */
+@function fluid($min, $max, $min-vw: $fluid-vw-min, $max-vw: $fluid-vw-max) {
+  $slope: math.div(($max - $min), ($max-vw - $min-vw)) * 100;
+  $base: $min - math.div($slope * $min-vw, 100);
+  @return clamp(
+    #{$min}px,
+    calc(#{$base}px + #{$slope}vw),
+    #{$max}px
+  );
+}
+
+/**
+ * @function vw-○○()
+ * 指定されたサイズを基準に、ビューポート幅に応じたvw単位の値を計算します。
+ * 
+ * @param {Number} $size - 基準となるサイズ（ピクセル単位）。
+ * @param {Number} $viewport - ビューポートの幅（デフォルトは1920px, 768px, 375px）。
+ * @return {String} - 計算されたvw単位の値。
+ */
+@function vw-pc($size, $viewport: 1920) {
+  $rate: calc(100 / $viewport);
+
+  @return $rate * $size * 1vw;
+}
+
+@function vw-tab($size, $viewport: 768) {
+  $rate: calc(100 / $viewport);
+
+  @return $rate * $size * 1vw;
+}
+
+@function vw-sp($size, $viewport: 375) {
+  $rate: calc(100 / $viewport);
+
+  @return $rate * $size * 1vw;
+}
+

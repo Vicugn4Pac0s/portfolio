@@ -1,0 +1,65 @@
+@use '../global' as *;
+@use './utility-config' as *;
+@use './utility-mixins' as *;
+
+@include responsive-class('u-block', (
+  display: block
+));
+
+@include responsive-class('u-inline', (
+  display: inline
+));
+
+@include responsive-class('u-inline-block', (
+  display: inline-block
+));
+
+@include responsive-class('u-flex', (
+  display: flex
+));
+
+@include responsive-class('u-inline-flex', (
+  display: inline-flex
+));
+
+@include responsive-class('u-grid', (
+  display: grid
+));
+
+@include responsive-class('u-hidden', (
+  display: none
+));
+
+.u-is-pc {
+  @media (max-width: $bp-tab) {
+    display: none !important;
+  }
+}
+
+.u-is-tab {
+  @media (max-width: $bp-sp) {
+    display: none !important;
+  }
+
+  @media (min-width: ($bp-tab + 1) ) {
+    display: none !important;
+  }
+}
+
+.u-is-sp {
+  @media (min-width: ($bp-sp + 1) ) {
+    display: none !important;
+  }
+}
+
+.u-is-pc-tab {
+  @media (max-width: $bp-sp) {
+    display: none !important;
+  }
+}
+
+.u-is-tab-sp {
+  @media (min-width: ($bp-tab + 1) ) {
+    display: none !important;
+  }
+}

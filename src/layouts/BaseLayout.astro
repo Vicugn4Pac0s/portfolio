@@ -1,5 +1,4 @@
 ---
-import '../styles/global.scss';
 
 interface Props {
   title: string;
@@ -34,3 +33,27 @@ const { title, description } = Astro.props;
     </script>
   </body>
 </html>
+
+<style lang="scss" is:global>
+@use '../styles/reset/the-new-css-reset';
+
+@use '../styles/base';
+
+@use '../styles/utility/display';
+@use '../styles/utility/grid';
+@use '../styles/utility/flex';
+@use '../styles/utility/text';
+@use '../styles/utility/list';
+@use '../styles/utility/form';
+@use '../styles/utility/sizing';
+@use '../styles/utility/spacing';
+
+@use '../styles/components/accordion';
+@use '../styles/components/dialog';
+@use '../styles/components/menu';
+</style>
+
+<script>
+import { initDialog } from '../scripts/libs/dialog.ts';
+initDialog();
+</script>

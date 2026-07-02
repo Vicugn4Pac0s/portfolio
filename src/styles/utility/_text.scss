@@ -1,0 +1,58 @@
+@use '../global' as *;
+@use './utility-config' as *;
+@use './utility-mixins' as *;
+@use "sass:map";
+@use "sass:math";
+
+// Font Weight
+.u-font-normal {
+  font-weight: 400 !important;
+}
+.u-font-midium {
+  font-weight: 500 !important;
+}
+.u-font-bold {
+  font-weight: 700 !important;
+}
+
+// Text Align
+@include responsive-class('u-text-left', (
+  'text-align': left,
+));
+@include responsive-class('u-text-center', (
+  'text-align': center,
+));
+@include responsive-class('u-text-right', (
+  'text-align': right,
+));
+
+
+@each $size, $values in $TEXT_SIZE_STEPS {
+  $base: map.get($values, base);
+  $sp: map.get($values, sp);
+
+  .u-text-#{$size} {
+    font-size: #{math.div($base, 10) * 1rem} !important;
+    @media (max-width: $bp-sp) {
+      font-size: #{math.div($sp, 10) * 1rem} !important;
+    }
+  }
+}
+
+
+// Font Size
+@each $value in $TEXT_SIZE_VALUES {
+  @include responsive-class('u-text-#{$value}', (
+    'font-size': #{math.div($value, 10) * 1rem},
+  ));
+}
+
+
+.u-link {
+  color: var(--color-primary);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

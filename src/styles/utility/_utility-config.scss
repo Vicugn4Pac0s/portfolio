@@ -1,0 +1,36 @@
+// 汎用的なマージン・パディング値（上下）
+$SPACING_VALUES_LONG: (0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64, 72, 80, 96, 112, 120, 128);
+
+// 汎用的なマージン・パディング値（左右）
+$SPACING_VALUES_SHORT: (0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40);
+
+// マージン・パディングの段階ごとの定義（PC: base / SP: sp）
+$SPACING_STEPS: (
+  xs: (base: 8,  sp: 4),
+  sm: (base: 16, sp: 8),
+  md: (base: 24, sp: 16),
+  lg: (base: 48, sp: 32),
+  xl: (base: 72, sp: 48),
+  2xl: (base: 96, sp: 64),
+  3xl: (base: 128, sp: 80)
+);
+
+// 汎用的なgrid-gap値
+$GAP_VALUES: (0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 48, 56, 64, 72, 80);
+
+// 汎用的なフォントサイズ値
+$TEXT_SIZE_VALUES: (10, 12, 14, 16, 18, 20, 24, 30);
+
+// フォントサイズの段階ごとの定義
+$TEXT_SIZE_STEPS: (
+  xs: (base: 12, sp: 10),
+  sm: (base: 14, sp: 12),
+  md: (base: 16, sp: 14),
+  lg: (base: 18, sp: 16),
+  xl: (base: 20, sp: 18),
+  2xl: (base: 24, sp: 20),
+  3xl: (base: 30, sp: 24)
+);
+
+// grid-template-columns: auto-fit 用の幅一覧
+$AUTOFIT_WIDTH_VALUES: (160, 200, 240, 300, 360);

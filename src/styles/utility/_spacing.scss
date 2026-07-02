@@ -1,0 +1,90 @@
+@use '../global' as *;
+@use './utility-config' as *;
+@use './utility-mixins' as *;
+@use "sass:map";
+@use "sass:math";
+
+// 上下方向
+@each $val in $SPACING_VALUES_LONG {
+  $space: #{math.div($val, 10)}rem;
+
+  @include responsive-class("u-mt-#{$val}", (margin-top: $space));
+  @include responsive-class("u-mb-#{$val}", (margin-bottom: $space));
+  @include responsive-class("u-my-#{$val}", (
+    margin-top: $space,
+    margin-bottom: $space
+  ));
+
+  @include responsive-class("u-pt-#{$val}", (padding-top: $space));
+  @include responsive-class("u-pb-#{$val}", (padding-bottom: $space));
+  @include responsive-class("u-py-#{$val}", (
+    padding-top: $space,
+    padding-bottom: $space
+  ));
+}
+
+// 左右方向
+@each $val in $SPACING_VALUES_SHORT {
+  $space: #{math.div($val, 10)}rem;
+
+  @include responsive-class("u-ml-#{$val}", (margin-left: $space));
+  @include responsive-class("u-mr-#{$val}", (margin-right: $space));
+  @include responsive-class("u-mx-#{$val}", (
+    margin-left: $space,
+    margin-right: $space
+  ));
+
+  @include responsive-class("u-pl-#{$val}", (padding-left: $space));
+  @include responsive-class("u-pr-#{$val}", (padding-right: $space));
+  @include responsive-class("u-px-#{$val}", (
+    padding-left: $space,
+    padding-right: $space
+  ));
+}
+
+$margin-directions: (
+  my: (top, bottom),
+  mt: (top),
+  mb: (bottom)
+);
+
+$padding-directions: (
+  py: (top, bottom),
+  pt: (top),
+  pb: (bottom)
+);
+
+@each $size, $values in $SPACING_STEPS {
+  $base: map.get($values, base);
+  $sp: map.get($values, sp);
+
+  // margin
+  @each $key, $sides in $margin-directions {
+    .u-#{$key}-#{$size} {
+      @each $side in $sides {
+        margin-#{$side}: #{math.div($base, 10)}rem !important;
+      }
+
+      @media (max-width: $bp-sp) {
+        @each $side in $sides {
+          margin-#{$side}: #{math.div($sp, 10)}rem !important;
+        }
+      }
+    }
+  }
+
+  // padding
+  @each $key, $sides in $padding-directions {
+    .u-#{$key}-#{$size} {
+      @each $side in $sides {
+        padding-#{$side}: #{math.div($base, 10)}rem !important;
+      }
+
+      @media (max-width: $bp-sp) {
+        @each $side in $sides {
+          padding-#{$side}: #{math.div($sp, 10)}rem !important;
+        }
+      }
+    }
+  }
+}

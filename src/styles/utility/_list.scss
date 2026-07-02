@@ -1,0 +1,39 @@
+@use './utility-config' as *;
+@use './utility-mixins' as *;
+
+.u-ul-default {
+  margin: 1rem 0;   
+  padding-left: 4rem;
+  list-style-type: disc;
+
+  li {
+    list-style: inherit;
+  }
+}
+
+.u-ol-default {
+  margin: 1rem 0;
+  padding-left: 4rem;
+  list-style-type: decimal;
+
+  li {
+    list-style: inherit;
+  }
+}
+
+.u-ul-asterisk {
+  list-style: none;
+  padding-left: 0; 
+  > li {
+    position: relative;
+    padding-left: 1em;
+
+    &::before {
+      content: '※';
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}

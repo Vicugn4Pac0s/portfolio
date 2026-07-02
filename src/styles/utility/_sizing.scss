@@ -1,0 +1,48 @@
+@use './utility-config' as *;
+@use './utility-mixins' as *;
+@use "sass:math";
+
+// Aspect Ratio
+.u-aspect-square {
+  aspect-ratio: math.div(1, 1) !important;
+}
+.u-aspect-16x9 {
+  aspect-ratio: math.div(16, 9) !important;
+}
+.u-aspect-4x3 {
+  aspect-ratio: math.div(4, 3) !important;
+}
+.u-aspect-3x2 {
+  aspect-ratio: math.div(3, 2) !important;
+}
+.u-aspect-2x3 {
+  aspect-ratio: math.div(2, 3) !important;
+}
+.u-aspect-3x4 {
+  aspect-ratio: math.div(3, 4) !important;
+}
+.u-aspect-9x16 {
+  aspect-ratio: math.div(9, 16) !important;
+}
+
+// Width
+@include responsive-class('u-w-auto', (
+  'width': auto,
+));
+@include responsive-class('u-w-full', (
+  'width': 100%,
+));
+@include responsive-class('u-w-screen', (
+  'width': 100vw,
+));
+
+// Height
+@include responsive-class('u-h-auto', (
+  'height': auto,
+));
+@include responsive-class('u-h-full', (
+  'height': 100%,
+));
+@include responsive-class('u-h-screen', (
+  'height': 100vh,
+));
