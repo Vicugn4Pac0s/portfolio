@@ -1,5 +1,6 @@
 ---
 import CaseStudyCard from '../ui/CaseStudyCard.astro';
+import Button from '../ui/Button.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
 
 interface Study {
@@ -31,6 +32,9 @@ const { studies } = Astro.props;
         </li>
       ))}
     </ul>
+    <div class="case-studies__action">
+      <Button href="/case-studies">View All Case Studies</Button>
+    </div>
   </div>
 </section>
 
@@ -48,12 +52,22 @@ const { studies } = Astro.props;
     &__item {
       height: 100%;
     }
+
+    &__action {
+      display: flex;
+      justify-content: center;
+      margin-top: 4rem;
+    }
   }
 
   @media (max-width: 1023px) {
     .case-studies {
       &__list {
         grid-template-columns: 1fr;
+      }
+
+      &__action {
+        justify-content: flex-start;
       }
     }
   }
