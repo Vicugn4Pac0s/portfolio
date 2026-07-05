@@ -21,30 +21,30 @@ const { title, description, period, role, tags, image } = study.data;
     <div class="site-container">
       <PageIntro title={title} description={description} />
 
-      <div class="cs-detail__top">
-        <figure class="cs-detail__hero">
+      <div class="cs-summary">
+        <figure class="cs-summary__hero">
           <img
-            class="cs-detail__hero-image"
+            class="cs-summary__hero-image"
             src={image}
             alt={`${title} - プロジェクトイメージ`}
             loading="eager"
           />
         </figure>
 
-        <aside class="cs-detail__meta">
-          <dl class="cs-detail__info">
-            <div class="cs-detail__info-item">
-              <dt class="cs-detail__info-label">期間</dt>
-              <dd class="cs-detail__info-value">{period}</dd>
+        <aside class="cs-summary__meta">
+          <dl class="cs-summary__info">
+            <div class="cs-summary__info-item">
+              <dt class="cs-summary__info-label">期間</dt>
+              <dd class="cs-summary__info-value">{period}</dd>
             </div>
-            <div class="cs-detail__info-item">
-              <dt class="cs-detail__info-label">役割</dt>
-              <dd class="cs-detail__info-value">{role}</dd>
+            <div class="cs-summary__info-item">
+              <dt class="cs-summary__info-label">役割</dt>
+              <dd class="cs-summary__info-value">{role}</dd>
             </div>
-            <div class="cs-detail__info-item">
-              <dt class="cs-detail__info-label">技術スタック</dt>
-              <dd class="cs-detail__info-value">
-                <ul class="cs-detail__stack">
+            <div class="cs-summary__info-item">
+              <dt class="cs-summary__info-label">技術スタック</dt>
+              <dd class="cs-summary__info-value">
+                <ul class="cs-summary__stack">
                   {tags.map((tag) => <li>{tag}</li>)}
                 </ul>
               </dd>
@@ -53,7 +53,7 @@ const { title, description, period, role, tags, image } = study.data;
         </aside>
       </div>
 
-      <div class="cs-detail__content">
+      <div class="cs-article">
         <Content />
       </div>
     </div>
@@ -74,22 +74,12 @@ const { title, description, period, role, tags, image } = study.data;
       margin-bottom: 20px;
       font-size: clamp(26px, 3.5vw, 40px);
     }
+  }
 
-    &__tag {
-      padding: 4px 12px;
-      border: 1px solid var(--color-line);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.8);
-      color: var(--color-muted);
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    &__top {
-      display: flex;
-      gap: 40px;
-      margin-bottom: 64px;
-    }
+  .cs-summary {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 64px;
 
     &__hero {
       flex: 1;
@@ -167,47 +157,45 @@ const { title, description, period, role, tags, image } = study.data;
       padding: 0;
       list-style: none;
     }
+  }
 
-    &__content {
-      min-width: 0;
+  .cs-article {
+    min-width: 0;
 
-      :global(h2) {
-        margin: 56px 0 16px;
-        font-size: 24px;
-        font-weight: 800;
-      }
+    :global(h2) {
+      margin: 56px 0 16px;
+      font-size: 24px;
+      font-weight: 800;
+    }
 
-      :global(h3) {
-        margin: 40px 0 14px;
-        font-size: 18px;
-        font-weight: 800;
-      }
+    :global(h3) {
+      margin: 40px 0 14px;
+      font-size: 18px;
+      font-weight: 800;
+    }
 
-      :global(p),
-      :global(li) {
-        color: var(--color-muted);
-        font-size: 15px;
-        font-weight: 650;
-        line-height: 2;
-      }
+    :global(p),
+    :global(li) {
+      color: var(--color-muted);
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 2;
+    }
 
-      :global(ul),
-      :global(ol) {
-        padding-left: 1.4em;
-      }
+    :global(ul),
+    :global(ol) {
+      padding-left: 1.4em;
+    }
 
-      :global(strong) {
-        color: var(--color-ink);
-      }
+    :global(strong) {
+      color: var(--color-ink);
     }
   }
 
   @media (max-width: 1023px) {
-    .cs-detail {
-      &__top {
-        flex-direction: column;
-        gap: 32px;
-      }
+    .cs-summary {
+      flex-direction: column;
+      gap: 32px;
 
       &__hero-image {
         height: clamp(240px, 50vw, 400px);
@@ -218,10 +206,10 @@ const { title, description, period, role, tags, image } = study.data;
   @media (max-width: 767px) {
     .cs-detail {
       padding: 40px 0 96px;
+    }
 
-      &__top {
-        margin-bottom: 40px;
-      }
+    .cs-summary {
+      margin-bottom: 40px;
 
       &__info {
         padding: 24px 20px;
