@@ -1,4 +1,10 @@
 ---
+interface Props {
+  variant?: 'default' | 'overlay';
+}
+
+const { variant = 'default' } = Astro.props;
+
 const navItems = [
   { label: 'About', href: '/#about' },
   { label: 'Strengths', href: '/#strengths' },
@@ -9,7 +15,7 @@ const navItems = [
 ];
 ---
 
-<header class="site-header">
+<header class:list={['site-header', { 'site-header--overlay': variant === 'overlay' }]}>
   <div class="site-header__inner site-container">
     <a class="site-header__logo" href="/">
       yoshiki.<span class="site-header__logo-accent">rundev</span>
@@ -24,9 +30,12 @@ const navItems = [
 
 <style lang="scss">
   .site-header {
-    position: absolute;
-    inset: 0 0 auto;
     z-index: 20;
+
+    &--overlay {
+      position: absolute;
+      inset: 0 0 auto;
+    }
 
     &__inner {
       display: flex;
