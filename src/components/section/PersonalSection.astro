@@ -1,99 +1,73 @@
 ---
 import SectionHeading from '../ui/SectionHeading.astro';
-
-const cards = [
-  {
-    title: 'Running',
-    text: 'ランニング・マラソンを継続。継続改善・長期視点・自己管理を大切にしています。',
-    image: 'https://images.unsplash.com/photo-1502224562085-639556652f33?auto=format&fit=crop&w=1000&q=80',
-  },
-  {
-    title: 'Strength Training',
-    text: '筋トレを通じて、小さな積み上げの重要性を実感。日々の積み重ねを大切にしています。',
-    image: 'https://images.unsplash.com/photo-1598632640487-6ea4a4e8b963?auto=format&fit=crop&w=1000&q=80',
-  },
-];
 ---
 
 <section id="personal" class="personal section-block section-block--grey">
   <div class="site-container">
     <SectionHeading>PERSONAL</SectionHeading>
-    <div class="personal__list">
-      {cards.map((card) => (
-        <article class="personal__card">
-          <div class="personal__body">
-            <h3 class="personal__title">{card.title}</h3>
-            <p class="personal__text">{card.text}</p>
-          </div>
-          <div class="personal__visual">
-            <img class="personal__image" src={card.image} alt={card.title} loading="lazy" />
-          </div>
-        </article>
-      ))}
+    <div class="personal-panel">
+      <figure class="personal-panel__media">
+        <img
+          class="personal-panel__image"
+          src="/images/hero-img.webp"
+          alt="Yoshiki Yamada"
+          loading="lazy"
+        />
+      </figure>
+      <div class="personal-panel__text">
+        <h2 class="section-title">
+          仕事の外でも、つくることと整えることが好きです。
+        </h2>
+        <div class="personal-panel__body">
+          <p>休日はデザインの観察、個人開発、散歩をしながら、頭の中を整理する時間を大切にしています。</p>
+          <p>新しい表現や体験に触れると、UI の見せ方や情報設計の引き出しが増えるので、意識的にインプットの時間をつくっています。</p>
+          <p>仕事でも私生活でも、複雑なものをシンプルに整えることに自然と惹かれます。</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <style lang="scss">
-  .personal {
-    &__list {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
-    }
+  .personal-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+    gap: 4.8rem;
+    align-items: center;
 
-    &__card {
-      display: flex;
-      overflow: hidden;
-      background: var(--color-base-white);
-    }
-
-    &__body {
-      flex: 1;
-      padding: 36px 28px;
-    }
-
-    &__title {
-      margin: 0 0 16px;
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    &__text {
+    &__media {
       margin: 0;
-      color: var(--color-muted);
-      font-size: 14px;
-      font-weight: 650;
-      line-height: 2.0;
-    }
-
-    &__visual {
-      flex-shrink: 0;
-      width: 160px;
       overflow: hidden;
     }
 
     &__image {
+      display: block;
       width: 100%;
       height: 100%;
+      min-height: 420px;
       object-fit: cover;
+    }
+
+    &__text {
+      min-width: 0;
+    }
+
+    &__body {
+      display: grid;
+      gap: 1.6rem;
+      color: var(--color-muted);
+      font-size: 1.6rem;
+      line-height: 2;
     }
   }
 
   @media (max-width: 767px) {
-    .personal {
-      &__list {
-        grid-template-columns: 1fr;
-      }
+    .personal-panel {
+      grid-template-columns: 1fr;
+      gap: 3.2rem;
 
-      &__card {
-        flex-direction: column;
-      }
-
-      &__visual {
-        width: 100%;
-        height: 180px;
-        order: -1;
+      &__image {
+        min-height: 280px;
       }
     }
   }
