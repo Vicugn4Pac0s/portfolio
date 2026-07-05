@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  variant?: 'narrow' | 'wide';
+}
+
+const { title, description, variant = 'narrow' } = Astro.props;
+---
+
+<header class={`page-intro page-intro--${variant}`}>
+  <div class="page-intro__content">
+    <h1 class="page-intro__title">{title}</h1>
+    <p class="page-intro__description">{description}</p>
+  </div>
+</header>
+
+<style lang="scss">
+  .page-intro {
+    &__content {
+      padding: 5.6rem 0;
+    }
+
+    &__title {
+      margin: 0 0 16px;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    &__description {
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 2;
+    }
+
+    &--narrow {
+      .page-intro__content {
+        max-width: 640px;
+      }
+
+      .page-intro__title {
+        font-size: clamp(26px, 3vw, 36px);
+      }
+    }
+
+    &--wide {
+      .page-intro__content {
+        max-width: 780px;
+        margin-bottom: 40px;
+      }
+
+      .page-intro__title {
+        margin-bottom: 20px;
+        font-size: clamp(26px, 3.5vw, 40px);
+      }
+    }
+  }
+</style>

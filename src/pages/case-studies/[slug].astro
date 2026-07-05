@@ -1,6 +1,6 @@
 ---
 import { render } from 'astro:content';
-import CaseStudyPageHeader from '../../components/ui/CaseStudyPageHeader.astro';
+import PageIntro from '../../components/ui/PageIntro.astro';
 import SiteFooter from '../../components/ui/SiteFooter.astro';
 import SiteHeader from '../../components/ui/SiteHeader.astro';
 import { getCaseStudyStaticPaths } from '../../data/caseStudies';
@@ -19,15 +19,10 @@ const { title, description, period, role, tags, image } = study.data;
   <SiteHeader />
   <main class="cs-detail">
     <div class="site-container">
-      <CaseStudyPageHeader
-        title={title}
-        description={description}
-        variant="detail"
-      >
-        <ul slot="meta" class="cs-detail__tags" aria-label="使用技術">
-          {tags.map((tag) => <li class="cs-detail__tag">{tag}</li>)}
-        </ul>
-      </CaseStudyPageHeader>
+      <ul class="cs-detail__tags" aria-label="使用技術">
+        {tags.map((tag) => <li class="cs-detail__tag">{tag}</li>)}
+      </ul>
+      <PageIntro title={title} description={description} variant="wide" />
 
       <figure class="cs-detail__hero">
         <img
