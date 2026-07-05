@@ -21,17 +21,17 @@ const { title, description, period, role, tags, image } = study.data;
     <div class="site-container">
       <PageIntro title={title} description={description} />
 
-      <figure class="cs-detail__hero">
-        <img
-          class="cs-detail__hero-image"
-          src={image}
-          alt={`${title} - プロジェクトイメージ`}
-          loading="eager"
-        />
-      </figure>
+      <div class="cs-detail__top">
+        <figure class="cs-detail__hero">
+          <img
+            class="cs-detail__hero-image"
+            src={image}
+            alt={`${title} - プロジェクトイメージ`}
+            loading="eager"
+          />
+        </figure>
 
-      <div class="cs-detail__body">
-        <aside class="cs-detail__sidebar">
+        <aside class="cs-detail__meta">
           <dl class="cs-detail__info">
             <div class="cs-detail__info-item">
               <dt class="cs-detail__info-label">期間</dt>
@@ -51,10 +51,10 @@ const { title, description, period, role, tags, image } = study.data;
             </div>
           </dl>
         </aside>
+      </div>
 
-        <div class="cs-detail__content">
-          <Content />
-        </div>
+      <div class="cs-detail__content">
+        <Content />
       </div>
     </div>
   </main>
@@ -85,8 +85,16 @@ const { title, description, period, role, tags, image } = study.data;
       font-weight: 800;
     }
 
+    &__top {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 64px;
+    }
+
     &__hero {
-      margin: 0 0 56px;
+      flex: 1;
+      min-width: 0;
+      margin: 0;
       border: 1px solid var(--color-line);
       border-radius: 8px;
       overflow: hidden;
@@ -96,23 +104,20 @@ const { title, description, period, role, tags, image } = study.data;
     &__hero-image {
       display: block;
       width: 100%;
-      height: clamp(280px, 40vw, 520px);
+      height: 100%;
+      min-height: 340px;
       object-fit: cover;
     }
 
-    &__body {
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 56px;
-      align-items: start;
-    }
-
-    &__sidebar {
-      position: sticky;
-      top: 80px;
+    &__meta {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     &__info {
+      flex: 1;
       margin: 0;
       padding: 28px 24px;
       border: 1px solid var(--color-line);
@@ -199,13 +204,13 @@ const { title, description, period, role, tags, image } = study.data;
 
   @media (max-width: 1023px) {
     .cs-detail {
-      &__body {
-        grid-template-columns: 1fr;
+      &__top {
+        flex-direction: column;
         gap: 32px;
       }
 
-      &__sidebar {
-        position: static;
+      &__hero-image {
+        height: clamp(240px, 50vw, 400px);
       }
     }
   }
@@ -214,7 +219,7 @@ const { title, description, period, role, tags, image } = study.data;
     .cs-detail {
       padding: 40px 0 96px;
 
-      &__hero {
+      &__top {
         margin-bottom: 40px;
       }
 
