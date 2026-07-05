@@ -19,7 +19,7 @@ const { title, description, period, role, tags, image } = study.data;
   <SiteHeader />
   <main class="cs-detail">
     <div class="site-container">
-      <PageIntro title={title} description={description} variant="wide" />
+      <PageIntro title={title} description={description} />
 
       <figure class="cs-detail__hero">
         <img
@@ -64,6 +64,16 @@ const { title, description, period, role, tags, image } = study.data;
 <style lang="scss">
   .cs-detail {
     padding: 60px 0 120px;
+
+    :global(.page-intro__content) {
+      max-width: 780px;
+      margin-bottom: 40px;
+    }
+
+    :global(.page-intro__title) {
+      margin-bottom: 20px;
+      font-size: clamp(26px, 3.5vw, 40px);
+    }
 
     &__tag {
       padding: 4px 12px;

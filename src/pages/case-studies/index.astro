@@ -19,7 +19,6 @@ const studies = await getCaseStudySummaries();
       <PageIntro
         title="実績・ケーススタディ"
         description="フロントエンドエンジニアとして担当したプロジェクトの設計・実装・成果をまとめています。"
-        variant="narrow"
       />
       <CaseStudyList studies={studies} />
     </div>
@@ -30,6 +29,10 @@ const studies = await getCaseStudySummaries();
 <style lang="scss">
   .cs-index {
     padding: 60px 0 120px;
+
+    :global(.page-intro__content) {
+      max-width: 640px;
+    }
   }
 
   @media (max-width: 767px) {
