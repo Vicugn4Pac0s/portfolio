@@ -19,9 +19,6 @@ const { title, description, period, role, tags, image } = study.data;
   <SiteHeader />
   <main class="cs-detail">
     <div class="site-container">
-      <ul class="cs-detail__tags" aria-label="使用技術">
-        {tags.map((tag) => <li class="cs-detail__tag">{tag}</li>)}
-      </ul>
       <PageIntro title={title} description={description} variant="wide" />
 
       <figure class="cs-detail__hero">
@@ -67,16 +64,6 @@ const { title, description, period, role, tags, image } = study.data;
 <style lang="scss">
   .cs-detail {
     padding: 60px 0 120px;
-
-    &__tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 0;
-      margin-bottom: 20px;
-      padding: 0;
-      list-style: none;
-    }
 
     &__tag {
       padding: 4px 12px;
