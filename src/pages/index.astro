@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 import AboutSection from '../components/section/AboutSection.astro';
 import CaseStudiesSection from '../components/section/CaseStudiesSection.astro';
 import ContactSection from '../components/section/ContactSection.astro';
@@ -9,19 +8,11 @@ import PersonalSection from '../components/section/PersonalSection.astro';
 import SiteFooter from '../components/ui/SiteFooter.astro';
 import SiteHeader from '../components/ui/SiteHeader.astro';
 import StrengthsSection from '../components/section/StrengthsSection.astro';
+import { getCaseStudySummaries } from '../data/caseStudies';
 import { histories, strengths } from '../data/portfolio';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const allStudies = await getCollection('case-studies');
-const studies = allStudies
-  .map((study) => ({
-    slug: study.id.replace(/\.md$/, ''),
-    number: study.data.number,
-    title: study.data.title,
-    description: study.data.description,
-    image: study.data.image,
-  }))
-  .sort((a, b) => a.number.localeCompare(b.number));
+const studies = await getCaseStudySummaries();
 ---
 
 <BaseLayout title="yoshiki.rundev | Frontend Engineer" description="保守性の高いシステム設計とプロダクト思考で、長く価値を生むフロントエンド開発を行うポートフォリオです。">

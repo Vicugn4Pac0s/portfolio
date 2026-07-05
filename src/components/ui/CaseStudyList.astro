@@ -1,0 +1,44 @@
+---
+import CaseStudyCard from './CaseStudyCard.astro';
+import type { CaseStudySummary } from '../../data/caseStudies';
+
+interface Props {
+  studies: CaseStudySummary[];
+}
+
+const { studies } = Astro.props;
+---
+
+<ul class="case-study-list">
+  {studies.map((study) => (
+    <li class="case-study-list__item">
+      <CaseStudyCard
+        slug={study.slug}
+        title={study.title}
+        description={study.description}
+        image={study.image}
+      />
+    </li>
+  ))}
+</ul>
+
+<style lang="scss">
+  .case-study-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &__item {
+      height: 100%;
+    }
+  }
+
+  @media (max-width: 1023px) {
+    .case-study-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,17 +1,11 @@
 ---
-import CaseStudyCard from '../ui/CaseStudyCard.astro';
 import Button from '../ui/Button.astro';
+import type { CaseStudySummary } from '../../data/caseStudies';
+import CaseStudyList from '../ui/CaseStudyList.astro';
 import SectionHeading from '../ui/SectionHeading.astro';
 
-interface Study {
-  slug: string;
-  title: string;
-  description: string;
-  image: string;
-}
-
 interface Props {
-  studies: Study[];
+  studies: CaseStudySummary[];
 }
 
 const { studies } = Astro.props;
@@ -20,18 +14,7 @@ const { studies } = Astro.props;
 <section id="case-studies" class="case-studies section-block section-block--grey">
   <div class="site-container">
     <SectionHeading>FEATURED CASE STUDIES</SectionHeading>
-    <ul class="case-studies__list">
-      {studies.map((study) => (
-        <li class="case-studies__item">
-          <CaseStudyCard
-            slug={study.slug}
-            title={study.title}
-            description={study.description}
-            image={study.image}
-          />
-        </li>
-      ))}
-    </ul>
+    <CaseStudyList studies={studies} />
     <div class="case-studies__action">
       <Button href="/case-studies">View All Case Studies</Button>
     </div>
@@ -40,19 +23,6 @@ const { studies } = Astro.props;
 
 <style lang="scss">
   .case-studies {
-    &__list {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    &__item {
-      height: 100%;
-    }
-
     &__action {
       display: flex;
       justify-content: center;
@@ -62,10 +32,6 @@ const { studies } = Astro.props;
 
   @media (max-width: 1023px) {
     .case-studies {
-      &__list {
-        grid-template-columns: 1fr;
-      }
-
       &__action {
         justify-content: flex-start;
       }

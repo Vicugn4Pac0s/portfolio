@@ -1,0 +1,65 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  variant?: 'index' | 'detail';
+}
+
+const {
+  title,
+  description,
+  variant = 'index',
+} = Astro.props;
+---
+
+<div class={`case-study-page-header case-study-page-header--${variant}`}>
+  <header class="case-study-page-header__content">
+    <slot name="meta" />
+    <h1 class="case-study-page-header__title">{title}</h1>
+    <p class="case-study-page-header__description">{description}</p>
+  </header>
+</div>
+
+<style lang="scss">
+  .case-study-page-header {
+    &__content {
+      margin-bottom: 56px;
+    }
+
+    &__title {
+      margin: 0 0 16px;
+      font-weight: 800;
+      line-height: 1.4;
+    }
+
+    &__description {
+      margin: 0;
+      color: var(--color-muted);
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 2;
+    }
+
+    &--index {
+      .case-study-page-header__content {
+        max-width: 640px;
+      }
+
+      .case-study-page-header__title {
+        font-size: clamp(26px, 3vw, 36px);
+      }
+    }
+
+    &--detail {
+      .case-study-page-header__content {
+        max-width: 780px;
+        margin-bottom: 40px;
+      }
+
+      .case-study-page-header__title {
+        margin-bottom: 20px;
+        font-size: clamp(26px, 3.5vw, 40px);
+      }
+    }
+  }
+</style>

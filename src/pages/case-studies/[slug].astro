@@ -1,43 +1,33 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
+import CaseStudyPageHeader from '../../components/ui/CaseStudyPageHeader.astro';
 import SiteFooter from '../../components/ui/SiteFooter.astro';
 import SiteHeader from '../../components/ui/SiteHeader.astro';
+import { getCaseStudyStaticPaths } from '../../data/caseStudies';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
-  const studies = await getCollection('case-studies');
-  return studies.map((study) => ({
-    params: { slug: study.id.replace(/\.md$/, '') },
-    props: { study },
-  }));
+  return getCaseStudyStaticPaths();
 }
 
 const { study } = Astro.props;
 const { Content } = await render(study);
-const { number, title, description, period, role, tags, image } = study.data;
+const { title, description, period, role, tags, image } = study.data;
 ---
 
 <BaseLayout title={`${title} | Case Study`} description={description}>
   <SiteHeader />
   <main class="cs-detail">
     <div class="site-container">
-      <a class="cs-detail__back" href="/case-studies">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M10 3L5 8l5 5" />
-        </svg>
-        Back to Case Studies
-      </a>
-
-      <header class="cs-detail__header">
-        <div class="cs-detail__meta-top">
-          <span class="cs-detail__number">CASE STUDY {number}</span>
-          <ul class="cs-detail__tags" aria-label="使用技術">
-            {tags.map((tag) => <li class="cs-detail__tag">{tag}</li>)}
-          </ul>
-        </div>
-        <h1 class="cs-detail__title">{title}</h1>
-        <p class="cs-detail__description">{description}</p>
-      </header>
+      <CaseStudyPageHeader
+        title={title}
+        description={description}
+        variant="detail"
+      >
+        <ul slot="meta" class="cs-detail__tags" aria-label="使用技術">
+          {tags.map((tag) => <li class="cs-detail__tag">{tag}</li>)}
+        </ul>
+      </CaseStudyPageHeader>
 
       <figure class="cs-detail__hero">
         <img
@@ -83,46 +73,12 @@ const { number, title, description, period, role, tags, image } = study.data;
   .cs-detail {
     padding: 60px 0 120px;
 
-    &__back {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 48px;
-      color: var(--color-blue);
-      font-size: 13px;
-      font-weight: 800;
-      transition: opacity 160ms ease;
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-
-    &__header {
-      max-width: 780px;
-      margin-bottom: 40px;
-    }
-
-    &__meta-top {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    &__number {
-      color: var(--color-blue);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }
-
     &__tags {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       margin: 0;
+      margin-bottom: 20px;
       padding: 0;
       list-style: none;
     }
@@ -135,21 +91,6 @@ const { number, title, description, period, role, tags, image } = study.data;
       color: var(--color-muted);
       font-size: 11px;
       font-weight: 800;
-    }
-
-    &__title {
-      margin: 0 0 20px;
-      font-size: clamp(26px, 3.5vw, 40px);
-      font-weight: 800;
-      line-height: 1.4;
-    }
-
-    &__description {
-      margin: 0;
-      color: var(--color-muted);
-      font-size: 15px;
-      font-weight: 650;
-      line-height: 2;
     }
 
     &__hero {
@@ -280,14 +221,6 @@ const { number, title, description, period, role, tags, image } = study.data;
   @media (max-width: 767px) {
     .cs-detail {
       padding: 40px 0 96px;
-
-      &__back {
-        margin-bottom: 32px;
-      }
-
-      &__header {
-        margin-bottom: 32px;
-      }
 
       &__hero {
         margin-bottom: 40px;

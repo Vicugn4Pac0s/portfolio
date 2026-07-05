@@ -1,14 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
-import CaseStudyCard from '../../components/ui/CaseStudyCard.astro';
+import CaseStudyList from '../../components/ui/CaseStudyList.astro';
+import CaseStudyPageHeader from '../../components/ui/CaseStudyPageHeader.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteFooter from '../../components/ui/SiteFooter.astro';
 import SiteHeader from '../../components/ui/SiteHeader.astro';
+import { getCaseStudySummaries } from '../../data/caseStudies';
 
-const allStudies = await getCollection('case-studies');
-const studies = allStudies
-  .map((s) => ({ ...s.data, slug: s.id.replace(/\.md$/, '') }))
-  .sort((a, b) => a.number.localeCompare(b.number));
+const studies = await getCaseStudySummaries();
 ---
 
 <BaseLayout
@@ -18,35 +16,12 @@ const studies = allStudies
   <SiteHeader />
   <main class="cs-index">
     <div class="site-container">
-
-      <a class="cs-index__back" href="/">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M10 3L5 8l5 5"/>
-        </svg>
-        Back to Portfolio
-      </a>
-
-      <header class="cs-index__header">
-        <p class="cs-index__label">CASE STUDIES</p>
-        <h1 class="cs-index__title">実績・ケーススタディ</h1>
-        <p class="cs-index__lead">
-          フロントエンドエンジニアとして担当したプロジェクトの設計・実装・成果をまとめています。
-        </p>
-      </header>
-
-      <ul class="cs-index__list">
-        {studies.map((study) => (
-          <li class="cs-index__item">
-            <CaseStudyCard
-              slug={study.slug}
-              title={study.title}
-              description={study.description}
-              image={study.image}
-            />
-          </li>
-        ))}
-      </ul>
-
+      <CaseStudyPageHeader
+        title="実績・ケーススタディ"
+        description="フロントエンドエンジニアとして担当したプロジェクトの設計・実装・成果をまとめています。"
+        variant="index"
+      />
+      <CaseStudyList studies={studies} />
     </div>
   </main>
   <SiteFooter />
@@ -55,70 +30,6 @@ const studies = allStudies
 <style lang="scss">
   .cs-index {
     padding: 60px 0 120px;
-
-    &__back {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 48px;
-      color: var(--color-blue);
-      font-size: 13px;
-      font-weight: 800;
-      transition: opacity 160ms ease;
-
-      &:hover {
-        opacity: 0.7;
-      }
-    }
-
-    &__header {
-      max-width: 640px;
-      margin-bottom: 56px;
-    }
-
-    &__label {
-      margin: 0 0 16px;
-      color: var(--color-blue);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }
-
-    &__title {
-      margin: 0 0 16px;
-      font-size: clamp(26px, 3vw, 36px);
-      font-weight: 800;
-      line-height: 1.4;
-    }
-
-    &__lead {
-      margin: 0;
-      color: var(--color-muted);
-      font-size: 15px;
-      font-weight: 650;
-      line-height: 2;
-    }
-
-    &__list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    &__item {
-      height: 100%;
-    }
-  }
-
-  @media (max-width: 1023px) {
-    .cs-index {
-      &__list {
-        grid-template-columns: 1fr;
-      }
-    }
   }
 
   @media (max-width: 767px) {
