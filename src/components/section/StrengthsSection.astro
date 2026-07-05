@@ -14,7 +14,7 @@ interface Props {
 const { strengths } = Astro.props;
 ---
 
-<section id="strengths" class="strengths section-block">
+<section id="strengths" class="strengths section-block section-block--grey">
   <div class="site-container">
     <SectionHeading>STRENGTHS</SectionHeading>
     <div class="strengths__list">
@@ -36,6 +36,7 @@ const { strengths } = Astro.props;
     &__list {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
     }
 
     &__item {
@@ -43,7 +44,7 @@ const { strengths } = Astro.props;
       display: flex;
       align-items: flex-start;
       gap: 24px;
-      padding: 36px 40px;
+      padding: 3.2rem 2.4rem;
 
       // 上段: 2つ（6列 ÷ 3列ずつ）
       &:nth-child(-n+2) {
