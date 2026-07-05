@@ -3,6 +3,7 @@ import { render } from 'astro:content';
 import PageIntro from '../../components/ui/PageIntro.astro';
 import SiteFooter from '../../components/ui/SiteFooter.astro';
 import SiteHeader from '../../components/ui/SiteHeader.astro';
+import SubpageContent from '../../components/ui/SubpageContent.astro';
 import { getCaseStudyStaticPaths } from '../../data/caseStudies';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
@@ -17,8 +18,8 @@ const { title, description, period, role, tags, image } = study.data;
 
 <BaseLayout title={`${title} | Case Study`} description={description}>
   <SiteHeader />
-  <main class="cs-detail">
-    <div class="site-container">
+  <SubpageContent>
+    <section class="cs-detail site-container">
       <PageIntro title={title} description={description} />
 
       <div class="cs-summary">
@@ -56,12 +57,15 @@ const { title, description, period, role, tags, image } = study.data;
       <div class="cs-article">
         <Content />
       </div>
-    </div>
-  </main>
+    </section>
+  </SubpageContent>
   <SiteFooter />
 </BaseLayout>
 
 <style lang="scss">
+  .cs-detail {
+    min-width: 0;
+  }
 
   .cs-summary {
     display: flex;
@@ -179,8 +183,7 @@ const { title, description, period, role, tags, image } = study.data;
     }
   }
 
-  @media (max-width: 767px) {s
-
+  @media (max-width: 767px) {
     .cs-summary {
       margin-bottom: 40px;
 

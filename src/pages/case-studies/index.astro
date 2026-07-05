@@ -1,6 +1,7 @@
 ---
 import CaseStudyList from '../../components/ui/CaseStudyList.astro';
 import PageIntro from '../../components/ui/PageIntro.astro';
+import SubpageContent from '../../components/ui/SubpageContent.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SiteFooter from '../../components/ui/SiteFooter.astro';
 import SiteHeader from '../../components/ui/SiteHeader.astro';
@@ -14,17 +15,14 @@ const studies = await getCaseStudySummaries();
   description="フロントエンドエンジニアとしての実績・ケーススタディ一覧です。"
 >
   <SiteHeader />
-  <main class="cs-index">
-    <div class="site-container">
+  <SubpageContent>
+    <section class="cs-index site-container">
       <PageIntro
         title="実績・ケーススタディ"
         description="フロントエンドエンジニアとして担当したプロジェクトの設計・実装・成果をまとめています。"
       />
       <CaseStudyList studies={studies} />
-    </div>
-  </main>
+    </section>
+  </SubpageContent>
   <SiteFooter />
 </BaseLayout>
-
-<style lang="scss">
-</style>
