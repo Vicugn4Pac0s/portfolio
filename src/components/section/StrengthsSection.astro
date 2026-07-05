@@ -14,13 +14,13 @@ interface Props {
 const { strengths } = Astro.props;
 ---
 
-<section id="strengths" class="strengths section-block section-block--grey">
+<section id="strengths" class="strengths section-block">
   <div class="site-container">
     <SectionHeading>STRENGTHS</SectionHeading>
     <div class="strengths__list">
-      {strengths.map((strength) => (
+      {strengths.map((strength, i) => (
         <article class="strengths__item">
-          <div class="strengths__icon" aria-hidden="true" set:html={strength.icon} />
+          <span class="strengths__number">{String(i + 1).padStart(2, '0')}</span>
           <div class="strengths__body">
             <h3 class="strengths__title">{strength.title}</h3>
             <p class="strengths__text">{strength.text}</p>
@@ -36,41 +36,45 @@ const { strengths } = Astro.props;
     &__list {
       display: grid;
       grid-template-columns: repeat(6, 1fr);
-      gap: 8px;
+      gap: 2.4rem;
     }
 
     &__item {
       background: var(--color-base-white);
       display: flex;
       align-items: flex-start;
-      gap: 24px;
-      padding: 3.2rem 2.4rem;
+      gap: 1.6rem;
+      padding: 1.6rem 0;
 
-      // 上段: 2つ（6列 ÷ 3列ずつ）
-      &:nth-child(-n+2) {
-        grid-column: span 3;
-      }
-
-      // 下段: 3つ（6列 ÷ 2列ずつ）
-      &:nth-child(n+3) {
+      // 上段: 3つ（6列 ÷ 2列ずつ）
+      &:nth-child(-n+3) {
         grid-column: span 2;
       }
 
+      // 下段: 2つ（6列 ÷ 3列ずつ）
+      &:nth-child(n+4) {
+        grid-column: span 3;
+      }
     }
 
-    &__icon {
+    &__number {
       flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      margin: 4px 0 0;
-      color: var(--color-blue);
+      font-size: 2.4rem;
+      padding-right: 1.6rem;
+      line-height: 1;
+      color: var(--color-muted);
+      position: relative;
 
-      :global(svg) {
-        width: 48px;
-        height: 48px;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 75%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background-color: var(--color-accent);
+        transform: rotate(45deg);
+        transform-origin: top right;
       }
     }
 
@@ -79,17 +83,15 @@ const { strengths } = Astro.props;
     }
 
     &__title {
-      margin: 0 0 12px;
       font-size: 1.8rem;
-      font-weight: 800;
+      font-weight: bold;
+      margin: 0 0 1.6rem;
+      line-height: 1;
     }
 
     &__text {
       margin: 0;
-      color: var(--color-muted);
-      font-size: 1.2rem;
-      font-weight: 650;
-      line-height: 1.9;
+      font-size: 1.4rem;
     }
   }
 
@@ -97,11 +99,12 @@ const { strengths } = Astro.props;
     .strengths {
       &__list {
         grid-template-columns: 1fr;
+        gap: 4px;
       }
 
       &__item {
         grid-column: auto;
-        padding: 28px 0;
+        padding: 2.8rem 2.4rem;
       }
     }
   }
