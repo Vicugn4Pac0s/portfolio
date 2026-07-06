@@ -9,7 +9,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
       <figure class="personal-panel__media">
         <img
           class="personal-panel__image"
-          src="/images/hero-img.webp"
+          src="/images/personal-img.webp"
           alt="Yoshiki Yamada"
           loading="lazy"
         />
@@ -32,8 +32,13 @@ import SectionHeading from '../ui/SectionHeading.astro';
   @use '@styles/global' as *;
 
   .personal-panel {
+    --image-size: 380px;
+    @include media-tab {
+      --image-size: 280px;
+    }
+    
     display: grid;
-    grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
+    grid-template-columns: minmax(0, var(--image-size)) minmax(0, 1fr);
     gap: 4.8rem;
     align-items: center;
 
@@ -55,7 +60,7 @@ import SectionHeading from '../ui/SectionHeading.astro';
       display: block;
       width: 100%;
       height: 100%;
-      min-height: 420px;
+      min-height: var(--image-size);
       object-fit: cover;
 
       @include media-sp {
