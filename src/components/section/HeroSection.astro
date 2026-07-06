@@ -169,5 +169,62 @@
         }
       }
     }
+
+    // ── OPアニメーション初期状態 ──
+    &__bg-particle--1,
+    &__bg-particle--2,
+    &__subtitle,
+    &__title,
+    &__lead,
+    &__image {
+      opacity: 0;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      &__bg-particle--1 { opacity: 0.1; }
+      &__bg-particle--2 { opacity: 0.5; }
+
+      &__subtitle,
+      &__title,
+      &__lead,
+      &__image {
+        opacity: 1;
+      }
+    }
   }
 </style>
+
+<script>
+  import gsap from 'gsap';
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const hero = document.querySelector('.hero');
+    const p1   = hero?.querySelector<HTMLElement>('.hero__bg-particle--1');
+    const p2   = hero?.querySelector<HTMLElement>('.hero__bg-particle--2');
+    const sub  = hero?.querySelector<HTMLElement>('.hero__subtitle');
+    const ttl  = hero?.querySelector<HTMLElement>('.hero__title');
+    const lead = hero?.querySelector<HTMLElement>('.hero__lead');
+    const img  = hero?.querySelector<HTMLElement>('.hero__image');
+
+    if (p1 && p2 && sub && ttl && lead && img) {
+      // CSS transform を GSAP に引き渡す（rotate・yPercent を維持したまま x だけ動かす）
+      gsap.set(p1, { x: -1600, yPercent: -50, rotation: 45 });
+      gsap.set(p2, { x:  1600, yPercent: -50, rotation: 45 });
+
+      // 写真は PC/SP で translateY が異なるため breakpoint を見て yPercent を設定
+      const isSp = window.matchMedia('(max-width: 767px)').matches;
+      gsap.set(img, { x: 64, yPercent: isSp ? 0 : -50, opacity: 0 });
+
+      gsap.timeline()
+        // ① スピードライン：左右から高速スライドイン
+        .to(p1, { x: 0, opacity: 0.1, duration: 0.55, ease: 'power4.out' })
+        .to(p2, { x: 0, opacity: 0.5, duration: 0.45, ease: 'power4.out' }, '<0.08')
+        // ② テキスト：右からシュッとスライドイン（スタガー）
+        .fromTo(sub,  { opacity: 0, x: 32 }, { opacity: 1, x: 0, duration: 0.5,  ease: 'power3.out' }, 0.35)
+        .fromTo(ttl,  { opacity: 0, x: 48 }, { opacity: 1, x: 0, duration: 0.55, ease: 'power3.out' }, 0.48)
+        .fromTo(lead, { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.5,  ease: 'power3.out' }, 0.64)
+        // ③ 写真：右からシュッとスライドイン
+        .to(img, { x: 0, opacity: 1, duration: 0.7, ease: 'power3.out' }, 0.4);
+    }
+  }
+</script>
