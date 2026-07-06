@@ -32,6 +32,8 @@ const { strengths } = Astro.props;
 </section>
 
 <style lang="scss">
+  @use '@styles/global' as *;
+
   .strengths {
     &__list {
       display: grid;
@@ -97,7 +99,22 @@ const { strengths } = Astro.props;
     }
   }
 
-  @media (max-width: 767px) {
+  @include media-tab {
+    .strengths {
+      &__list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      &__item {
+        &:nth-child(-n+3),
+        &:nth-child(n+4) {
+          grid-column: auto;
+        }
+      }
+    }
+  }
+
+  @include media-sp {
     .strengths {
       &__list {
         grid-template-columns: 1fr;
@@ -105,7 +122,10 @@ const { strengths } = Astro.props;
       }
 
       &__item {
-        grid-column: auto;
+        &:nth-child(-n+3),
+        &:nth-child(n+4) {
+          grid-column: auto;
+        }
         padding: 2.8rem 2.4rem;
       }
     }

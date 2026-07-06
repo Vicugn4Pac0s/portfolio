@@ -26,6 +26,8 @@ const { histories } = Astro.props;
 </section>
 
 <style lang="scss">
+  @use '@styles/global' as *;
+
   .history {
     &__list {
       position: relative;
@@ -47,7 +49,7 @@ const { histories } = Astro.props;
 
   }
 
-  @media (max-width: 767px) {
+  @include media-sp {
     .history {
       &__list {
         padding-left: 54px;

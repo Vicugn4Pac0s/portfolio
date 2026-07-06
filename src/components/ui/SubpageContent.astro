@@ -6,10 +6,12 @@
 </main>
 
 <style lang="scss">
+  @use '@styles/global' as *;
+
   .subpage-content {
     padding-bottom: 12rem;
 
-    @media (max-width: 767px) {
+    @include media-sp {
       padding-bottom: 8rem;
     }
   }

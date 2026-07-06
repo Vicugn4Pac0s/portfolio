@@ -16,17 +16,15 @@ import Button from '../ui/Button.astro';
 </section>
 
 <style lang="scss">
+  @use '@styles/global' as *;
+
   .contact {
     &__action {
     }
   }
 
-  @media (max-width: 767px) {
+  @include media-sp {
     .contact {
-      &__grid {
-        grid-template-columns: 1fr;
-      }
-
       &__action {
         justify-content: flex-start;
       }

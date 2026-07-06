@@ -130,7 +130,7 @@ select {
   }
 }
 
-@media (max-width: 767px) {
+@include media-sp {
   .site-container {
     width: min(100% - 32px, 1120px);
   }

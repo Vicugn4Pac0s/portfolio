@@ -29,6 +29,8 @@ const navItems = [
 </header>
 
 <style lang="scss">
+  @use '@styles/global' as *;
+
   .site-header {
     z-index: 20;
 
@@ -72,7 +74,15 @@ const navItems = [
     }
   }
 
-  @media (max-width: 767px) {
+  @include media-tab {
+    .site-header {
+      &__nav {
+        gap: 24px;
+      }
+    }
+  }
+
+  @include media-sp {
     .site-header {
       &__nav {
         display: none;

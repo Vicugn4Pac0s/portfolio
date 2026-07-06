@@ -22,6 +22,8 @@ const { studies } = Astro.props;
 </section>
 
 <style lang="scss">
+  @use '@styles/global' as *;
+
   .case-studies {
     &__action {
       display: flex;
@@ -30,7 +32,15 @@ const { studies } = Astro.props;
     }
   }
 
-  @media (max-width: 1023px) {
+  @include media-tab {
+    .case-studies {
+      &__action {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  @include media-sp {
     .case-studies {
       &__action {
         justify-content: flex-start;

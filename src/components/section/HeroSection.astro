@@ -24,6 +24,8 @@
 </section>
 
 <style lang="scss">
+  @use '@styles/global' as *;
+
   .hero {
     padding-top: 80px;
     overflow: hidden;
@@ -105,13 +107,31 @@
     }
   }
 
-  @media (max-width: 767px) {
+  @include media-tab {
+    .hero {
+      &__image {
+        width: 28rem;
+        right: 2rem;
+      }
+
+      &__title {
+        font-size: 52px;
+      }
+    }
+  }
+
+  @include media-sp {
     .hero {
       min-height: 560px;
-      background-position: 65% center;
 
       &__inner {
         min-height: 560px;
+      }
+
+      &__image {
+        width: 18rem;
+        right: 0;
+        opacity: 0.3;
       }
 
       &__title {

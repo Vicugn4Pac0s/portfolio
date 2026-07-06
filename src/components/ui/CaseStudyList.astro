@@ -23,6 +23,8 @@ const { studies } = Astro.props;
 </ul>
 
 <style lang="scss">
+  @use '@styles/global' as *;
+
   .case-study-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -36,7 +38,13 @@ const { studies } = Astro.props;
     }
   }
 
-  @media (max-width: 1023px) {
+  @include media-tab {
+    .case-study-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include media-sp {
     .case-study-list {
       grid-template-columns: 1fr;
     }

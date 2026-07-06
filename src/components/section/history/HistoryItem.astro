@@ -42,6 +42,8 @@ const { title, text } = Astro.props;
 </script>
 
 <style lang="scss">
+  @use '@styles/global' as *;
+
   .history-item {
     position: relative;
 
@@ -95,7 +97,7 @@ const { title, text } = Astro.props;
     }
   }
 
-  @media (max-width: 767px) {
+  @include media-sp {
     .history-item {
       &::before {
         left: -41px;
