@@ -208,17 +208,17 @@
 
     if (p1 && p2 && sub && ttl && lead && img) {
       // CSS transform を GSAP に引き渡す（rotate・yPercent を維持したまま x だけ動かす）
-      gsap.set(p1, { x: -1600, yPercent: -50, rotation: 45, filter: 'blur(8px)'  });
-      gsap.set(p2, { x:  1600, yPercent: -50, rotation: 45, filter: 'blur(12px)' });
+      gsap.set(p1, { x: -1600, yPercent: -50, rotation: 45 });
+      gsap.set(p2, { x:  1600, yPercent: -50, rotation: 45 });
 
       // 写真は PC/SP で translateY が異なるため breakpoint を見て yPercent を設定
       const isSp = window.matchMedia('(max-width: 767px)').matches;
       gsap.set(img, { x: 64, yPercent: isSp ? 0 : -50, opacity: 0, skewX: -2 });
 
       gsap.timeline()
-        // ① スピードライン：左右から高速スライドイン＋モーションブラー
-        .to(p1, { x: 0, opacity: 0.1, filter: 'blur(0px)', duration: 0.55, ease: 'power4.out' })
-        .to(p2, { x: 0, opacity: 0.5, filter: 'blur(0px)', duration: 0.45, ease: 'power4.out' }, '<0.08')
+        // ① スピードライン：左右から高速スライドイン
+        .to(p1, { x: 0, opacity: 0.1, duration: 0.55, ease: 'power4.out' })
+        .to(p2, { x: 0, opacity: 0.5, duration: 0.45, ease: 'power4.out' }, '<0.08')
         // ② テキスト：右からシュッ（スキュー＋モーションブラー）
         .fromTo(sub,
           { opacity: 0, x: 32, skewX: -12,  filter: 'blur(4px)' },
