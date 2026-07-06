@@ -13,12 +13,19 @@ const { as: Tag = 'h2' } = Astro.props;
 </Tag>
 
 <style lang="scss">
+  @use '@styles/global' as *;
+
   .section-heading {
     margin: 0 0 4.8rem;
     color: var(--color-primary);
     font-size: 2.4rem;
     font-style: italic;
     font-weight: 600;
+
+    @include media-sp {
+      font-size: 2rem;
+      margin-bottom: 3.2rem;
+    }
     
     span {
       display: inline-flex;

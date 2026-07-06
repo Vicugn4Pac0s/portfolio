@@ -18,12 +18,22 @@ import SectionHeading from '../ui/SectionHeading.astro';
 </section>
 
 <style lang="scss">
+  @use '@styles/global' as *;
+
   .about {
     &__body {
       color: var(--color-muted);
       font-size: 1.6rem;
+      display: grid;
+      gap: 1.2rem;
+
       p {
         margin: 0;
+      }
+
+      @include media-sp {
+        font-size: 1.5rem;
+        gap: 1rem;
       }
     }
   }
