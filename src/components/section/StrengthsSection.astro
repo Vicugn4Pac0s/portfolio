@@ -39,6 +39,15 @@ const { strengths } = Astro.props;
       display: grid;
       grid-template-columns: repeat(6, 1fr);
       gap: 2.4rem;
+
+      @include media-tab {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include media-sp {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
     }
 
     &__item {
@@ -56,6 +65,22 @@ const { strengths } = Astro.props;
       // 下段: 2つ（6列 ÷ 3列ずつ）
       &:nth-child(n+4) {
         grid-column: span 3;
+      }
+
+      @include media-tab {
+        &:nth-child(-n+3),
+        &:nth-child(n+4) {
+          grid-column: auto;
+        }
+      }
+
+      @include media-sp {
+        &:nth-child(-n+3),
+        &:nth-child(n+4) {
+          grid-column: auto;
+        }
+
+        padding: 2.8rem 2.4rem;
       }
     }
 
@@ -96,38 +121,6 @@ const { strengths } = Astro.props;
     &__text {
       margin: 0;
       font-size: 1.4rem;
-    }
-  }
-
-  @include media-tab {
-    .strengths {
-      &__list {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      &__item {
-        &:nth-child(-n+3),
-        &:nth-child(n+4) {
-          grid-column: auto;
-        }
-      }
-    }
-  }
-
-  @include media-sp {
-    .strengths {
-      &__list {
-        grid-template-columns: 1fr;
-        gap: 4px;
-      }
-
-      &__item {
-        &:nth-child(-n+3),
-        &:nth-child(n+4) {
-          grid-column: auto;
-        }
-        padding: 2.8rem 2.4rem;
-      }
     }
   }
 </style>

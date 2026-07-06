@@ -72,6 +72,15 @@ const { title, description, period, role, tags, image } = study.data;
     gap: 4rem;
     margin-bottom: 6rem;
 
+    @media (max-width: 1023px) {
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    @media (max-width: 767px) {
+      margin-bottom: 40px;
+    }
+
     &__hero {
       flex: 1;
       overflow: hidden;
@@ -83,6 +92,10 @@ const { title, description, period, role, tags, image } = study.data;
       height: 100%;
       min-height: 340px;
       object-fit: cover;
+
+      @media (max-width: 1023px) {
+        height: clamp(240px, 50vw, 400px);
+      }
     }
 
     &__meta {
@@ -94,6 +107,10 @@ const { title, description, period, role, tags, image } = study.data;
 
     &__info {
       flex: 1;
+
+      @media (max-width: 767px) {
+        padding: 24px 20px;
+      }
     }
 
     &__info-item {
@@ -164,27 +181,6 @@ const { title, description, period, role, tags, image } = study.data;
 
     :global(strong) {
       color: var(--color-ink);
-    }
-  }
-
-  @media (max-width: 1023px) {
-    .cs-summary {
-      flex-direction: column;
-      gap: 32px;
-
-      &__hero-image {
-        height: clamp(240px, 50vw, 400px);
-      }
-    }
-  }
-
-  @media (max-width: 767px) {
-    .cs-summary {
-      margin-bottom: 40px;
-
-      &__info {
-        padding: 24px 20px;
-      }
     }
   }
 </style>

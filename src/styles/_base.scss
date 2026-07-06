@@ -59,6 +59,10 @@ select {
 .site-container {
   width: min(100% - 40px, 1120px);
   margin-inline: auto;
+
+  @include media-sp {
+    width: min(100% - 32px, 1120px);
+  }
 }
 
 .section-block {
@@ -66,6 +70,10 @@ select {
 
   &--grey {
     background: var(--color-bg-gray);
+  }
+
+  @include media-sp {
+    padding-block: 42px;
   }
 }
 
@@ -128,20 +136,8 @@ select {
     opacity: 1;
     transform: scale(1);
   }
-}
 
-@include media-sp {
-  .site-container {
-    width: min(100% - 32px, 1120px);
-  }
-
-  .section-block {
-    padding-block: 42px;
-  }
-}
-
-@media (hover: none), (pointer: coarse) {
-  .cursor-follower {
+  @media (hover: none), (pointer: coarse) {
     display: none;
   }
 }

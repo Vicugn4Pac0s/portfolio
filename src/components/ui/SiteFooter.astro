@@ -25,6 +25,12 @@
       color: #64748b;
       font-size: 12px;
       font-weight: 650;
+
+      @include media-sp {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+      }
     }
 
     &__logo {
@@ -51,16 +57,6 @@
       font-size: 18px;
       place-items: center;
       box-shadow: var(--shadow-soft);
-    }
-  }
-
-  @include media-sp {
-    .site-footer {
-      &__inner {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 24px;
-      }
     }
   }
 </style>

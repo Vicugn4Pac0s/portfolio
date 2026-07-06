@@ -30,12 +30,20 @@
     padding-top: 80px;
     overflow: hidden;
 
+    @include media-sp {
+      min-height: 560px;
+    }
+
     &__inner {
       position: relative;
       z-index: 1;
       display: flex;
       align-items: center;
       min-height: 680px;
+
+      @include media-sp {
+        min-height: 560px;
+      }
     }
 
     &__content {
@@ -50,6 +58,14 @@
       font-style: italic;
       font-weight: 600;
       margin-bottom: 2.4rem;
+
+      @include media-tab {
+        font-size: 52px;
+      }
+
+      @include media-sp {
+        font-size: 34px;
+      }
     }
     
     &__subtitle {
@@ -59,6 +75,10 @@
     }
     &__lead {
       line-height: 1.8;
+
+      @include media-sp {
+        font-size: 15px;
+      }
     }
 
     &__image {
@@ -67,6 +87,17 @@
       right: 4rem;
       transform: translateY(-50%);
       width: 38rem;
+
+      @include media-tab {
+        width: 28rem;
+        right: 2rem;
+      }
+
+      @include media-sp {
+        width: 18rem;
+        right: 0;
+        opacity: 0.3;
+      }
 
       img {
         height: auto;
@@ -103,43 +134,6 @@
         width: 90px;
         right: -285px;
         opacity: 0.5;
-      }
-    }
-  }
-
-  @include media-tab {
-    .hero {
-      &__image {
-        width: 28rem;
-        right: 2rem;
-      }
-
-      &__title {
-        font-size: 52px;
-      }
-    }
-  }
-
-  @include media-sp {
-    .hero {
-      min-height: 560px;
-
-      &__inner {
-        min-height: 560px;
-      }
-
-      &__image {
-        width: 18rem;
-        right: 0;
-        opacity: 0.3;
-      }
-
-      &__title {
-        font-size: 34px;
-      }
-
-      &__lead {
-        font-size: 15px;
       }
     }
   }

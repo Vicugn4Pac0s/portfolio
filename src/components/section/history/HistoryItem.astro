@@ -56,6 +56,10 @@ const { title, text } = Astro.props;
       border-radius: 999px;
       background: var(--color-blue);
       content: "";
+
+      @include media-sp {
+        left: -41px;
+      }
     }
 
     &__details {
@@ -94,14 +98,6 @@ const { title, text } = Astro.props;
     &__detail {
       font-size: 14px;
       padding: 12px 12px 0;
-    }
-  }
-
-  @include media-sp {
-    .history-item {
-      &::before {
-        left: -41px;
-      }
     }
   }
 </style>

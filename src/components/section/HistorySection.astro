@@ -36,6 +36,10 @@ const { histories } = Astro.props;
       max-width: 850px;
       padding-left: 88px;
 
+      @include media-sp {
+        padding-left: 54px;
+      }
+
       &::before {
         position: absolute;
         top: 8px;
@@ -44,20 +48,12 @@ const { histories } = Astro.props;
         width: 2px;
         content: "";
         background: #b9d8f5;
-      }
-    }
 
-  }
-
-  @include media-sp {
-    .history {
-      &__list {
-        padding-left: 54px;
-
-        &::before {
+        @include media-sp {
           left: 18px;
         }
       }
     }
+
   }
 </style>

@@ -63,6 +63,14 @@ const navItems = [
       color: var(--color-ink);
       font-size: 12px;
       font-weight: 650;
+
+      @include media-tab {
+        gap: 24px;
+      }
+
+      @include media-sp {
+        display: none;
+      }
     }
 
     &__nav-link {
@@ -70,22 +78,6 @@ const navItems = [
 
       &:hover {
         color: var(--color-blue);
-      }
-    }
-  }
-
-  @include media-tab {
-    .site-header {
-      &__nav {
-        gap: 24px;
-      }
-    }
-  }
-
-  @include media-sp {
-    .site-header {
-      &__nav {
-        display: none;
       }
     }
   }
