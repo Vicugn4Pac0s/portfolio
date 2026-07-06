@@ -63,6 +63,7 @@ const { title, description, period, role, tags, image } = study.data;
 </BaseLayout>
 
 <style lang="scss">
+  @use '@styles/global' as *;
   .cs-detail {
     min-width: 0;
   }
@@ -72,13 +73,15 @@ const { title, description, period, role, tags, image } = study.data;
     gap: 4rem;
     margin-bottom: 6rem;
 
-    @media (max-width: 1023px) {
+    @include media-tab {
       flex-direction: column;
       gap: 32px;
     }
 
-    @media (max-width: 767px) {
-      margin-bottom: 40px;
+    @include media-sp {
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 4rem;
     }
 
     &__hero {
@@ -93,7 +96,7 @@ const { title, description, period, role, tags, image } = study.data;
       min-height: 340px;
       object-fit: cover;
 
-      @media (max-width: 1023px) {
+      @include media-tab {
         height: clamp(240px, 50vw, 400px);
       }
     }
@@ -107,10 +110,6 @@ const { title, description, period, role, tags, image } = study.data;
 
     &__info {
       flex: 1;
-
-      @media (max-width: 767px) {
-        padding: 24px 20px;
-      }
     }
 
     &__info-item {
@@ -133,7 +132,7 @@ const { title, description, period, role, tags, image } = study.data;
       display: block;
       margin-bottom: 6px;
       color: var(--color-blue);
-      font-size: 11px;
+      font-size: 1.2rem;
       font-weight: 800;
       letter-spacing: 0.04em;
     }
@@ -141,7 +140,7 @@ const { title, description, period, role, tags, image } = study.data;
     &__info-value {
       margin: 0;
       color: var(--color-ink);
-      font-size: 13px;
+      font-size: 1.4rem;
       font-weight: 650;
       line-height: 1.8;
     }
@@ -149,7 +148,7 @@ const { title, description, period, role, tags, image } = study.data;
     &__stack {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
+      gap: 4px;
       margin: 0;
       padding: 0;
       list-style: none;
@@ -160,23 +159,35 @@ const { title, description, period, role, tags, image } = study.data;
     min-width: 0;
 
     :global(h2) {
-      margin: 56px 0 16px;
-      font-size: 24px;
+      font-size: 2.4rem;
       font-weight: 800;
+      margin: 5.6rem 0 1.6rem;
+
+      @include media-sp {
+        font-size: 1.8rem;
+        margin: 4rem 0 1.4rem;
+      }
     }
 
     :global(h3) {
-      margin: 40px 0 14px;
-      font-size: 18px;
+      font-size: 1.8rem;
       font-weight: 800;
+      margin: 4rem 0 1.4rem;
+
+      @include media-sp {
+        font-size: 1.6rem;
+        margin: 3rem 0 1.2rem;
+      }
     }
 
     :global(p),
     :global(li) {
       color: var(--color-muted);
-      font-size: 15px;
-      font-weight: 650;
-      line-height: 2;
+      font-size: 1.6rem;
+
+      @include media-sp {
+        font-size: 1.4rem;
+      }
     }
 
     :global(strong) {
