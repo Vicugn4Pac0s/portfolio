@@ -208,23 +208,35 @@
 
     if (p1 && p2 && sub && ttl && lead && img) {
       // CSS transform を GSAP に引き渡す（rotate・yPercent を維持したまま x だけ動かす）
-      gsap.set(p1, { x: -1600, yPercent: -50, rotation: 45 });
-      gsap.set(p2, { x:  1600, yPercent: -50, rotation: 45 });
+      gsap.set(p1, { x: -1600, yPercent: -50, rotation: 45, filter: 'blur(8px)'  });
+      gsap.set(p2, { x:  1600, yPercent: -50, rotation: 45, filter: 'blur(12px)' });
 
       // 写真は PC/SP で translateY が異なるため breakpoint を見て yPercent を設定
       const isSp = window.matchMedia('(max-width: 767px)').matches;
-      gsap.set(img, { x: 64, yPercent: isSp ? 0 : -50, opacity: 0 });
+      gsap.set(img, { x: 64, yPercent: isSp ? 0 : -50, opacity: 0, skewX: -2 });
 
       gsap.timeline()
-        // ① スピードライン：左右から高速スライドイン
-        .to(p1, { x: 0, opacity: 0.1, duration: 0.55, ease: 'power4.out' })
-        .to(p2, { x: 0, opacity: 0.5, duration: 0.45, ease: 'power4.out' }, '<0.08')
-        // ② テキスト：右からシュッとスライドイン（スタガー）
-        .fromTo(sub,  { opacity: 0, x: 32 }, { opacity: 1, x: 0, duration: 0.5,  ease: 'power3.out' }, 0.35)
-        .fromTo(ttl,  { opacity: 0, x: 48 }, { opacity: 1, x: 0, duration: 0.55, ease: 'power3.out' }, 0.48)
-        .fromTo(lead, { opacity: 0, x: 24 }, { opacity: 1, x: 0, duration: 0.5,  ease: 'power3.out' }, 0.64)
-        // ③ 写真：右からシュッとスライドイン
-        .to(img, { x: 0, opacity: 1, duration: 0.7, ease: 'power3.out' }, 0.4);
+        // ① スピードライン：左右から高速スライドイン＋モーションブラー
+        .to(p1, { x: 0, opacity: 0.1, filter: 'blur(0px)', duration: 0.55, ease: 'power4.out' })
+        .to(p2, { x: 0, opacity: 0.5, filter: 'blur(0px)', duration: 0.45, ease: 'power4.out' }, '<0.08')
+        // ② テキスト：右からシュッ（スキュー＋モーションブラー）
+        .fromTo(sub,
+          { opacity: 0, x: 32, skewX: -12,  filter: 'blur(4px)' },
+          { opacity: 1, x: 0,  skewX: 0,   filter: 'blur(0px)', duration: 0.5,  ease: 'power3.out' },
+          0.35
+        )
+        .fromTo(ttl,
+          { opacity: 0, x: 48, skewX: -6, filter: 'blur(6px)' },
+          { opacity: 1, x: 0,  skewX: 0,   filter: 'blur(0px)', duration: 0.55, ease: 'power3.out' },
+          0.48
+        )
+        .fromTo(lead,
+          { opacity: 0, x: 24, skewX: -4,  filter: 'blur(3px)' },
+          { opacity: 1, x: 0,  skewX: 0,   filter: 'blur(0px)', duration: 0.5,  ease: 'power3.out' },
+          0.64
+        )
+        // ③ 写真：右からシュッ（スキュー）
+        .to(img, { x: 0, opacity: 1, skewX: 0, duration: 0.7, ease: 'power3.out' }, 0.4);
     }
   }
 </script>
