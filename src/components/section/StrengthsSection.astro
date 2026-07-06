@@ -46,7 +46,6 @@ const { strengths } = Astro.props;
 
       @include media-sp {
         grid-template-columns: 1fr;
-        gap: 4px;
       }
     }
 
@@ -75,12 +74,13 @@ const { strengths } = Astro.props;
       }
 
       @include media-sp {
+        padding: 0;
+
         &:nth-child(-n+3),
         &:nth-child(n+4) {
           grid-column: auto;
         }
 
-        padding: 2.8rem 2.4rem;
       }
     }
 
@@ -93,6 +93,10 @@ const { strengths } = Astro.props;
       line-height: 1;
       color: #ddd;
       position: relative;
+
+      @include media-sp {
+        font-size: 3.2rem;
+      }
 
       &::after {
         content: '';
@@ -115,6 +119,9 @@ const { strengths } = Astro.props;
       font-size: 2.0rem;
       font-weight: bold;
       margin: 0 0 1.6rem;
+      @include media-sp {
+        font-size: 1.6rem;
+      }
     }
 
     &__text {
