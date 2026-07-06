@@ -30,16 +30,16 @@
     padding-top: 80px;
     overflow: hidden;
 
-    @include media-sp {
-      min-height: 560px;
-    }
-
     &__inner {
       position: relative;
       z-index: 1;
       display: flex;
       align-items: center;
       min-height: 680px;
+
+      @include media-tab {
+        min-height: 620px;
+      }
 
       @include media-sp {
         min-height: 560px;
@@ -60,11 +60,11 @@
       margin-bottom: 2.4rem;
 
       @include media-tab {
-        font-size: 52px;
+        font-size: 4.8rem;
       }
 
       @include media-sp {
-        font-size: 34px;
+        font-size: 3.4rem;
       }
     }
     
@@ -89,7 +89,7 @@
       width: 38rem;
 
       @include media-tab {
-        width: 28rem;
+        width: 26rem;
         right: 2rem;
       }
 
