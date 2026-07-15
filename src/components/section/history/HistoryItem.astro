@@ -2,9 +2,10 @@
 interface Props {
   title: string;
   text: string;
+  detail: string;
 }
 
-const { title, text } = Astro.props;
+const { title, text, detail } = Astro.props;
 ---
 
 <article class="history-item">
@@ -13,7 +14,7 @@ const { title, text } = Astro.props;
       <h3 class="history-item__title">{title}</h3>
       <p class="history-item__text">{text}</p>
     </summary>
-    <div class="history-item__detail">詳細が入ります</div>
+    <div class="history-item__detail">{detail}</div>
   </details>
 </article>
 

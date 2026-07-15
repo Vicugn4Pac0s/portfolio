@@ -5,6 +5,7 @@ import HistoryItem from './history/HistoryItem.astro';
 interface HistoryItem {
   title: string;
   text: string;
+  detail: string;
 }
 
 interface Props {
@@ -19,7 +20,7 @@ const { histories } = Astro.props;
     <SectionHeading>HISTORY</SectionHeading>
     <div class="history__list">
       {histories.map((item) => (
-        <HistoryItem title={item.title} text={item.text} />
+        <HistoryItem title={item.title} text={item.text} detail={item.detail} />
       ))}
     </div>
   </div>
