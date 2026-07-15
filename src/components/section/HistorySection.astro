@@ -2,10 +2,16 @@
 import SectionHeading from '../ui/SectionHeading.astro';
 import HistoryItem from './history/HistoryItem.astro';
 
+interface HistoryDetailSection {
+  heading: string;
+  paragraphs: string[];
+}
+
 interface HistoryItem {
   title: string;
+  phase: string;
   text: string;
-  detail: string;
+  detail: HistoryDetailSection[];
 }
 
 interface Props {
@@ -20,7 +26,12 @@ const { histories } = Astro.props;
     <SectionHeading>HISTORY</SectionHeading>
     <div class="history__list">
       {histories.map((item) => (
-        <HistoryItem title={item.title} text={item.text} detail={item.detail} />
+        <HistoryItem
+          title={item.title}
+          phase={item.phase}
+          text={item.text}
+          detail={item.detail}
+        />
       ))}
     </div>
   </div>

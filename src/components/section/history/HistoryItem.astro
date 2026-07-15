@@ -1,20 +1,38 @@
 ---
-interface Props {
-  title: string;
-  text: string;
-  detail: string;
+interface HistoryDetailSection {
+  heading: string;
+  paragraphs: string[];
 }
 
-const { title, text, detail } = Astro.props;
+interface Props {
+  title: string;
+  phase: string;
+  text: string;
+  detail: HistoryDetailSection[];
+}
+
+const { title, phase, text, detail } = Astro.props;
 ---
 
 <article class="history-item">
   <details class="history-item__details">
     <summary class="history-item__summary" data-cursor-label="VIEW DETAIL">
       <h3 class="history-item__title">{title}</h3>
+      <p class="history-item__phase">{phase}</p>
       <p class="history-item__text">{text}</p>
     </summary>
-    <div class="history-item__detail">{detail}</div>
+    <div class="history-item__detail">
+      {detail.map((section) => (
+        <section class="history-item__detail-section">
+          <h4 class="history-item__detail-heading">{section.heading}</h4>
+          <div class="history-item__detail-body">
+            {section.paragraphs.map((paragraph) => (
+              <p>{paragraph}</p>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
   </details>
 </article>
 
@@ -89,6 +107,13 @@ const { title, text, detail } = Astro.props;
       font-weight: 800;
     }
 
+    &__phase {
+      margin: 0 0 8px;
+      color: var(--color-ink);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
     &__text {
       margin: 0;
       color: var(--color-muted);
@@ -97,8 +122,33 @@ const { title, text, detail } = Astro.props;
       line-height: 2;
     }
     &__detail {
+      display: grid;
+      gap: 24px;
+      padding: 24px 12px 0;
+    }
+
+    &__detail-section {
+      display: grid;
+      gap: 8px;
+    }
+
+    &__detail-heading {
+      margin: 0;
+      color: var(--color-ink);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    &__detail-body {
+      display: grid;
+      gap: 8px;
+      color: var(--color-muted);
       font-size: 12px;
-      padding: 12px 12px 0;
+      line-height: 2;
+
+      p {
+        margin: 0;
+      }
     }
   }
 </style>
