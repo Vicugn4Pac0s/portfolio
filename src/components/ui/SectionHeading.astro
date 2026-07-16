@@ -29,16 +29,12 @@ const { as: Tag = 'h2' } = Astro.props;
     
     span {
       display: inline-flex;
-      align-items: center;
-      justify-content: flex-start;
-      gap: 24px;
       position: relative;
     }
 
     span::after {
       content: '';
       background-color: var(--color-accent);
-      display: block;
       height: 3px;
       width: 7.2rem;
       position: absolute;
