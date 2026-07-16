@@ -1,6 +1,3 @@
-const lineIcon = (paths: string) =>
-  `<svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">${paths}</svg>`;
-
 export const strengths = [
   {
     title: '複雑なUIを形にする実装力',
