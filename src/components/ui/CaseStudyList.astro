@@ -4,9 +4,10 @@ import type { CaseStudySummary } from '../../data/caseStudies';
 
 interface Props {
   studies: CaseStudySummary[];
+  headingLevel?: 'h2' | 'h3';
 }
 
-const { studies } = Astro.props;
+const { studies, headingLevel = 'h2' } = Astro.props;
 ---
 
 <ul class="case-study-list">
@@ -17,6 +18,7 @@ const { studies } = Astro.props;
         title={study.title}
         description={study.description}
         image={study.image}
+        headingLevel={headingLevel}
       />
     </li>
   ))}

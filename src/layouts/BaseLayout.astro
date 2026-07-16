@@ -23,37 +23,33 @@ const { title, description } = Astro.props;
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <style lang="scss" is:global>
+      @use '@styles/reset/the-new-css-reset';
+
+      @use '@styles/base';
+
+      @use '@styles/utility/display';
+      @use '@styles/utility/grid';
+      @use '@styles/utility/flex';
+      @use '@styles/utility/text';
+      @use '@styles/utility/list';
+      @use '@styles/utility/form';
+      @use '@styles/utility/sizing';
+      @use '@styles/utility/spacing';
+
+      @use '@styles/components/accordion';
+      @use '@styles/components/dialog';
+      @use '@styles/components/menu';
+    </style>
   </head>
   <body>
     <slot />
     <script>
       import { initCursorFollower } from '../scripts/initCursorFollower';
+      import { initDialog } from '@scripts/libs/dialog.ts';
 
+      initDialog();
       initCursorFollower();
     </script>
   </body>
 </html>
-
-<style lang="scss" is:global>
-@use '@styles/reset/the-new-css-reset';
-
-@use '@styles/base';
-
-@use '@styles/utility/display';
-@use '@styles/utility/grid';
-@use '@styles/utility/flex';
-@use '@styles/utility/text';
-@use '@styles/utility/list';
-@use '@styles/utility/form';
-@use '@styles/utility/sizing';
-@use '@styles/utility/spacing';
-
-@use '@styles/components/accordion';
-@use '@styles/components/dialog';
-@use '@styles/components/menu';
-</style>
-
-<script>
-import { initDialog } from '@scripts/libs/dialog.ts';
-initDialog();
-</script>

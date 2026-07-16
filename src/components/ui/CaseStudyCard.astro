@@ -4,9 +4,11 @@ interface Props {
   title: string;
   description: string;
   image: string;
+  headingLevel?: 'h2' | 'h3';
 }
 
-const { slug, title, description, image } = Astro.props;
+const { slug, title, description, image, headingLevel = 'h2' } = Astro.props;
+const Heading = headingLevel;
 ---
 
 <article class="case-study-card">
@@ -20,7 +22,7 @@ const { slug, title, description, image } = Astro.props;
       />
     </div>
     <div class="case-study-card__body">
-      <h3 class="case-study-card__title">{title}</h3>
+      <Heading class="case-study-card__title">{title}</Heading>
       <p class="case-study-card__text">{description}</p>
     </div>
   </a>

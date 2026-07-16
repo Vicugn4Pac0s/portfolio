@@ -18,8 +18,8 @@ const { title, phase, text, detail } = Astro.props;
   <details class="history-item__details">
     <summary class="history-item__summary" data-cursor-label="VIEW DETAIL">
       <h3 class="history-item__title">{title}</h3>
-      <p class="history-item__phase">{phase}</p>
-      <p class="history-item__text">{text}</p>
+      <span class="history-item__phase">{phase}</span>
+      <span class="history-item__text">{text}</span>
     </summary>
     <div class="history-item__detail">
       {detail.map((section) => (
@@ -108,6 +108,7 @@ const { title, phase, text, detail } = Astro.props;
     }
 
     &__phase {
+      display: block;
       margin: 0 0 8px;
       color: var(--color-ink);
       font-size: 14px;
@@ -115,6 +116,7 @@ const { title, phase, text, detail } = Astro.props;
     }
 
     &__text {
+      display: block;
       margin: 0;
       color: var(--color-muted);
       font-size: 12px;
