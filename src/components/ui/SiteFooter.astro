@@ -15,14 +15,14 @@
   @use '@styles/global' as *;
 
   .site-footer {
-    border-top: 1px solid rgba(219, 229, 240, 0.8);
+    border-top: 1px solid color-mix(in srgb, var(--color-line) 80%, transparent);
     padding-block: 36px;
 
     &__inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: #64748b;
+      color: var(--color-muted);
       font-size: 12px;
       font-weight: 650;
 

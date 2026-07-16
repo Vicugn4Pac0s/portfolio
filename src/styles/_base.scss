@@ -99,7 +99,7 @@ select {
   width: 24px;
   height: 24px;
   border-radius: 999px;
-  background: rgba(22, 131, 247, 0.12);
+  background: color-mix(in srgb, var(--color-primary) 12%, transparent);
   backdrop-filter: blur(2px);
   pointer-events: none;
   opacity: 0;
@@ -118,13 +118,13 @@ select {
   &[data-active="true"] {
     width: 96px;
     height: 96px;
-    background: rgba(7, 22, 47, 0.24);
+    background: color-mix(in srgb, var(--color-ink) 24%, transparent);
   }
 
   &__label {
     align-self: center;
     justify-self: center;
-    color: white;
+    color: var(--color-base-white);
     font-size: 10px;
     font-weight: 800;
     letter-spacing: 0.08em;
