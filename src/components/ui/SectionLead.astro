@@ -1,0 +1,28 @@
+---
+interface Props {
+  as?: 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+}
+
+const { as: Tag = 'p' } = Astro.props as Props;
+---
+
+<Tag class="section-lead">
+  <slot />
+</Tag>
+
+<style lang="scss">
+  @use '@styles/global' as *;
+
+  .section-lead {
+    margin: 0 0 24px;
+    color: var(--color-ink);
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 650;
+    line-height: 1.7;
+
+    @include media-sp {
+      font-size: 2rem;
+      line-height: 1.5;
+    }
+  }
+</style>
