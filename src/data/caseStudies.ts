@@ -9,7 +9,7 @@ export interface CaseStudySummary {
   title: string;
   description: string;
   category: string;
-  date: Date;
+  sortTimestamp: number;
   image: string;
 }
 
@@ -21,13 +21,17 @@ export function getCaseStudyImage(image: string) {
   return image || caseStudyPlaceholderImage;
 }
 
+function getCaseStudySortTimestamp(date: Date | undefined) {
+  return date?.getTime() ?? 0;
+}
+
 export function toCaseStudySummary(study: CaseStudyEntry): CaseStudySummary {
   return {
     slug: getCaseStudySlug(study),
     title: study.data.title,
     description: study.data.description,
     category: study.data.category,
-    date: study.data.date,
+    sortTimestamp: getCaseStudySortTimestamp(study.data.date),
     image: getCaseStudyImage(study.data.image),
   };
 }
@@ -43,7 +47,7 @@ export async function getCaseStudySummaries() {
     .map(toCaseStudySummary)
     .sort(
       (a, b) =>
-        b.date.getTime() - a.date.getTime() || a.title.localeCompare(b.title, 'ja'),
+        b.sortTimestamp - a.sortTimestamp || a.title.localeCompare(b.title, 'ja'),
     );
 }
 
