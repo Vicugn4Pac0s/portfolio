@@ -4,7 +4,7 @@ import PageIntro from '../../components/ui/PageIntro.astro';
 import SiteFooter from '../../components/ui/SiteFooter.astro';
 import SiteHeader from '../../components/ui/SiteHeader.astro';
 import SubpageContent from '../../components/ui/SubpageContent.astro';
-import { getCaseStudyStaticPaths } from '../../data/caseStudies';
+import { getCaseStudyImage, getCaseStudyStaticPaths } from '../../data/caseStudies';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
@@ -13,7 +13,8 @@ export async function getStaticPaths() {
 
 const { study } = Astro.props;
 const { Content } = await render(study);
-const { title, description, period, role, tags, image } = study.data;
+const { title, description, category, tags, image } = study.data;
+const caseStudyImage = getCaseStudyImage(image);
 ---
 
 <BaseLayout title={`${title} | Case Study`} description={description}>
@@ -26,7 +27,7 @@ const { title, description, period, role, tags, image } = study.data;
         <figure class="cs-summary__hero">
           <img
             class="cs-summary__hero-image"
-            src={image}
+            src={caseStudyImage}
             alt={`${title} - プロジェクトイメージ`}
             loading="eager"
           />
@@ -35,12 +36,8 @@ const { title, description, period, role, tags, image } = study.data;
         <div class="cs-summary__meta">
           <dl class="cs-summary__info">
             <div class="cs-summary__info-item">
-              <dt class="cs-summary__info-label">期間</dt>
-              <dd class="cs-summary__info-value">{period}</dd>
-            </div>
-            <div class="cs-summary__info-item">
-              <dt class="cs-summary__info-label">役割</dt>
-              <dd class="cs-summary__info-value">{role}</dd>
+              <dt class="cs-summary__info-label">カテゴリ</dt>
+              <dd class="cs-summary__info-value">{category}</dd>
             </div>
             <div class="cs-summary__info-item">
               <dt class="cs-summary__info-label">技術スタック</dt>

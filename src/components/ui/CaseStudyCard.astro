@@ -3,11 +3,12 @@ interface Props {
   slug: string;
   title: string;
   description: string;
+  category: string;
   image: string;
   headingLevel?: 'h2' | 'h3';
 }
 
-const { slug, title, description, image, headingLevel = 'h2' } = Astro.props;
+const { slug, title, description, category, image, headingLevel = 'h2' } = Astro.props;
 const Heading = headingLevel;
 ---
 
@@ -22,6 +23,7 @@ const Heading = headingLevel;
       />
     </div>
     <div class="case-study-card__body">
+      <p class="case-study-card__category">{category}</p>
       <Heading class="case-study-card__title">{title}</Heading>
       <p class="case-study-card__text">{description}</p>
     </div>
@@ -98,6 +100,17 @@ const Heading = headingLevel;
         font-size: 1.6rem;
         margin-bottom: 1.6rem;
       }
+    }
+
+    &__category {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 0.8rem;
+      color: var(--color-primary);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     &__text {

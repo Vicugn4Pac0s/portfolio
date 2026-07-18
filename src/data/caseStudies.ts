@@ -2,11 +2,14 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 export type CaseStudyEntry = CollectionEntry<'case-studies'>;
 
+export const caseStudyPlaceholderImage = '/images/case-studies/placeholder.webp';
+
 export interface CaseStudySummary {
   slug: string;
-  number: string;
   title: string;
   description: string;
+  category: string;
+  date: Date;
   image: string;
 }
 
@@ -14,13 +17,18 @@ export function getCaseStudySlug(study: CaseStudyEntry) {
   return study.id.replace(/\.md$/, '');
 }
 
+export function getCaseStudyImage(image: string) {
+  return image || caseStudyPlaceholderImage;
+}
+
 export function toCaseStudySummary(study: CaseStudyEntry): CaseStudySummary {
   return {
     slug: getCaseStudySlug(study),
-    number: study.data.number,
     title: study.data.title,
     description: study.data.description,
-    image: study.data.image,
+    category: study.data.category,
+    date: study.data.date,
+    image: getCaseStudyImage(study.data.image),
   };
 }
 
@@ -33,7 +41,10 @@ export async function getCaseStudySummaries() {
 
   return studies
     .map(toCaseStudySummary)
-    .sort((a, b) => a.number.localeCompare(b.number));
+    .sort(
+      (a, b) =>
+        b.date.getTime() - a.date.getTime() || a.title.localeCompare(b.title, 'ja'),
+    );
 }
 
 export async function getCaseStudyStaticPaths() {
