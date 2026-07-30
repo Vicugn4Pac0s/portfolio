@@ -6,9 +6,16 @@ date: "2023-06-01"
 tags:
   - "React"
   - "TypeScript"
-  - "Google Maps"
-  - "API連携"
+  - "TanStack Query"
+  - "Zustand"
+  - "Google Maps JavaScript API"
+  - "Google Maps React Wrapper"
+  - "Google Directions API"
+  - "SCSS"
 image: ""
+projectDuration: "約2週間〜1か月"
+responsibilities: "画面設計支援、フロントエンドの技術設計、実装、リファクタリング"
+developmentType: "新規機能開発"
 ---
 
 ## プロジェクト概要
@@ -16,10 +23,6 @@ image: ""
 工事情報サイト向けに、工事区間を含むルートと複数の迂回ルートについて、現在の所要時間と経路を比較できる地図機能を新規開発しました。
 
 対象区間を選択すると、本線と迂回ルートの所要時間、通常時からの増加、通行止めの有無を確認できます。各ルートはGoogle Maps上にも表示され、所要時間と実際の経路をあわせて比較できる機能です。
-
-- 制作期間：約2週間〜1か月
-- 担当範囲：画面設計支援、フロントエンドの技術設計、実装、リファクタリング
-- 開発種別：新規機能開発
 
 ## 担当範囲
 
@@ -102,14 +105,3 @@ PCでは地図上に所要時間一覧を重ね、経路と数値を同じ画面
 画面設計の支援からデータ構造、外部API連携、地図表示までを一貫して設計し、短期間でリアルタイム所要時間と複数の経路を比較できる機能として公開しました。
 
 案件ごとの差分を設定データへ集約したことで、別の工事区間や類似案件にも展開しやすい構成にしています。また、座標作成ツールを整備することで、開発者以外もデータ準備に参加できる運用へ改善しました。
-
-## 使用技術
-
-- React
-- TypeScript
-- TanStack Query
-- Zustand
-- Google Maps JavaScript API
-- Google Maps React Wrapper
-- Google Directions API
-- SCSS

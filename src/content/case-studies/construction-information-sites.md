@@ -6,10 +6,22 @@ date: "2024-01-01"
 tags:
   - "React"
   - "TypeScript"
-  - "Google Maps"
-  - "フロントエンド設計"
-  - "継続改善"
+  - "JavaScript"
+  - "TanStack Query"
+  - "Zustand"
+  - "Google Maps JavaScript API"
+  - "Google Directions API"
+  - "SVG"
+  - "Draft.js"
+  - "CMS"
+  - "SCSS"
+  - "Jest / Vitest"
+  - "Git"
 image: ""
+projectDuration: "複数年にわたり継続"
+projectDurationLabel: "担当期間"
+responsibilities: "フロントエンドの技術設計、実装、レビュー、運用改善"
+developmentType: "新規開発、案件展開、機能追加、リファクタリング"
 ---
 
 ## プロジェクト概要
@@ -19,10 +31,6 @@ image: ""
 工事規制や渋滞予測、リアルタイム所要時間などを分かりやすく伝えるため、Google MapsやSVG、グラフ、チャット形式のUIを用いた複数の機能を開発しています。
 
 工事サイトは工事案件ごとに複製・再構築されるため、一度公開して終わるのではなく、過去の実装を次の案件へ展開しながら、機能追加や設計改善を重ねてきました。
-
-- 担当期間：複数年にわたり継続
-- 担当範囲：フロントエンドの技術設計、実装、レビュー、運用改善
-- 開発種別：新規開発、案件展開、機能追加、リファクタリング
 
 ## 担当範囲
 
@@ -129,19 +137,3 @@ Gitを使用した変更管理、レビュー手順、公開前の確認項目�
 短納期で立ち上げた初期サイトを基盤として、複数の工事案件へ機能を展開しながら、TypeScript化、コンポーネント設計、状態管理、テスト、構築手順を継続的に改善しました。
 
 個別案件の要望に対応するだけでなく、次の案件でも利用できる形へ実装を整理したことで、複雑な地図・チャット・CMS機能を含むサイトを、社内で継続して開発・運用できる体制につなげました。
-
-## 使用技術
-
-- React
-- TypeScript
-- JavaScript
-- TanStack Query
-- Zustand
-- Google Maps JavaScript API
-- Google Directions API
-- SVG
-- Draft.js
-- CMS
-- SCSS
-- Jest / Vitest
-- Git

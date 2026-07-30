@@ -9,6 +9,10 @@ const caseStudies = defineCollection({
     date: z.coerce.date(),
     tags: z.array(z.string()),
     image: z.string().optional().default(''),
+    projectDuration: z.string().optional(),
+    projectDurationLabel: z.string().optional(),
+    responsibilities: z.string().optional(),
+    developmentType: z.string().optional(),
   }),
 });
 
