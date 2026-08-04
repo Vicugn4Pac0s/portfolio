@@ -161,7 +161,7 @@ const caseStudyImage = getCaseStudyImage(image);
       display: block;
       margin-bottom: 6px;
       color: var(--color-primary);
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: 800;
       letter-spacing: 0.04em;
     }
@@ -190,18 +190,19 @@ const caseStudyImage = getCaseStudyImage(image);
 
   .cs-article {
     :global(h2) {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       font-weight: 800;
       margin: 5.6rem 0 1.6rem;
 
       @include media-sp {
-        font-size: 1.8rem;
+        font-size: 2rem;
         margin: 4rem 0 1.4rem;
       }
     }
 
     :global(h3) {
-      font-size: 1.8rem;
+      color: var(--color-muted);
+      font-size: 2rem;
       font-weight: 800;
       margin: 4rem 0 1.4rem;
 
@@ -213,7 +214,6 @@ const caseStudyImage = getCaseStudyImage(image);
 
     :global(p),
     :global(li) {
-      color: var(--color-muted);
       font-size: 1.6rem;
 
       @include media-sp {
