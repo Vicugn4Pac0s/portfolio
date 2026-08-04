@@ -119,8 +119,11 @@ const Heading = headingLevel;
       min-height: 6.4rem;
       margin: 0;
       color: var(--color-muted);
-      font-size: 1.2rem;
-      line-height: 2;
+      font-size: 1.4rem;
+
+      @include media-sp {
+        font-size: 1.2rem;
+      }
     }
   }
 
