@@ -2,7 +2,7 @@
 title: "渋滞予測マップ機能の設計・実装"
 description: "日付と時間を選択し、渋滞予測を地図と詳細情報で確認できる機能を設計・実装しました。"
 category: "frontend"
-date: "2023-01-01"
+date: "2026-07-01"
 tags:
   - "React"
   - "TypeScript"
@@ -12,7 +12,7 @@ tags:
   - "Google Maps React Wrapper"
   - "Material UI"
   - "SCSS"
-image: ""
+image: "/images/case-studies/traffic-prediction-map.webp"
 projectDuration: "約3週間〜1か月"
 responsibilities: "フロントエンドの技術設計、実装、UI改修、リファクタリング"
 developmentType: "新規機能開発、継続改修"

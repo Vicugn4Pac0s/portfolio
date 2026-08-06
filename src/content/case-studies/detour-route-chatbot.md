@@ -2,7 +2,7 @@
 title: "迂回ルート案内チャットボットの設計・実装"
 description: "工事規制時の迂回ルートを、出発IC・目的ICの選択から検索結果まで会話形式で案内する機能を設計・実装しました。"
 category: "frontend"
-date: "2024-01-01"
+date: "2026-08-01"
 tags:
   - "React"
   - "TypeScript"
@@ -11,7 +11,7 @@ tags:
   - "SCSS"
   - "Motion"
   - "Swiper"
-image: ""
+image: "/images/case-studies/detour-route-chatbot.webp"
 projectDuration: "約2週間〜1か月"
 responsibilities: "フロントエンドの技術設計、実装、コードレビュー"
 developmentType: "新規機能開発"

@@ -2,7 +2,7 @@
 title: "工事情報サイトの新規開発と継続改善"
 description: "工事情報サイトの新規開発・継続改善を担当し、地図・グラフ・チャットなどの機能実装からフロントエンド設計まで幅広く対応しました。"
 category: "frontend"
-date: "2024-01-01"
+date: "2026-08-06"
 tags:
   - "React"
   - "TypeScript"
@@ -17,7 +17,7 @@ tags:
   - "SCSS"
   - "Jest / Vitest"
   - "Git"
-image: ""
+image: "/images/case-studies/construction-information-sites.webp"
 projectDuration: "複数年にわたり継続"
 projectDurationLabel: "担当期間"
 responsibilities: "フロントエンドの技術設計、実装、レビュー、運用改善"

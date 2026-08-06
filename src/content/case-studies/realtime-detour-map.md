@@ -2,7 +2,7 @@
 title: "リアルタイム所要時間機能の設計・実装"
 description: "工事区間を含むルートと複数の迂回ルートについて、現在の所要時間を比較し、経路情報を地図上へ可視化する機能を設計・実装しました。"
 category: "frontend"
-date: "2023-06-01"
+date: "2026-06-01"
 tags:
   - "React"
   - "TypeScript"
@@ -12,7 +12,7 @@ tags:
   - "Google Maps React Wrapper"
   - "Google Directions API"
   - "SCSS"
-image: ""
+image: "/images/case-studies/realtime-detour-map.webp"
 projectDuration: "約2週間〜1か月"
 responsibilities: "画面設計支援、フロントエンドの技術設計、実装、リファクタリング"
 developmentType: "新規機能開発"
