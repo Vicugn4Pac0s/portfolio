@@ -2,7 +2,7 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 export type CaseStudyEntry = CollectionEntry<'case-studies'>;
 
-export const caseStudyPlaceholderImage = '/images/case-studies/placeholder.webp';
+export const caseStudyPlaceholderImage = '/images/case-studies/no-image.webp';
 
 export interface CaseStudySummary {
   slug: string;
