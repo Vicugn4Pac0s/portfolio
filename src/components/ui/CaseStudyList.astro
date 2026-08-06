@@ -5,13 +5,17 @@ import type { CaseStudySummary } from '../../data/caseStudies';
 interface Props {
   studies: CaseStudySummary[];
   headingLevel?: 'h2' | 'h3';
+  maxItems?: number;
 }
 
-const { studies, headingLevel = 'h2' } = Astro.props;
+const { studies, headingLevel = 'h2', maxItems } = Astro.props;
+const displayedStudies = maxItems === undefined
+  ? studies
+  : studies.slice(0, Math.max(0, Math.floor(maxItems)));
 ---
 
 <ul class="case-study-list">
-  {studies.map((study) => (
+  {displayedStudies.map((study) => (
     <li class="case-study-list__item">
       <CaseStudyCard
         slug={study.slug}

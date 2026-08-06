@@ -14,7 +14,7 @@ const { studies } = Astro.props;
 <section id="case-studies" class="case-studies section-block section-block--grey">
   <div class="site-container">
     <SectionHeading>FEATURED CASE STUDIES</SectionHeading>
-    <CaseStudyList studies={studies} headingLevel="h3" />
+    <CaseStudyList studies={studies} headingLevel="h3" maxItems={3} />
     <div class="case-studies__action">
       <Button href="/case-studies">View All Case Studies</Button>
     </div>
@@ -25,6 +25,16 @@ const { studies } = Astro.props;
   @use '@styles/global' as *;
 
   .case-studies {
+    :global(.case-study-list__item:nth-child(n + 3)) {
+      @include media-tab {
+        display: none;
+      }
+
+      @include media-sp {
+        display: none;
+      }
+    }
+    
     &__action {
       display: flex;
       justify-content: center;
