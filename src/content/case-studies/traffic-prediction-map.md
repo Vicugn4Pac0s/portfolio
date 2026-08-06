@@ -12,7 +12,7 @@ tags:
   - "Google Maps React Wrapper"
   - "Material UI"
   - "SCSS"
-image: ""
+image: "/images/case-studies/traffic-prediction-map.webp"
 projectDuration: "約3週間〜1か月"
 responsibilities: "フロントエンドの技術設計、実装、UI改修、リファクタリング"
 developmentType: "新規機能開発、継続改修"
