@@ -1,4 +1,5 @@
 ---
+import { Icon } from 'astro-icon/components';
 ---
 
 <footer class="site-footer">
@@ -7,7 +8,9 @@
       yoshiki.<span class="site-footer__logo-accent">rundev</span>
     </a>
     <p class="site-footer__copy">&copy; 2026 yoshiki.rundev All rights reserved.</p>
-    <a class="site-footer__back-top" href="#" aria-label="Back to top">↑</a>
+    <a class="site-footer__back-top" href="#" aria-label="Back to top">
+      <Icon name="lucide:chevron-up" aria-hidden="true" />
+    </a>
   </div>
 </footer>
 
@@ -56,6 +59,11 @@
       color: var(--color-ink);
       font-size: 20px;
       place-items: center;
+      transition: var(--delay-in);
+
+      &:hover {
+        background-color: var(--color-accent);
+      }
     }
   }
 </style>
