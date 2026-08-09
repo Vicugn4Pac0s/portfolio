@@ -31,6 +31,10 @@ body {
   font-size: 1.6rem;
   font-family: var(--font-sans);
   letter-spacing: 0;
+
+  @include media-sp {
+    font-size: 1.4rem;
+  }
 }
 
 * {

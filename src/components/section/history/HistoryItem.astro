@@ -93,33 +93,39 @@ const { title, phase, text, detail } = Astro.props;
     }
 
     &__title {
-      margin: 0 0 .8rem;
-      font-size: 2.4rem;
+      margin: 0 0 1.2rem;
+      font-size: 3.2rem;
       font-weight: 900;
       font-style: italic;
       color: var(--color-muted);
+
+      @include media-sp {
+        font-size: 2.4rem;
+      }
     }
 
     &__phase {
       display: block;
-      margin: 0 0 8px;
+      margin: 0 0 1.6rem;
       color: var(--color-ink);
-      font-size: 14px;
-      font-weight: 800;
+      font-size: 2.4rem;
+      font-weight: bold;
+
+      @include media-sp {
+        font-size: 1.8rem;
+      }
     }
 
     &__text {
       display: block;
       margin: 0;
       color: var(--color-muted);
-      font-size: 12px;
-      font-weight: 650;
-      line-height: 2;
+      line-height: 1.8;
     }
     &__detail {
       display: grid;
       gap: 24px;
-      padding: 24px 12px 0;
+      padding: 2.4rem 1.2rem 0;
     }
 
     &__detail-section {
@@ -130,16 +136,18 @@ const { title, phase, text, detail } = Astro.props;
     &__detail-heading {
       margin: 0;
       color: var(--color-ink);
-      font-size: 14px;
+      font-size: 2rem;
       font-weight: 800;
+
+      @include media-sp {
+        font-size: 1.6rem;
+      }
     }
 
     &__detail-body {
       display: grid;
-      gap: 8px;
+      gap: 1.6rem;
       color: var(--color-muted);
-      font-size: 12px;
-      line-height: 2;
 
       p {
         margin: 0;
