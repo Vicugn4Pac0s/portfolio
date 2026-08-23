@@ -3,7 +3,7 @@ category: frontend
 date: 2026-08-04
 description: プロダクトブランドサイトやユーザー参加型インタラクティブコンテンツにおいて、フロントエンド実装、技術調整、品質監修を担当しました。
 developmentType: ブランドサイト、キャンペーンサイト、インタラクティブコンテンツ開発
-image: /images/case-studies/brand-promotion-interactive-site.webp
+image: /images/case-studies/brand-promotion-interactive-sites.webp
 projectDuration: 複数案件にわたり継続
 projectDurationLabel: 担当期間
 responsibilities: フロントエンド実装、技術調整、品質監修
@@ -18,9 +18,6 @@ tags:
 - Video API
 title: ブランドサイト・インタラクティブコンテンツの実装・品質監修
 ---
-
-※
-本ページに掲載している画像は、実際の画面をもとにAIで生成したイメージです。
 
 ## プロジェクト概要
 
