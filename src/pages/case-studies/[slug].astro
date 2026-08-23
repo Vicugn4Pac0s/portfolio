@@ -217,6 +217,28 @@ const caseStudyImage = getCaseStudyImage(image);
       }
     }
 
+    :global(ul),
+    :global(ol) {
+      margin: 1.6rem 0;
+      padding-left: 2.4rem;
+    }
+
+    :global(ul) {
+      list-style: disc;
+    }
+
+    :global(ol) {
+      list-style: decimal;
+    }
+
+    :global(li) {
+      line-height: 1.8;
+    }
+
+    :global(li + li) {
+      margin-top: 0.4rem;
+    }
+
     :global(strong) {
       color: var(--color-ink);
     }
