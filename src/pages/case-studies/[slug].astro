@@ -242,5 +242,13 @@ const caseStudyImage = getCaseStudyImage(image);
     :global(strong) {
       color: var(--color-ink);
     }
+
+    :global(a) {
+      color: var(--color-ink);
+      text-decoration: underline;
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
   }
 </style>

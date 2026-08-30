@@ -24,7 +24,7 @@ responsibilities: "企画、UI・機能設計、フロントエンド・バッ�
 developmentType: "個人開発、Webアプリケーション開発、継続改善"
 ---
 
-※ 現在試験公開中です。[TABIRUNを開く](https://tabirun.vercel.app/)
+<a href="https://tabirun.vercel.app/" target="_blank" rel="noopener noreferrer">TABIRUNを開く（※現在試験公開中です。）</a>
 
 ## プロジェクト概要
 
