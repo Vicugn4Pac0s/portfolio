@@ -22,6 +22,7 @@ projectDuration: "2025年10月〜開発継続中"
 projectDurationLabel: "開発期間"
 responsibilities: "企画、UI・機能設計、フロントエンド・バックエンド実装、データベース設計、テスト、AIを活用した実装改善"
 developmentType: "個人開発、Webアプリケーション開発、継続改善"
+image: /images/case-studies/tabirun.webp
 ---
 
 <a href="https://tabirun.vercel.app/" target="_blank" rel="noopener noreferrer">TABIRUNを開く（※現在試験公開中です。）</a>
